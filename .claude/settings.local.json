@@ -10,7 +10,11 @@
       "WebFetch(domain:codepen.io)",
       "Bash(find:*)",
       "Bash(npm start)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:www.freepik.com)",
+      "WebFetch(domain:www.pexels.com)",
+      "WebFetch(domain:www.peakpx.com)",
+      "WebFetch(domain:www.figma.com)"
     ],
     "deny": []
   }

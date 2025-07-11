@@ -36,7 +36,7 @@ const Hero = () => {
       <div className="absolute inset-0 pointer-events-none">
       </div>
 
-      <div className="w-full px-10 lg:px-12 py-32">
+      <div className="w-full px-10 lg:px-12 py-40">
         <div className="grid lg:grid-cols-12 gap-16 items-start min-h-[calc(100vh-200px)] w-full">
           {/* Left Content - Takes up more space like original */}
           <div className="lg:col-span-6 space-y-6">
