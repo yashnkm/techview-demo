@@ -6,51 +6,42 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 
 const Hero = () => {
-  const rightSideRef = useRef<HTMLDivElement>(null);
-  const badgeRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
   const phoneRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const arrowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Initial setup - hide elements
-    gsap.set([badgeRef.current, headingRef.current, ctaRef.current], {
+    // Hide elements initially
+    gsap.set([phoneRef.current, dotRef.current, headingRef.current, arrowRef.current], {
       y: 50,
       opacity: 0
     });
-    
-    gsap.set(phoneRef.current, {
-      scale: 0.8,
-      opacity: 0
-    });
 
-    // Animation timeline triggered after loading completes
-    const tl = gsap.timeline({ delay: 6.5 }); // Starts after loading animation
+    // Animation timeline (20% faster)
+    const tl = gsap.timeline({ delay: 5.6 });
 
-    tl.to(badgeRef.current, {
+    // Dot and heading animation
+    tl.to([dotRef.current, headingRef.current], {
       y: 0,
       opacity: 1,
-      duration: 0.8,
+      duration: 0.64, // 0.8 * 0.8
       ease: "power2.out"
     })
-    .to(headingRef.current, {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power2.out"
-    }, "-=0.4")
-    .to(ctaRef.current, {
-      y: 0,
-      opacity: 1,
-      duration: 0.8,
-      ease: "power2.out"
-    }, "-=0.6")
+    // Phone animation
     .to(phoneRef.current, {
       scale: 1,
       opacity: 1,
-      duration: 1.2,
+      duration: 0.96, // 1.2 * 0.8
       ease: "power2.out"
-    }, "-=1");
+    }, "-=0.64")
+    // Arrow animation - same timing as all text (5.2s)
+    .to(arrowRef.current, {
+      y: 0,
+      opacity: 1,
+      duration: 0.64,
+      ease: "power2.out"
+    }, "-=0.64"); // Same time as dot and heading
 
     return () => {
       tl.kill();
@@ -83,23 +74,23 @@ const Hero = () => {
            }}>
       </div>
 
-      {/* Background decorative elements - Green shapes removed */}
-      <div className="absolute inset-0 pointer-events-none">
-      </div>
 
       <div className="w-full px-10 lg:px-12 py-40">
         <div className="grid lg:grid-cols-12 gap-16 items-start min-h-[calc(100vh-200px)] w-full">
-          {/* Left Content - Takes up more space like original */}
           <div className="lg:col-span-6 space-y-6">
-            {/* Badge - Simple text with dot */}
-            <div ref={badgeRef} className="inline-flex items-center space-x-2 ml-4">
-              <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-              <span className="text-xl font-bold text-black">
+            {/* Badge */}
+            <div className="inline-flex items-center space-x-2 ml-4">
+              <div ref={dotRef} className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
+              <SplitTextReveal 
+                className="text-xl font-bold text-black"
+                delay={5.6}
+                stagger={0.04}
+              >
                 Intelligent Business Solutions
-              </span>
+              </SplitTextReveal>
             </div>
 
-            {/* Main Heading - New structure with scramble text */}
+            {/* Main Heading */}
             <h1 ref={headingRef} className="text-6xl lg:text-7xl xl:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tight font-akkurat">
               One partner,<br />
               for all your<br />
@@ -111,29 +102,34 @@ const Hero = () => {
               <span className="text-slate-600 font-bold">Step into TechView</span>
             </h1>
 
-            {/* Subtext - SplitText reveal */}
+            {/* Subtext */}
             <div className="pt-4 max-w-2xl">
               <SplitTextReveal 
                 className="text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium"
-                delay={8.0}
-                stagger={0.1}
+                delay={5.6}
+                stagger={0.08}
               >
                 Custom AI solutions and modern web applications designed specifically for your need. We build intelligent business tools that works for you.
               </SplitTextReveal>
             </div>
 
-            {/* CTA Section */}
-            <div ref={ctaRef} className="pt-12 flex items-center space-x-4">
-              {/* Text */}
-              <span className="text-xl font-bold text-slate-800">See Our Solutions</span>
-              
-              {/* Standardized Animated Arrow Button */}
-              <AnimatedArrowButton arrowDirection="down" size="md" />
+            {/* CTA */}
+            <div className="pt-12 flex items-center space-x-4">
+              <SplitTextReveal 
+                className="text-xl font-bold text-slate-800"
+                delay={5.6}
+                stagger={0.04}
+              >
+                See Our Solutions
+              </SplitTextReveal>
+              <div ref={arrowRef}>
+                <AnimatedArrowButton arrowDirection="down" size="md" />
+              </div>
             </div>
           </div>
 
-          {/* Right Content - iPhone Mockup */}
-          <div className="lg:col-span-6 relative flex items-start justify-center mt-12" ref={rightSideRef}>
+          {/* Phone */}
+          <div className="lg:col-span-6 relative flex items-start justify-center mt-4">
             <div ref={phoneRef}>
               <SimplePhone className="scale-125" />
             </div>
