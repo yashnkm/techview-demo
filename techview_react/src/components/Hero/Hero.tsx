@@ -49,7 +49,7 @@ const Hero = () => {
             </div>
 
             {/* Main Heading - New structure with scramble text */}
-            <h1 className="text-6xl lg:text-7xl xl:text-8xl font-extrabold text-slate-900 leading-[0.9] tracking-tight" style={{fontFamily: "'Space Grotesk', sans-serif", fontWeight: '900'}}>
+            <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tight font-akkurat">
               One partner,<br />
               for all your<br />
               <ScrambleText 
@@ -57,12 +57,12 @@ const Hero = () => {
                 duration={2500}
                 scrambleDuration={0.6}
               /><br />
-              <span className="text-slate-600 font-extrabold" style={{fontWeight: '900'}}>Step into TechView</span>
+              <span className="text-slate-600 font-bold">Step into TechView</span>
             </h1>
 
             {/* Subtext - Positioned lower like original */}
             <div className="pt-4 max-w-2xl">
-              <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed font-light">
+              <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium">
                 Custom AI solutions and modern web applications designed specifically for your need. We build intelligent business tools that works for you.
               </p>
             </div>
@@ -70,7 +70,7 @@ const Hero = () => {
             {/* CTA Section */}
             <div className="pt-12 flex items-center space-x-4">
               {/* Text */}
-              <span className="text-xl font-semibold text-slate-800">See Our Solutions</span>
+              <span className="text-xl font-bold text-slate-800">See Our Solutions</span>
               
               {/* Standardized Animated Arrow Button */}
               <AnimatedArrowButton arrowDirection="down" size="md" />

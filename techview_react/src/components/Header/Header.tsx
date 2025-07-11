@@ -39,7 +39,7 @@ const Header = () => {
           {/* Logo - Left side */}
           <div className="flex items-center space-x-3 px-6">
             <div className="w-8 h-8 rounded-lg" style={{backgroundColor: '#74f5a2'}}></div>
-            <span className="text-xl font-bold text-slate-800">TechView</span>
+            <span className="text-xl font-bold text-slate-800 font-akkurat">TechView</span>
           </div>
 
           {/* Desktop Navigation - Centered */}
@@ -49,7 +49,7 @@ const Header = () => {
               onMouseEnter={() => handleMouseEnter('services')}
               onMouseLeave={handleMouseLeave}
             >
-              <a href="#services" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg flex items-center space-x-1 group">
+              <a href="#services" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg flex items-center space-x-1 group font-akkurat">
                 <span>Services</span>
                 <svg className="w-3 h-3 fill-current transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 12 8">
                   <path d="M6 8L0 0h12L6 8z"/>
@@ -62,7 +62,7 @@ const Header = () => {
               onMouseEnter={() => handleMouseEnter('cases')}
               onMouseLeave={handleMouseLeave}
             >
-              <a href="#cases" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg flex items-center space-x-1 group">
+              <a href="#cases" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg flex items-center space-x-1 group font-akkurat">
                 <span>Cases</span>
                 <svg className="w-3 h-3 fill-current transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 12 8">
                   <path d="M6 8L0 0h12L6 8z"/>
@@ -70,13 +70,13 @@ const Header = () => {
               </a>
             </div>
             
-            <a href="#about" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg">About</a>
-            <a href="#contact" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg">Contact</a>
+            <a href="#about" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg font-akkurat">About</a>
+            <a href="#contact" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg font-akkurat">Contact</a>
           </nav>
 
           {/* Text and Square Button - Right side */}
           <div className="hidden lg:flex items-center space-x-3 px-6">
-            <span className="text-slate-700 font-bold">Talk with us</span>
+            <span className="text-slate-700 font-bold font-akkurat">Talk with us</span>
             <AnimatedArrowButton arrowDirection="top-right" size="md" />
           </div>
 

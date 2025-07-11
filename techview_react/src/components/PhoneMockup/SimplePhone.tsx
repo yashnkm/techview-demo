@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import darkmodeImage from '../../assets/darkmode.JPG';
 
 interface SimplePhoneProps {
   className?: string;
@@ -150,10 +151,14 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
               <div 
                 className="absolute inset-0 z-20 transition-transform duration-1000 ease-out tech-background"
                 style={{
-                  transform: animationState === 'locked' ? 'translateY(100%)' : 'translateY(0%)'
+                  transform: animationState === 'locked' ? 'translateY(100%)' : 'translateY(0%)',
+                  backgroundImage: `url(${darkmodeImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
                 }}
               >
-                <div className="absolute inset-0 circuit-pattern"></div>
+                <div className="absolute inset-0 circuit-pattern bg-black bg-opacity-60"></div>
                 {/* Unlocked Screen Content */}
                 <div 
                   className={`flex flex-col h-full p-6 justify-between transition-all duration-300 ${
