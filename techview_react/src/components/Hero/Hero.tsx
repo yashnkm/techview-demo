@@ -1,6 +1,6 @@
 import AnimatedArrowButton from '../UI/AnimatedArrowButton';
 import ScrambleText from '../UI/ScrambleText';
-import PhoneMockup from '../PhoneMockup/PhoneMockup';
+import SimplePhone from '../PhoneMockup/SimplePhone';
 import { useRef } from 'react';
 
 const Hero = () => {
@@ -79,7 +79,7 @@ const Hero = () => {
 
           {/* Right Content - iPhone Mockup */}
           <div className="lg:col-span-6 relative flex items-start justify-center mt-20" ref={rightSideRef}>
-            <PhoneMockup className="scale-125" />
+            <SimplePhone className="scale-125" />
           </div>
         </div>
       </div>
