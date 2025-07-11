@@ -1,22 +1,31 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
 import AnimatedArrowButton from '../UI/AnimatedArrowButton';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+  const megaMenuRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
   const handleMouseEnter = (dropdown: string) => {
     if (hoverTimeout) {
       clearTimeout(hoverTimeout);
       setHoverTimeout(null);
     }
+    
+    // Kill any existing timeline
+    if (timelineRef.current) {
+      timelineRef.current.kill();
+    }
+    
     setActiveDropdown(dropdown);
   };
 
   const handleMouseLeave = () => {
     const timeout = setTimeout(() => {
-      setActiveDropdown(null);
+      animateOut();
     }, 300); // 300ms delay before hiding
     setHoverTimeout(timeout);
   };
@@ -29,8 +38,77 @@ const Header = () => {
   };
 
   const handleMegaMenuLeave = () => {
-    setActiveDropdown(null);
+    animateOut();
   };
+
+  const animateIn = () => {
+    if (megaMenuRef.current) {
+      // Kill any existing timeline
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+      }
+      
+      // Set initial state
+      gsap.set(megaMenuRef.current, {
+        opacity: 0,
+        y: 20,
+        scale: 0.95
+      });
+      
+      // Create new timeline
+      timelineRef.current = gsap.timeline();
+      
+      // Animate in
+      timelineRef.current.to(megaMenuRef.current, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    }
+  };
+
+  const animateOut = () => {
+    if (megaMenuRef.current) {
+      // Kill any existing timeline
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+      }
+      
+      // Create new timeline
+      timelineRef.current = gsap.timeline({
+        onComplete: () => {
+          setActiveDropdown(null);
+        }
+      });
+      
+      // Animate out
+      timelineRef.current.to(megaMenuRef.current, {
+        opacity: 0,
+        y: 20,
+        scale: 0.95,
+        duration: 0.2,
+        ease: "power2.in"
+      });
+    }
+  };
+
+  // Trigger animation when mega menu becomes visible
+  useEffect(() => {
+    if (activeDropdown && megaMenuRef.current) {
+      animateIn();
+    }
+  }, [activeDropdown]);
+
+  // Cleanup timeline on unmount
+  useEffect(() => {
+    return () => {
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -94,7 +172,8 @@ const Header = () => {
       {/* Mega Menu Dropdowns */}
       {activeDropdown && (
         <div 
-          className="fixed top-24 left-1/2 transform -translate-x-1/2 z-40 transition-all duration-300 ease-out"
+          ref={megaMenuRef}
+          className="fixed top-28 left-1/2 transform -translate-x-1/2 z-40"
           onMouseEnter={handleMegaMenuEnter}
           onMouseLeave={handleMegaMenuLeave}
           style={{ 

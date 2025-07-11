@@ -1,10 +1,61 @@
 import AnimatedArrowButton from '../UI/AnimatedArrowButton';
 import ScrambleText from '../UI/ScrambleText';
 import SimplePhone from '../PhoneMockup/SimplePhone';
-import { useRef } from 'react';
+import SplitTextReveal from '../UI/SplitTextReveal';
+import { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
 
 const Hero = () => {
   const rightSideRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const phoneRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Initial setup - hide elements
+    gsap.set([badgeRef.current, headingRef.current, ctaRef.current], {
+      y: 50,
+      opacity: 0
+    });
+    
+    gsap.set(phoneRef.current, {
+      scale: 0.8,
+      opacity: 0
+    });
+
+    // Animation timeline triggered after loading completes
+    const tl = gsap.timeline({ delay: 6.5 }); // Starts after loading animation
+
+    tl.to(badgeRef.current, {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      ease: "power2.out"
+    })
+    .to(headingRef.current, {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power2.out"
+    }, "-=0.4")
+    .to(ctaRef.current, {
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      ease: "power2.out"
+    }, "-=0.6")
+    .to(phoneRef.current, {
+      scale: 1,
+      opacity: 1,
+      duration: 1.2,
+      ease: "power2.out"
+    }, "-=1");
+
+    return () => {
+      tl.kill();
+    };
+  }, []);
 
   return (
     <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
@@ -41,7 +92,7 @@ const Hero = () => {
           {/* Left Content - Takes up more space like original */}
           <div className="lg:col-span-6 space-y-6">
             {/* Badge - Simple text with dot */}
-            <div className="inline-flex items-center space-x-2 ml-4">
+            <div ref={badgeRef} className="inline-flex items-center space-x-2 ml-4">
               <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
               <span className="text-xl font-bold text-black">
                 Intelligent Business Solutions
@@ -49,7 +100,7 @@ const Hero = () => {
             </div>
 
             {/* Main Heading - New structure with scramble text */}
-            <h1 className="text-6xl lg:text-7xl xl:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tight font-akkurat">
+            <h1 ref={headingRef} className="text-6xl lg:text-7xl xl:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tight font-akkurat">
               One partner,<br />
               for all your<br />
               <ScrambleText 
@@ -60,15 +111,19 @@ const Hero = () => {
               <span className="text-slate-600 font-bold">Step into TechView</span>
             </h1>
 
-            {/* Subtext - Positioned lower like original */}
+            {/* Subtext - SplitText reveal */}
             <div className="pt-4 max-w-2xl">
-              <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium">
+              <SplitTextReveal 
+                className="text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium"
+                delay={8.0}
+                stagger={0.1}
+              >
                 Custom AI solutions and modern web applications designed specifically for your need. We build intelligent business tools that works for you.
-              </p>
+              </SplitTextReveal>
             </div>
 
             {/* CTA Section */}
-            <div className="pt-12 flex items-center space-x-4">
+            <div ref={ctaRef} className="pt-12 flex items-center space-x-4">
               {/* Text */}
               <span className="text-xl font-bold text-slate-800">See Our Solutions</span>
               
@@ -78,8 +133,10 @@ const Hero = () => {
           </div>
 
           {/* Right Content - iPhone Mockup */}
-          <div className="lg:col-span-6 relative flex items-start justify-center mt-20" ref={rightSideRef}>
-            <SimplePhone className="scale-125" />
+          <div className="lg:col-span-6 relative flex items-start justify-center mt-12" ref={rightSideRef}>
+            <div ref={phoneRef}>
+              <SimplePhone className="scale-125" />
+            </div>
           </div>
         </div>
       </div>

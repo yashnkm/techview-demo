@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import darkmodeImage from '../../assets/darkmode.JPG';
+
 
 interface SimplePhoneProps {
   className?: string;
@@ -8,6 +8,7 @@ interface SimplePhoneProps {
 const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
   const [animationState, setAnimationState] = useState<'locked' | 'wiping' | 'apps_appearing' | 'unlocked'>('locked');
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [showPhoneNumber, setShowPhoneNumber] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -45,7 +46,28 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
     } else if (animationState === 'unlocked') {
       // Allow re-locking by clicking again
       setAnimationState('locked');
+      setShowPhoneNumber(false);
     }
+  };
+
+  const handlePhoneClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setShowPhoneNumber(true);
+  };
+
+  const handleLinkedInClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    window.open('https://www.linkedin.com/company/techviewai', '_blank');
+  };
+
+  const handleInstagramClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    window.open('https://www.instagram.com/yash_nkm', '_blank');
+  };
+
+  const handleMailClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    window.location.href = 'mailto:techviewai@gmail.com';
   };
 
   return (
@@ -152,7 +174,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                 className="absolute inset-0 z-20 transition-transform duration-1000 ease-out tech-background"
                 style={{
                   transform: animationState === 'locked' ? 'translateY(100%)' : 'translateY(0%)',
-                  backgroundImage: `url(${darkmodeImage})`,
+                  
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat'
@@ -279,7 +301,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                       }`}
                       style={{ transitionDelay: '700ms' }}
                     >
-                      <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform cursor-pointer relative">
+                      <div onClick={handleMailClick} className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform cursor-pointer relative">
                         <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
@@ -316,7 +338,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                   >
                     <div className="flex space-x-3 bg-black bg-opacity-20 backdrop-blur-md rounded-3xl px-5 py-4 border border-white border-opacity-10">
                       {/* iOS 18 Phone Icon */}
-                      <div className="w-14 h-14 rounded-[22%] flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-200 cursor-pointer relative overflow-hidden">
+                      <div onClick={handlePhoneClick} className="w-14 h-14 rounded-[22%] flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-200 cursor-pointer relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-b from-green-400 via-green-500 to-green-600 rounded-[22%]"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-white/10 to-transparent rounded-[22%]"></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-[22%]"></div>
@@ -326,7 +348,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                       </div>
 
                       {/* iOS 18 LinkedIn Icon */}
-                      <div className="w-14 h-14 rounded-[22%] flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-200 cursor-pointer relative overflow-hidden">
+                      <div onClick={handleLinkedInClick} className="w-14 h-14 rounded-[22%] flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-200 cursor-pointer relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-b from-blue-500 via-blue-600 to-blue-700 rounded-[22%]"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-white/10 to-transparent rounded-[22%]"></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-[22%]"></div>
@@ -336,7 +358,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                       </div>
 
                       {/* iOS 18 Instagram Icon */}
-                      <div className="w-14 h-14 rounded-[22%] flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-200 cursor-pointer relative overflow-hidden">
+                      <div onClick={handleInstagramClick} className="w-14 h-14 rounded-[22%] flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-200 cursor-pointer relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-pink-500 via-red-500 to-orange-400 rounded-[22%]"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-white/10 to-transparent rounded-[22%]"></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-[22%]"></div>
@@ -346,7 +368,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                       </div>
 
                       {/* iOS 18 Mail Icon */}
-                      <div className="w-14 h-14 rounded-[22%] flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-200 cursor-pointer relative overflow-hidden">
+                      <div onClick={handleMailClick} className="w-14 h-14 rounded-[22%] flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-200 cursor-pointer relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600 rounded-[22%]"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-white/10 to-transparent rounded-[22%]"></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-[22%]"></div>
@@ -359,6 +381,32 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                   </div>
                 </div>
               </div>
+              
+              {/* Phone Number Overlay */}
+              {showPhoneNumber && (
+                <div 
+                  className="absolute inset-0 z-30 flex items-center justify-center bg-black bg-opacity-80 backdrop-blur-sm"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="bg-white rounded-3xl px-8 py-6 shadow-2xl border border-gray-200 font-akkurat">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">Call TechView</h3>
+                      <p className="text-3xl font-bold text-green-600 tracking-wider mb-4">9518571613</p>
+                      <button 
+                        onClick={() => setShowPhoneNumber(false)}
+                        className="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium px-6 py-2 rounded-full transition-colors duration-200"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

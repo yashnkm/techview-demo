@@ -1,0 +1,105 @@
+<section class="hero-section">
+  <h1 class="title-animation">
+    This is the animated GSAP multiline title
+  </h1>
+</section>
+
+<section>
+  <h2 class="title-animation">Another heading with GSAP animation</h2>
+</section>
+
+<section>
+  <h3 class="title-animation">Smaller heading animated line by line</h3>
+</section>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #141414;
+  color: #fcfcfc;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.mask {
+  overflow: hidden;
+  display: block;
+  padding-inline: .5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 0 1em 0;
+  overflow: hidden;
+  max-width: fit-content;
+  text-transform: uppercase;
+  font-style: italic;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(3rem, 5.8vw, 5.8rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+}
+
+section {
+  padding: 100px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}import $ from "https://esm.sh/jquery";
+
+gsap.registerPlugin(SplitText, ScrollTrigger);
+
+$(function () {
+  const $titles = $(".title-animation");
+
+  $titles.each(function () {
+    const $title = $(this);
+
+    const split = new SplitText($title[0], { type: "lines" });
+    const lines = split.lines;
+    
+    $title.empty();
+
+    lines.forEach(line => {
+      const mask = document.createElement("div");
+      mask.className = "mask";
+
+      const inner = document.createElement("div");
+      inner.className = "line-inner";
+      inner.textContent = line.textContent;
+
+      mask.appendChild(inner);
+      $title[0].appendChild(mask);
+    });
+
+    gsap.from($title.find(".mask .line-inner"), {
+      y: 50,
+      opacity: 0,
+      duration: 0.7,
+      ease: "power3.out",
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: $title[0],
+        start: "top 70%",
+        toggleActions: "play none play reverse"
+      }
+    });
+  });
+});
