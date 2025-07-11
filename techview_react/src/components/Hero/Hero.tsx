@@ -77,7 +77,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Phone Mockup */}
+          {/* Right Content - iPhone Mockup */}
           <div className="lg:col-span-6 relative flex items-start justify-center mt-20" ref={rightSideRef}>
             <PhoneMockup className="scale-125" />
           </div>

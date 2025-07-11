@@ -9,7 +9,7 @@ interface PhoneMockupProps {
 const PhoneMockup: React.FC<PhoneMockupProps> = ({ className = '' }) => {
   return (
     <div className={`phone-mockup-container ${className}`}>
-      {/* Phone positioning and 3D effects */}
+      {/* iPhone positioning and 3D effects */}
       <div className="relative transform-gpu">
         <PhoneFrame>
           <PhoneScreen />

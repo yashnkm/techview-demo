@@ -7,14 +7,14 @@ interface PhoneFrameProps {
 const PhoneFrame: React.FC<PhoneFrameProps> = ({ children }) => {
   return (
     <div className="phone-frame">
-      {/* Phone outer frame with realistic styling */}
+      {/* iPhone outer frame with realistic styling */}
       <div className="relative">
-        {/* Phone body */}
+        {/* iPhone body */}
         <div 
           className="phone-body bg-gray-900 rounded-[3rem] p-2 shadow-2xl"
           style={{
-            width: '320px',
-            height: '578px',
+            width: '308px',
+            height: '615px',
             background: 'linear-gradient(145deg, #1f2937 0%, #111827 100%)',
             boxShadow: `
               0 25px 50px -12px rgba(0, 0, 0, 0.6),
@@ -32,12 +32,12 @@ const PhoneFrame: React.FC<PhoneFrameProps> = ({ children }) => {
               background: '#000000'
             }}
           >
-            {/* Dynamic Island */}
+            {/* Thin Dynamic Island */}
             <div 
               className="absolute top-3 left-1/2 transform -translate-x-1/2 bg-black rounded-full z-20"
               style={{
                 width: '100px',
-                height: '20px',
+                height: '18px',
                 background: '#000000'
               }}
             />
@@ -48,24 +48,24 @@ const PhoneFrame: React.FC<PhoneFrameProps> = ({ children }) => {
             </div>
           </div>
         </div>
-        
-        {/* Side buttons */}
+
+        {/* iPhone Side buttons */}
         <div className="phone-buttons absolute top-0 left-0 w-full h-full pointer-events-none">
           {/* Volume buttons */}
           <div 
             className="absolute -left-1 bg-gray-700 rounded-r-sm"
             style={{
-              top: '100px',
+              top: '120px',
               width: '3px',
-              height: '30px'
+              height: '35px'
             }}
           />
           <div 
             className="absolute -left-1 bg-gray-700 rounded-r-sm"
             style={{
-              top: '150px',
+              top: '170px',
               width: '3px',
-              height: '30px'
+              height: '35px'
             }}
           />
           
@@ -73,9 +73,9 @@ const PhoneFrame: React.FC<PhoneFrameProps> = ({ children }) => {
           <div 
             className="absolute -right-1 bg-gray-700 rounded-l-sm"
             style={{
-              top: '125px',
+              top: '140px',
               width: '3px',
-              height: '50px'
+              height: '60px'
             }}
           />
         </div>
