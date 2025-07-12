@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import LoadingScreen from './components/Loading/LoadingScreen'
 import Solutions from './components/Solutions/Solutions'
+import { scrollManager } from './utils/scrollSmoother'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -11,13 +12,26 @@ function App() {
     setIsLoading(false)
   }
 
+  useEffect(() => {
+    if (!isLoading) {
+      // Initialize ScrollSmoother after loading completes
+      scrollManager.init()
+    }
+  }, [isLoading])
+
   return (
     <div className="min-h-screen bg-white">
       {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
       <Header />
-      <Hero />
-      <div id="solutions">
-        <Solutions />
+      
+      {/* ScrollSmoother wrapper */}
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <Hero />
+          <div id="solutions">
+            <Solutions />
+          </div>
+        </div>
       </div>
     </div>
   )

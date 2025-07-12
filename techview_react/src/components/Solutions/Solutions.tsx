@@ -24,10 +24,10 @@ const Solutions = () => {
       </div>
 
       <div className="w-full py-20 sm:py-32 lg:py-40">
-        <div className="relative w-full min-h-[calc(100vh-200px)] -mt-[10vh]">
+        <div className="relative w-full min-h-[calc(100vh-200px)] -mt-[10alvh]">
           
           {/* Our Services Badge - Fixed position top left */}
-          <div className="absolute top-0 left-4 sm:left-6 md:left-8 lg:left-12">
+          <div className="absolute top-0 left-[2vw] lg:left-[3vw]">
             <div className="inline-flex items-center space-x-2">
               <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
               <span className="text-lg sm:text-xl font-bold text-black font-akkurat">Our Services</span>
@@ -36,8 +36,8 @@ const Solutions = () => {
 
           {/* Left Side - Professional Image */}
           <div className="absolute left-0 top-16 lg:top-12">
-            <div className="pl-4 sm:pl-6 md:pl-8 lg:pl-12">
-              <div className="w-72 h-80 lg:w-80 lg:h-96 bg-gradient-to-br from-slate-200 to-slate-300 rounded-2xl overflow-hidden shadow-xl">
+            <div className="pl-[2vw] lg:pl-[3vw]">
+              <div className="w-[40vw] lg:w-[34vw] h-[60vh] lg:h-[70vh] bg-gradient-to-br from-slate-200 to-slate-300 rounded-2xl overflow-hidden shadow-xl">
                 {/* Placeholder for professional image */}
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="text-center text-slate-600">
@@ -53,7 +53,7 @@ const Solutions = () => {
               </div>
               
               {/* TechView overlay */}
-              <div className="absolute top-6 left-10 sm:left-12 md:left-14 lg:left-18 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
+              <div className="absolute top-6 left-[3vw] lg:left-[4vw] bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
                 <span className="font-bold text-slate-800 text-xl font-akkurat">TechView</span>
               </div>
             </div>
@@ -106,7 +106,7 @@ const Solutions = () => {
                   </div>
 
                   {/* Business Intelligence */}
-                  <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out">
+                  <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.3s both'}}>
                     <div className="bg-white p-6 md:p-8 lg:p-10 rounded-xl hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
                       <div className="pr-8">
                         <h3 className="font-bold text-slate-800 text-lg md:text-xl lg:text-2xl">Business<br />Intelligence</h3>
