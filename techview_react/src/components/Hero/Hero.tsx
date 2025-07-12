@@ -80,9 +80,9 @@ const Hero = () => {
 
 
       <div className="w-full px-4 sm:px-6 md:px-8 py-16 sm:py-28 lg:py-36">
-        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center min-h-[660px]">
-          <div className="lg:col-span-6 space-y-6 text-center lg:text-left mr-[-10%]">
+        <div className="max-w-[9.24xl] mx-auto border-4 border-red-500 bg-red-50/20" style={{maxWidth: '110.88rem'}}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center min-h-[41.25rem]">
+          <div className="lg:col-span-6 space-y-6 text-center lg:text-left mr-[-10%] border-4 border-blue-500 bg-blue-50/20 p-2">
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 justify-center lg:justify-start">
               <div ref={dotRef} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
@@ -141,7 +141,7 @@ const Hero = () => {
           </div>
 
           {/* Phone - Hidden on mobile/tablet */}
-          <div className="hidden lg:flex lg:col-span-6 relative items-center justify-end pr-48">
+          <div className="hidden lg:flex lg:col-span-6 relative items-center justify-end pr-48 border-4 border-green-500 bg-green-50/20">
             <div ref={phoneRef}>
               <SimplePhone className="scale-110" />
             </div>
