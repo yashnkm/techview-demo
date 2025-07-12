@@ -9,39 +9,49 @@ const Hero = () => {
   const phoneRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
-  const arrowRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  const handleSolutionsClick = () => {
+    const solutionsSection = document.getElementById('solutions');
+    if (solutionsSection) {
+      solutionsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 
   useEffect(() => {
     // Hide elements initially
-    gsap.set([phoneRef.current, dotRef.current, headingRef.current, arrowRef.current], {
-      y: 50,
+    gsap.set([phoneRef.current, dotRef.current, headingRef.current, ctaRef.current], {
+      opacity: 0
+    });
+    
+    gsap.set(phoneRef.current, {
+      scale: 0.8,
       opacity: 0
     });
 
-    // Animation timeline (20% faster)
-    const tl = gsap.timeline({ delay: 5.6 });
-
-    // Dot and heading animation
+    // All animations at 4.2s - synchronized (faster loading)
+    const tl = gsap.timeline();
+    
     tl.to([dotRef.current, headingRef.current], {
-      y: 0,
-      opacity: 1,
-      duration: 0.64, // 0.8 * 0.8
-      ease: "power2.out"
-    })
-    // Phone animation
-    .to(phoneRef.current, {
-      scale: 1,
-      opacity: 1,
-      duration: 0.96, // 1.2 * 0.8
-      ease: "power2.out"
-    }, "-=0.64")
-    // Arrow animation - same timing as all text (5.2s)
-    .to(arrowRef.current, {
-      y: 0,
       opacity: 1,
       duration: 0.64,
       ease: "power2.out"
-    }, "-=0.64"); // Same time as dot and heading
+    }, 4.2)
+    .to(phoneRef.current, {
+      scale: 1,
+      opacity: 1,
+      duration: 0.96,
+      ease: "power2.out"
+    }, 4.2)
+    // CTA (text + arrow) simple fade-in animation
+    .to(ctaRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out"
+    }, 4.2); // Same exact timing as SplitText delay
 
     return () => {
       tl.kill();
@@ -75,15 +85,15 @@ const Hero = () => {
       </div>
 
 
-      <div className="w-full px-10 lg:px-12 py-40">
-        <div className="grid lg:grid-cols-12 gap-16 items-start min-h-[calc(100vh-200px)] w-full">
-          <div className="lg:col-span-6 space-y-6">
+      <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 py-20 sm:py-32 lg:py-40">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center lg:items-start min-h-[calc(100vh-200px)] w-full">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-6 text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
             {/* Badge */}
-            <div className="inline-flex items-center space-x-2 ml-4">
-              <div ref={dotRef} className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
+            <div className="inline-flex items-center space-x-2 lg:ml-4 justify-center lg:justify-start">
+              <div ref={dotRef} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
               <SplitTextReveal 
-                className="text-xl font-bold text-black"
-                delay={5.6}
+                className="text-lg sm:text-xl font-bold text-black"
+                delay={4.2}
                 stagger={0.04}
               >
                 Intelligent Business Solutions
@@ -91,22 +101,33 @@ const Hero = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 ref={headingRef} className="text-6xl lg:text-7xl xl:text-8xl font-bold text-slate-900 leading-[0.9] tracking-tight font-akkurat">
-              One partner,<br />
-              for all your<br />
-              <ScrambleText 
-                texts={['tech solutions', 'business needs', 'digital goals', 'growth plans']}
-                duration={2500}
-                scrambleDuration={0.6}
-              /><br />
-              <span className="text-slate-600 font-bold">Step into TechView</span>
+            <h1 ref={headingRef} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-slate-900 leading-[0.9] tracking-tight font-akkurat">
+              {/* Mobile & Tablet - Static text */}
+              <span className="lg:hidden">
+                One partner,<br />
+                for all your<br />
+                tech solutions<br />
+                <span className="text-slate-600 font-bold">Step into TechView</span>
+              </span>
+              
+              {/* Desktop - With ScrambleText */}
+              <span className="hidden lg:block">
+                One partner,<br />
+                for all your<br />
+                <ScrambleText 
+                  texts={['tech solutions', 'business needs', 'digital goals', 'growth plans']}
+                  duration={2500}
+                  scrambleDuration={0.6}
+                /><br />
+                <span className="text-slate-600 font-bold">Step into TechView</span>
+              </span>
             </h1>
 
             {/* Subtext */}
             <div className="pt-4 max-w-2xl">
               <SplitTextReveal 
-                className="text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium"
-                delay={5.6}
+                className="text-lg sm:text-xl lg:text-2xl text-slate-600 leading-relaxed font-medium"
+                delay={4.2}
                 stagger={0.08}
               >
                 Custom AI solutions and modern web applications designed specifically for your need. We build intelligent business tools that works for you.
@@ -114,24 +135,24 @@ const Hero = () => {
             </div>
 
             {/* CTA */}
-            <div className="pt-12 flex items-center space-x-4">
-              <SplitTextReveal 
-                className="text-xl font-bold text-slate-800"
-                delay={5.6}
-                stagger={0.04}
-              >
+            <div 
+              ref={ctaRef}
+              className="pt-8 sm:pt-12 flex items-center space-x-4 sm:space-x-4 cursor-pointer group"
+              onClick={handleSolutionsClick}
+            >
+              <span className="text-lg sm:text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
                 See Our Solutions
-              </SplitTextReveal>
-              <div ref={arrowRef}>
+              </span>
+              <div className="group-hover:scale-110 transition-transform flex items-center">
                 <AnimatedArrowButton arrowDirection="down" size="md" />
               </div>
             </div>
           </div>
 
-          {/* Phone */}
-          <div className="lg:col-span-6 relative flex items-start justify-center mt-4">
+          {/* Phone - Hidden on mobile/tablet */}
+          <div className="hidden lg:flex lg:col-span-6 relative items-start justify-center mt-12">
             <div ref={phoneRef}>
-              <SimplePhone className="scale-125" />
+              <SimplePhone className="scale-110 xl:scale-125" />
             </div>
           </div>
         </div>

@@ -8,7 +8,6 @@ interface LoadingScreenProps {
 const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
   const loadingRef = useRef<HTMLDivElement>(null);
   const counterRef = useRef<HTMLSpanElement>(null);
-  const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -18,31 +17,24 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
       clipPath: "polygon(0% 45%, 0% 45%, 0% 55%, 0% 55%)"
     });
 
-    // Phase 1: Expand loading bar horizontally
+    // Phase 1: Expand loading bar horizontally (faster)
     tl.to(loadingRef.current, {
       clipPath: "polygon(0% 45%, 25% 45%, 25% 55%, 0% 55%)",
-      duration: 1.5,
+      duration: 0.8,
       ease: "power2.inOut",
-      delay: 0.5
+      delay: 0.3
     });
 
-    // Phase 2: Expand to full width with counter
+    // Phase 2: Expand to full width with counter (faster)
     tl.to(loadingRef.current, {
       clipPath: "polygon(0% 45%, 100% 45%, 100% 55%, 0% 55%)",
-      duration: 2,
+      duration: 1.2,
       ease: "power2.inOut",
       onStart: () => {
-        // Animate progress bar width
-        gsap.to(progressRef.current, {
-          width: "100%",
-          duration: 2,
-          ease: "power2.inOut"
-        });
-
-        // Animate counter
+        // Animate counter only (no green bar)
         gsap.to(counterRef.current, {
           innerHTML: 100,
-          duration: 2,
+          duration: 1.2,
           ease: "power2.inOut",
           snap: { innerHTML: 1 }
         });
@@ -52,11 +44,11 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
     // Phase 3: Full reveal
     tl.to(loadingRef.current, {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      duration: 1,
+      duration: 0.8,
       ease: "power2.inOut",
       onStart: () => {
-        // Hide progress elements
-        gsap.to([progressRef.current, counterRef.current], {
+        // Hide counter
+        gsap.to(counterRef.current, {
           opacity: 0,
           duration: 0.3
         });
@@ -65,7 +57,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         // Slide up to reveal main content
         gsap.to(loadingRef.current, {
           y: "-100%",
-          duration: 1,
+          duration: 0.8,
           ease: "power2.inOut",
           onComplete: onComplete
         });
@@ -86,26 +78,20 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         willChange: 'clip-path, transform'
       }}
     >
-      {/* Progress Bar */}
-      <div 
-        ref={progressRef}
-        className="absolute left-8 top-1/2 transform -translate-y-1/2 w-0 h-0.5"
-        style={{ backgroundColor: '#74f5a2' }}
-      />
       
       {/* Loading Text and Counter */}
-      <div className="flex items-center space-x-4 font-akkurat">
-        <span className="text-2xl font-bold text-black">loading</span>
-        <span className="text-2xl font-bold text-black">
+      <div className="flex items-center space-x-3 sm:space-x-4 font-akkurat">
+        <span className="text-xl sm:text-2xl font-bold text-black">loading</span>
+        <span className="text-xl sm:text-2xl font-bold text-black">
           / <span ref={counterRef}>0</span>
         </span>
       </div>
 
       {/* TechView Logo/Brand */}
-      <div className="absolute bottom-8 left-8">
+      <div className="absolute bottom-6 sm:bottom-8 left-4 sm:left-8">
         <div className="flex items-center space-x-2">
-          <div className="w-3 h-3 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-          <span className="text-xl font-bold text-black font-akkurat">TechView</span>
+          <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
+          <span className="text-lg sm:text-xl font-bold text-black font-akkurat">TechView</span>
         </div>
       </div>
     </div>
