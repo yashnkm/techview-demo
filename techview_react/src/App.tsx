@@ -3,6 +3,7 @@ import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import LoadingScreen from './components/Loading/LoadingScreen'
 import Solutions from './components/Solutions/Solutions'
+import About from './components/About/About'
 import { scrollManager } from './utils/scrollSmoother'
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
           <Hero />
           <div id="solutions">
             <Solutions />
+          </div>
+          <div id="about">
+            <About />
           </div>
         </div>
       </div>

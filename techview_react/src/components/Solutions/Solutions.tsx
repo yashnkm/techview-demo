@@ -25,10 +25,10 @@ const Solutions = () => {
 
       <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
         <div className="max-w-[9.24xl] mx-auto border-4 border-purple-500 bg-purple-50/20" style={{maxWidth: '110.88rem'}}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center min-h-[41.25rem]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-2 items-center min-h-[41.25rem]">
           
           {/* Left Side - Professional Image */}
-          <div className="lg:col-span-5 relative border-4 border-orange-500 bg-orange-50/20 p-2">
+          <div className="lg:col-span-5 relative p-4 h-full flex flex-col mr-1 border-4 border-orange-500 bg-orange-50/20">
             {/* Our Services Badge */}
             <div className="mb-6">
               <div className="inline-flex items-center space-x-2">
@@ -37,8 +37,8 @@ const Solutions = () => {
               </div>
             </div>
             
-            <div className="relative">
-              <div className="w-full h-[24rem] bg-gradient-to-br from-slate-200 to-slate-300 rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative flex-1">
+              <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 rounded-2xl overflow-hidden shadow-xl">
                 {/* Placeholder for professional image */}
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="text-center text-slate-600">
@@ -61,10 +61,10 @@ const Solutions = () => {
           </div>
 
           {/* Right Side - Services Content */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left border-4 border-cyan-500 bg-cyan-50/20 p-2">
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left p-2 border-4 border-cyan-500 bg-cyan-50/20">
 
             {/* Main Heading */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 leading-[0.85] tracking-tight font-akkurat">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-slate-900 leading-[0.85] tracking-tight font-familjen">
               Comprehensive<br />
               Tech Solutions<br />
               <span className="text-slate-600 font-bold">for Modern Business</span>
@@ -78,9 +78,9 @@ const Solutions = () => {
                 <div className="flex flex-col md:flex-row gap-1">
                   {/* AI Solutions */}
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.1s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-xl hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-xl md:text-2xl lg:text-3xl">AI Solutions</h3>
+                        <h3 className="font-bold text-slate-800 text-base md:text-lg lg:text-xl font-familjen">AI Solutions</h3>
                       </div>
                       <div className="absolute bottom-6 right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
@@ -90,9 +90,9 @@ const Solutions = () => {
 
                   {/* Web Development */}
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.2s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-xl hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-xl md:text-2xl lg:text-3xl">Web Development</h3>
+                        <h3 className="font-bold text-slate-800 text-base md:text-lg lg:text-xl font-familjen">Web<br />Development</h3>
                       </div>
                       <div className="absolute bottom-6 right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
@@ -102,9 +102,9 @@ const Solutions = () => {
 
                   {/* Business Intelligence */}
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.3s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-xl hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-xl md:text-2xl lg:text-3xl">Business<br />Intelligence</h3>
+                        <h3 className="font-bold text-slate-800 text-base md:text-lg lg:text-xl font-familjen">Business<br />Intelligence</h3>
                       </div>
                       <div className="absolute bottom-6 right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
@@ -117,9 +117,9 @@ const Solutions = () => {
                 <div className="flex gap-1">
                   {/* Cloud Solutions */}
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.4s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-xl hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-xl md:text-2xl lg:text-3xl">Cloud Solutions</h3>
+                        <h3 className="font-bold text-slate-800 text-base md:text-lg lg:text-xl font-familjen">Cloud Solutions</h3>
                       </div>
                       <div className="absolute bottom-6 right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
@@ -129,9 +129,9 @@ const Solutions = () => {
 
                   {/* Mobile Apps */}
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.5s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-xl hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-xl md:text-2xl lg:text-3xl">Mobile Apps</h3>
+                        <h3 className="font-bold text-slate-800 text-base md:text-lg lg:text-xl font-familjen">Mobile Apps</h3>
                       </div>
                       <div className="absolute bottom-6 right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />

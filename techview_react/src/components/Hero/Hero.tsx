@@ -79,10 +79,10 @@ const Hero = () => {
       </div>
 
 
-      <div className="w-full px-4 sm:px-6 md:px-8 py-16 sm:py-28 lg:py-36">
+      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-32">
         <div className="max-w-[9.24xl] mx-auto border-4 border-red-500 bg-red-50/20" style={{maxWidth: '110.88rem'}}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center min-h-[41.25rem]">
-          <div className="lg:col-span-6 space-y-6 text-center lg:text-left mr-[-10%] border-4 border-blue-500 bg-blue-50/20 p-2">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-0 items-center min-h-[50rem]">
+          <div className="lg:col-span-8 space-y-6 text-center lg:text-left border-4 border-blue-500 bg-blue-50/20 p-2 pt-16 h-full">
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 justify-center lg:justify-start">
               <div ref={dotRef} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
@@ -96,32 +96,32 @@ const Hero = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 ref={headingRef} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-slate-900 leading-[0.9] tracking-tight font-akkurat">
+            <h1 ref={headingRef} className="text-[3.15rem] sm:text-[3.75rem] md:text-[4.38rem] lg:text-[6.3rem] font-bold text-slate-900 leading-[1.1] tracking-tight font-familjen">
               {/* Mobile & Tablet - Static text */}
               <span className="lg:hidden">
                 One partner,<br />
-                for all your<br />
-                tech solutions<br />
+                for all your <span className="italic font-normal">tech solutions</span><br />
                 <span className="text-slate-600 font-bold">Step into TechView</span>
               </span>
               
               {/* Desktop - Static text */}
               <span className="hidden lg:block">
                 One partner,<br />
-                for all your<br />
-                tech solutions<br />
+                for all your <span className="italic font-normal">tech solutions</span><br />
                 <span className="text-slate-600 font-bold">Step into TechView</span>
               </span>
             </h1>
 
             {/* Subtext */}
-            <div className="max-w-2xl mx-auto lg:mx-0">
+            <div className="max-w-2xl mx-auto lg:mx-0 mt-8">
               <SplitTextReveal 
-                className="text-xl sm:text-2xl lg:text-3xl text-slate-600 leading-relaxed font-medium"
+                className="text-xl sm:text-2xl lg:text-3xl text-slate-600 leading-relaxed font-semibold font-familjen"
                 delay={4.2}
                 stagger={0.08}
               >
-                Custom AI solutions and modern web applications designed specifically for your need. We build intelligent business tools that works for you.
+                Custom AI solutions and modern web applications<br />
+                designed specifically for your business needs.<br />
+                We build intelligent tools that work for you.
               </SplitTextReveal>
             </div>
 
@@ -141,7 +141,7 @@ const Hero = () => {
           </div>
 
           {/* Phone - Hidden on mobile/tablet */}
-          <div className="hidden lg:flex lg:col-span-6 relative items-center justify-end pr-48 border-4 border-green-500 bg-green-50/20">
+          <div className="hidden lg:flex lg:col-span-4 relative items-center justify-end pr-48 border-4 border-green-500 bg-green-50/20 h-full">
             <div ref={phoneRef}>
               <SimplePhone className="scale-110" />
             </div>

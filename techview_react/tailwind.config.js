@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         'akkurat': ['Akkurat', 'Inter', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
+        'familjen': ['Familjen Grotesk', 'sans-serif'],
       },
     },
   },
