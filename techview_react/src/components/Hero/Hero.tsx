@@ -53,7 +53,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative min-h-screen overflow-hidden debug-outline" style={{backgroundColor: '#efeeef'}}>
       {/* Grainy Texture Background */}
       <div className="absolute inset-0" 
            style={{
@@ -79,15 +79,15 @@ const Hero = () => {
       </div>
 
 
-      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-32">
-        <div className="max-w-[9.24xl] mx-auto border-4 border-red-500 bg-red-50/20" style={{maxWidth: '110.88rem'}}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-0 items-center min-h-[50rem]">
-          <div className="lg:col-span-8 space-y-6 text-center lg:text-left border-4 border-blue-500 bg-blue-50/20 p-2 pt-16 h-full">
+      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-32 debug-outline-blue">
+        <div className="max-w-[9.24xl] mx-auto debug-outline-green" style={{maxWidth: '110.88rem'}}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-0 items-center min-h-[50rem] debug-outline-yellow">
+          <div className="lg:col-span-8 space-y-6 text-center lg:text-left p-2 pt-16 h-full debug-outline-purple">
             {/* Badge */}
-            <div className="inline-flex items-center space-x-2 justify-center lg:justify-start">
+            <div className="inline-flex items-center space-x-2 justify-center lg:justify-start debug-outline-blue">
               <div ref={dotRef} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
               <SplitTextReveal 
-                className="text-xl sm:text-2xl font-bold text-black"
+                className="text-xl sm:text-2xl font-bold text-black font-familjen"
                 delay={4.2}
                 stagger={0.04}
               >
@@ -100,35 +100,34 @@ const Hero = () => {
               {/* Mobile & Tablet - Static text */}
               <span className="lg:hidden">
                 One partner,<br />
-                for all your <span className="italic font-normal">tech solutions</span><br />
+                for all your <span className="font-edu-hand font-normal italic">Tech Solutions</span><br />
                 <span className="text-slate-600 font-bold">Step into TechView</span>
               </span>
               
               {/* Desktop - Static text */}
               <span className="hidden lg:block">
                 One partner,<br />
-                for all your <span className="italic font-normal">tech solutions</span><br />
+                for all your <span className="font-edu-hand font-normal italic">Tech Solutions</span><br />
                 <span className="text-slate-600 font-bold">Step into TechView</span>
               </span>
             </h1>
 
             {/* Subtext */}
-            <div className="max-w-2xl mx-auto lg:mx-0 mt-8">
+            <div className="max-w-2xl mx-auto lg:mx-0 mt-8 debug-outline-green">
               <SplitTextReveal 
                 className="text-xl sm:text-2xl lg:text-3xl text-slate-600 leading-relaxed font-semibold font-familjen"
                 delay={4.2}
                 stagger={0.08}
               >
-                Custom AI solutions and modern web applications<br />
-                designed specifically for your business needs.<br />
-                We build intelligent tools that work for you.
+                We build simple, effective tech solutions, workflows and systems tailored to your specific business needs.<br />
+                Custom automation that solves your exact problems and actually save time.
               </SplitTextReveal>
             </div>
 
             {/* CTA */}
             <div 
               ref={ctaRef}
-              className="pt-6 flex items-center justify-center lg:justify-start space-x-4 cursor-pointer group"
+              className="pt-6 flex items-center justify-center lg:justify-start space-x-4 cursor-pointer group debug-outline-yellow"
               onClick={handleSolutionsClick}
             >
               <span className="text-xl sm:text-2xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
@@ -141,7 +140,7 @@ const Hero = () => {
           </div>
 
           {/* Phone - Hidden on mobile/tablet */}
-          <div className="hidden lg:flex lg:col-span-4 relative items-center justify-end pr-48 border-4 border-green-500 bg-green-50/20 h-full">
+          <div className="hidden lg:flex lg:col-span-4 relative items-center justify-end pr-48 h-full debug-outline">
             <div ref={phoneRef}>
               <SimplePhone className="scale-110" />
             </div>

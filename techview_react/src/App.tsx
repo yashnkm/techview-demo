@@ -3,7 +3,8 @@ import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import LoadingScreen from './components/Loading/LoadingScreen'
 import Solutions from './components/Solutions/Solutions'
-import About from './components/About/About'
+import Results from './components/Results/Results'
+import Blog from './components/Blog/Blog'
 import { scrollManager } from './utils/scrollSmoother'
 
 function App() {
@@ -21,19 +22,22 @@ function App() {
   }, [isLoading])
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white debug-outline">
       {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
       <Header />
       
       {/* ScrollSmoother wrapper */}
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
+      <div id="smooth-wrapper" className="debug-outline-blue">
+        <div id="smooth-content" className="debug-outline-green">
           <Hero />
-          <div id="solutions">
+          <div id="solutions" className="debug-outline-yellow">
             <Solutions />
           </div>
-          <div id="about">
-            <About />
+          <div id="results" className="debug-outline-purple">
+            <Results />
+          </div>
+          <div id="blog" className="debug-outline">
+            <Blog />
           </div>
         </div>
       </div>
