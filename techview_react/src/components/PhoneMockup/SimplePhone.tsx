@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import phoneImage from '../../../assets/isometric-style-photo-gray-smartphone-similar-iphone-without-background-template-mockup_946657-19392.avif';
 
 
 interface SimplePhoneProps {
@@ -72,32 +73,37 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
 
   return (
     <div className={`phone-container ${className}`}>
-      {/* iPhone outer frame */}
+      {/* Phone using actual image */}
       <div className="relative">
         <div 
-          className={`phone-body bg-gray-900 rounded-[3rem] p-2 shadow-2xl transition-all duration-300 ${
+          className={`phone-body transition-all duration-300 ${
             animationState === 'unlocked' ? 'animate-pulse' : ''
           }`}
           style={{
-            width: '308px',
-            height: '615px',
-            background: 'linear-gradient(145deg, #1f2937 0%, #111827 100%)',
-            boxShadow: `
-              0 25px 50px -12px rgba(0, 0, 0, 0.6),
-              0 0 0 1px rgba(255, 255, 255, 0.1),
-              inset 0 1px 0 rgba(255, 255, 255, 0.1)
-              ${animationState === 'wiping' ? ', 0 0 30px rgba(116, 245, 162, 0.3)' : ''}
-            `,
-            animation: animationState === 'wiping' ? 'phoneGlow 1s ease-in-out' : 'none'
+            width: '320px',
+            height: '650px',
+            backgroundImage: `url(${phoneImage})`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundColor: '#f3f4f6', // Fallback background
+            filter: animationState === 'wiping' ? 'drop-shadow(0 0 20px rgba(116, 245, 162, 0.5))' : 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3))',
+            animation: animationState === 'wiping' ? 'phoneGlow 1s ease-in-out' : 'none',
+            border: '2px solid red' // Temporary debug border
           }}
         >
-          {/* Screen container */}
+          {/* Screen container - positioned to match the actual phone screen in the image */}
           <div 
-            className="phone-screen bg-black rounded-[2.5rem] overflow-hidden relative"
+            className="phone-screen bg-black overflow-hidden relative"
             style={{
-              width: '100%',
-              height: '100%',
-              background: '#000000'
+              position: 'absolute',
+              top: '12%',
+              left: '8%',
+              width: '84%',
+              height: '76%',
+              background: '#000000',
+              borderRadius: '35px',
+              transform: 'perspective(1000px) rotateY(-2deg)'
             }}
           >
             {/* Dynamic Island */}
@@ -411,21 +417,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
           </div>
         </div>
 
-        {/* Side buttons */}
-        <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-          <div 
-            className="absolute -left-1 bg-gray-700 rounded-r-sm"
-            style={{ top: '120px', width: '3px', height: '35px' }}
-          />
-          <div 
-            className="absolute -left-1 bg-gray-700 rounded-r-sm"
-            style={{ top: '170px', width: '3px', height: '35px' }}
-          />
-          <div 
-            className="absolute -right-1 bg-gray-700 rounded-l-sm"
-            style={{ top: '140px', width: '3px', height: '60px' }}
-          />
-        </div>
+        {/* No need for side buttons since they're part of the image */}
       </div>
     </div>
   );
