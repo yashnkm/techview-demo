@@ -1,191 +1,275 @@
-<div class="main">
-  <h1>Material Design 3 Carousel (Draggable)</h1>
-  <div class="carousel-container">
-    <div id="carousel"></div>
+<body class="bg-white min-h-screen grid place-content-center">
+   <!-- theme toggle radio -->
+   <input type="checkbox" id="theme" class="sr-only peer/theme" checked>
+
+  <div style="--total: 12;" class="relative rounded-full grid  size-72 [grid-template-areas:'stack'] place-content-center
+        [&>label]:[grid-area:stack]
+        [&>label]:size-20
+        [&>label]:rounded-full
+        [&>label]:grid
+        [&>label]:place-content-center 
+        [&>label]:bg-white/20
+        [&>label]:relative
+        [&>label]:text-sky-500
+        [&>label]:text-xl
+        [&>label]:transition-all 
+        [&>label]:duration-500
+        [&>label]:cursor-pointer
+        [&>label]:ring-4
+        [&>label]:ring-white/5
+        [&_img]:rounded-full
+        [&_img]:s-full
+        [&_img]:object-cover
+        [&_img]:transition-all
+        [&_img]:duration-1000
+        [&_img]:ease-in-out
+        [&_svg]:transition-all
+        [&_svg]:duration-500
+        [&_svg]:ease-in-out
+        [&_svg]:absolute
+        [&_svg]:top-2/4
+        [&_svg]:left-2/4
+        [&_svg]:-translate-x-2/4
+        [&_svg]:-translate-y-2/4
+        [&_svg]:w-[125px]
+        [&_svg]:opacity-0 
+        [&_svg]:-z-10
+
+        [&_input:checked+label]:transform-none
+        [&_input:checked+label]:duration-1000
+        [&_input:checked+label>img]:scale-[200%]
+        [&_input:checked+label>svg]:opacity-100
+        [&_input:checked+label>svg]:scale-[225%]
+        [&_input:checked+label>svg]:rotate-45
+        [&_input:checked+label>svg]:[transition-delay:700ms,500ms,2000ms]
+        
+        peer-checked/theme:before:[&_#center]:-inset-[3000%]
+        peer-checked/theme:[&>label]:text-white
+    ">
+    <div id="center" class="absolute inset-0 m-auto size-32 bg-sky-600 border border-white/40   rounded-full grid place-content-center uppercase font-thin tracking-wider text-slate-100 text-lg  
+        before:absolute 
+            before:-inset-0
+            before:bg-sky-950 
+            before:rounded-full
+            before:-z-10
+            before:transition-all
+            before:duration-1000
+            peer-checked/theme:before:-inset-[3000%]
+        
+        ">The Team</div>
+
+    <input type="radio" name="radio-avatar" id="radio-avatar-1" class="sr-only">
+    <label id="avatar-1" for="radio-avatar-1" class="avatar" style="--i:1">
+      <img src="https://i.pravatar.cc/300?img=12" alt="Steven Robinson">
+      <svg viewBox="0 0 300 300">
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">Steven Robinson - Web Developer</textPath>
+        </text>
+      </svg>
+    </label>
+
+    <input type="radio" name="radio-avatar" id="radio-avatar-2" class="sr-only">
+    <label id="avatar-2" for="radio-avatar-2" class="avatar" style="--i:2">
+      <img src="https://i.pravatar.cc/300?img=37" alt="Mari Johnson">
+      <svg viewBox="0 0 300 300">
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">Mari Johnson - UX Designer</textPath>
+        </text>
+      </svg>
+    </label>
+
+    <input type="radio" name="radio-avatar" id="radio-avatar-3" class="sr-only">
+    <label id="avatar-3" for="radio-avatar-3" class="avatar" style="--i:3">
+      <img src="https://i.pravatar.cc/300?img=3" alt="Bob">
+      <svg viewBox="0 0 300 300">
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">Bob - Designer</textPath>
+        </text>
+      </svg>
+    </label>
+
+    <input type="radio" name="radio-avatar" id="radio-avatar-4" class="sr-only">
+    <label id="avatar-4" for="radio-avatar-4" class="avatar" style="--i:4">
+      <img src="https://i.pravatar.cc/300?img=42" alt="Susan Williams">
+      <svg viewBox="0 0 300 300">
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">Susan Williams - Full Stack Developer</textPath>
+        </text>
+      </svg>
+    </label>
+
+    <input type="radio" name="radio-avatar" id="radio-avatar-5" class="sr-only">
+    <label id="avatar-5" for="radio-avatar-5" class="avatar" style="--i:5">
+      <img src="https://i.pravatar.cc/300?img=52" alt="James Braun">
+      <svg viewBox="0 0 300 300">
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">James Braun - Content Creator</textPath>
+        </text>
+      </svg>
+    </label>
+
+    <input type="radio" name="radio-avatar" id="radio-avatar-6" class="sr-only">
+    <label id="avatar-6" for="radio-avatar-6" class="avatar" style="--i:6">
+      <img src="https://i.pravatar.cc/300?img=33" alt="Andrew Charles">
+      <svg viewBox="0 0 300 300">
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">Andrew Charles - Front End Developer</textPath>
+        </text>
+      </svg>
+    </label>
+
+    <input type="radio" name="radio-avatar" id="radio-avatar-7" class="sr-only">
+    <label id="avatar-7" for="radio-avatar-7" class="avatar" style="--i:7">
+      <img src="https://i.pravatar.cc/300?img=44" alt="Jane Dobson">
+      <svg viewBox="0 0 300 300">
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">Jane Dobson - Social Media Manager</textPath>
+        </text>
+      </svg>
+    </label>
+
+    <input type="radio" name="radio-avatar" id="radio-avatar-8" class="sr-only">
+    <label id="avatar-8" for="radio-avatar-8" class="avatar" style="--i:8">
+      <img src="https://i.pravatar.cc/300?img=13" alt="Ryan Williams">
+      <svg viewBox="0 0 300 300">
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">Ryan Williams - Back End Developer</textPath>
+        </text>
+      </svg>
+    </label>
+
+    <input type="radio" name="radio-avatar" id="radio-avatar-9" class="sr-only">
+    <label id="avatar-9" for="radio-avatar-9" class="avatar" style="--i:9">
+      <img src="https://i.pravatar.cc/300?img=14" alt="Ralph Heartling">
+      <svg viewBox="0 0 300 300">
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">Ralph Heartling - Full Stack Developer</textPath>
+        </text>
+      </svg>
+    </label>
+
+    <input type="radio" name="radio-avatar" id="radio-avatar-10" class="sr-only">
+    <label id="avatar-10" for="radio-avatar-10" class="avatar" style="--i:10">
+      <img src="https://i.pravatar.cc/300?img=15" alt="Bryan Davidson">
+      <svg viewBox="0 0 300 300">
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">Bryan Davidson - Team Leader</textPath>
+        </text>
+      </svg>
+    </label>
+
+    <input type="radio" name="radio-avatar" id="radio-avatar-11" class="sr-only">
+    <label id="avatar-11" for="radio-avatar-11" class="avatar" style="--i:11">
+      <img src="https://i.pravatar.cc/300?img=16" alt="Angie Jameson">
+      <svg viewBox="0 0 300 300">
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">Angie Jameson - Front End Developer</textPath>
+        </text>
+      </svg>
+    </label>
+
+    <input type="radio" name="radio-avatar" id="radio-avatar-12" class="sr-only">
+    <label id="avatar-12" for="radio-avatar-12" class="avatar" style="--i:12">
+      <img src="https://i.pravatar.cc/300?img=17" alt="Raymond Simpson">
+      <svg viewBox="0 0 300 300">
+        <text fill="currentColor">
+          <textPath xlink:href="#circlePath">Raymond Simpson - CEO and Entrepreneur</textPath>
+        </text>
+      </svg>
+    </label>
+
   </div>
-</div>
-<div class="bottom-text">
-  <p>
-    Checkout similar carousel with ScrollTrigger <a target="_blank" href="https://codepen.io/boredPheonix/pen/BaGBXQv">here</a>
-  </p>
-  <p>Please feel free to comment suggestions or improvements</p>
-</div>* {
-  box-sizing: border-box;
-  margin: 0;
-}
+  
+  <!-- theme toggle switch -->
+        <div style="--height:2rem; --border:.1" class="absolute top-4 left-4
+                
+                [&>label]:w-[calc(var(--height)*2)]
+                [&>label]:h-[var(--height)]
+                [&>label]:cursor-pointer
+                [&>label]:relative
+                [&>label]:isolate
+                [&>label]:px-[calc(var(--height)/4)]
+                [&>label]:flex
+                [&>label]:items-center
+                [&>label]:justify-center
+                [&>label]:gap-[calc(var(--height)/2)] // this calculation is not correct
+                
+                [&>label>span]:text-slate-700
+                first:[&>label>span]:text-slate-500
+                [&>label>span]:text-lg
+                [&>label>span]:transition-all
+                [&>label>span]:duration-500
+                
+                before:[&>label]:absolute
+                before:[&>label]:inset-0
+                before:[&>label]:rounded-full
+                before:[&>label]:bg-slate-200 
 
-body {
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  padding: 0 24px;
-  font-family: "Red Hat Display", sans-serif;
-}
+                before:[&>label]:
+                before:[&>label]:-z-20
+                before:[&>label]:transition-all
+                before:[&>label]:duration-300
+                hover:before:[&>label]:-inset-1
+                peer-foccs:before:[&>label]:-inset-1
 
-.main {
-  display: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-h1 {
-  color: white;
-  text-align: center;
-  margin-top: 24px;
-  margin-bottom: 40px;
-  letter-spacing: 1.4px;
-}
-
-.carousel-container {
-  width: 100%;
-  height: 100%;
-  max-height: 336px;
-  padding: 8px;
-  overflow: hidden;
-  margin: 0 auto;
-}
-
-#carousel {
-  width: fit-content;
-  height: 100%;
-  display: flex;
-  gap: 8px;
-  margin: 0 auto;
-}
-
-.carousel-img {
-  object-fit: cover;
-  border-radius: 48px;
-}
-
-.bottom-text {
-  position: fixed;
-  bottom: 4px;
-  right: 4px;
-  color: #E6E0E9;
-  font-size: 12px;
-}// carousel images
-const images = [
-  "https://res.cloudinary.com/boredpheonix/image/upload/v1715673142/Codepens/Carousel/pexels-zmelhus-3363331_asjkax.jpg",
-  "https://res.cloudinary.com/boredpheonix/image/upload/v1715673133/Codepens/Carousel/pexels-quang-nguyen-vinh-222549-2177296_m82vrm.jpg",
-  "https://res.cloudinary.com/boredpheonix/image/upload/v1715673128/Codepens/Carousel/pexels-michael-block-1691617-3225517_gyu2cs.jpg",
-  "https://res.cloudinary.com/boredpheonix/image/upload/v1715673096/Codepens/Carousel/pexels-eberhardgross-1366909_ylyv85.jpg",
-  "https://res.cloudinary.com/boredpheonix/image/upload/v1715673109/Codepens/Carousel/pexels-chetanvlad-2279334_qokehq.jpg",
-  "https://res.cloudinary.com/boredpheonix/image/upload/v1715673095/Codepens/Carousel/pexels-iurii-laimin-78973777-9184517_yxpm9t.jpg",
-  "https://res.cloudinary.com/boredpheonix/image/upload/v1715673121/Codepens/Carousel/pexels-arts-1547813_esxaf8.jpg",
-  "https://res.cloudinary.com/boredpheonix/image/upload/v1715673137/Codepens/Carousel/pexels-tobiasbjorkli-2669181_yccjw8.jpg",
-  "https://res.cloudinary.com/boredpheonix/image/upload/v1715673106/Codepens/Carousel/pexels-luisdalvan-1770809_bbqj36.jpg",
-];
-
-const carousel = document.getElementById("carousel");
-
-// Added images as children of carousel
-images.forEach((image) => {
-  const img = document.createElement("img");
-  img.src = image;
-  img.classList.add("carousel-img");
-  carousel.appendChild(img);
-});
-
-let maxScrollWidth = 0;
-let widths = [320, 192, 96];
-const proxy = document.createElement("div");
-let carouselTl = null
-
-
-// gsap animation
-const initAnim = () => {
-  const imgEls = document.querySelectorAll(".carousel-img");
-  gsap.set(imgEls, { width: widths[2], height: widths[0] });
-  gsap.set(imgEls[0], { width: widths[0] });
-  gsap.set(imgEls[1], { width: widths[1] });
-  carouselTl = gsap.timeline({
-    paused: true,
-  });
-  for (let i = 0; i < Math.ceil(imgEls.length / 3); i++) {
-    if (i * 3 + 1 >= imgEls.length) break;
-    const intermediateWidth =
-      i * 3 + 2 >= imgEls.length ? widths[1] : (widths[1] + widths[2]) / 2;
-    carouselTl.addLabel(`Img${i * 3 + 1}`);
-    carouselTl.to(imgEls[i * 3], { width: intermediateWidth, duration: 2 });
-    carouselTl.to(imgEls[i * 3 + 1], { width: widths[0], duration: 2 }, "-=2");
-    if (i * 3 + 2 >= imgEls.length) break;
-    carouselTl.to(
-      imgEls[i * 3 + 2],
-      { width: intermediateWidth, duration: 2 },
-      "-=2"
-    );
-    carouselTl.addLabel(`Img${i * 3 + 2}`);
-
-    carouselTl.to(imgEls[i * 3], { width: widths[2], duration: 2 });
-    carouselTl.to(imgEls[i * 3 + 1], { width: widths[1], duration: 2 }, "-=2");
-    carouselTl.to(imgEls[i * 3 + 2], { width: widths[0], duration: 2 }, "-=2");
-
-    if (i * 3 + 3 >= imgEls.length) break;
-    carouselTl.addLabel(`Img${i * 3 + 3}`);
-    carouselTl.to(carousel, {
-      x: -1 * Math.min(maxScrollWidth, (i + 1) * 3 * (widths[2] + 8)),
-      duration: 4,
-    });
-    carouselTl.to(imgEls[i * 3 + 1], { width: widths[2], duration: 2 }, "-=4");
-    carouselTl.to(imgEls[i * 3 + 2], { width: widths[2], duration: 2 }, "-=4");
-    carouselTl.to(imgEls[i * 3 + 3], { width: widths[0], duration: 2 }, "-=4");
-    if (i * 3 + 4 >= imgEls.length) break;
-    carouselTl.to(imgEls[i * 3 + 4], { width: widths[1], duration: 2 }, "-=4");
-  }
-  carouselTl.to(carousel, { x: -1 * maxScrollWidth, duration: 2 });
-  carouselTl.addLabel("end");
-};
-
-let dragStartX = 0
-let snapAnim = null
-const initDraggable = () => {
-  var draggable = new Draggable(proxy, {
-    type: "x",
-    trigger: ".carousel-container",
-    onDragStart: updateStart,
-    onDrag: updateProgress,
-    onDragEnd: updateEnd,
-  });
+                after:[&>label]:absolute
+                after:[&>label]:rounded-full
+                after:[&>label]:-z-10
+                after:[&>label]:bg-white
+                after:[&>label]:transition-all
+                after:[&>label]:duration-500
+                after:[&>label]:ease-in-out
+                Xafter:[&>label]:[box-shadow:0_1px_2px_rgba(0,0,0,.5),inset_0_1px_rgba(255,255,255,.5)]
+                
+                // calculate postion and size based on custom properties - no need to change these
+                after:[&>label]:top-[calc(var(--height)*var(--border))]
+                after:[&>label]:left-[calc(var(--height)*var(--border))]
+                after:[&>label]:h-[calc(var(--height)*calc(1-var(--border)*2))]
+                after:[&>label]:w-[calc(var(--height)*calc(1-var(--border)*2))]
+                
+                peer-checked/theme:before:[&>label]:bg-slate-500
+                peer-checked/theme:first:[&>label>span]:text-white
+                peer-checked/theme:after:[&>label]:translate-x-[var(--height)]
+                peer-checked/theme:after:bg-teal-900  
+        ">
+            <label for="theme" class="switch">
+                <span class="material-symbols-outlined ">light_mode</span>
+                <span class="material-symbols-outlined">dark_mode</span>
+            </label>
+        </div>
+  
+    <p class="absolute bottom-4 right-4 text-white mt-4 text-sm">Looking for a <a href="https://codepen.io/cbolson/pen/QWPYQBe" class="text-orange-500 hover:underline" target="_parent">pure css version</a>?
+      
+<!-- SVG template for dynamic text -->
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" width="0" height="0">
+    <defs>
+      <path id="circlePath" d="M 150, 150 m -100, 0 a 100,100 0 0,1 200,0 a 100,100 0 0,1 -200,0" />
+    </defs>
+  </svg>
   
 
-  function updateStart() {
-    dragStartX = this.x
-  }
-  function updateProgress() {
-    const addOnProgress = (-1 * this.deltaX) / (10* (maxScrollWidth || listWidth))
-    const newProgress = Math.min(1, Math.max(carouselTl.progress() + addOnProgress, 0))
-    carouselTl.progress(newProgress);
-  }
-  function updateEnd() {
-    const diffX = this.x - dragStartX
-    const previousLabel = carouselTl.previousLabel() || 'Img1'
-    const nextLabel = carouselTl.nextLabel() || 'end'
-    const newProgress = carouselTl.labels[diffX > 0 ? previousLabel : nextLabel] / carouselTl.labels['end']
-    carouselTl.pause();
-    snapAnim = gsap.to(carouselTl, {progress: newProgress, ease: "none"});
-  }
+</body>
+/*
+* CREDITS:
+* original code for circle placement calculations taken from this codepen:
+* https: //codepen.io/team/keyframers/pen/LYWyrqO
+*/
+.avatar {
+    --radius: 14rem;
+    --d: calc(var(--i) / var(--total));
+    --r-offset: -0.15turn;
+    --r-amount: 1turn;
+    --r: calc((var(--r-amount) * var(--d)) + var(--r-offset));
+    transform: rotate(var(--r)) translate(var(--radius)) rotate(calc(-1 * var(--r)));
 }
 
 
-let listWidth = widths[2] * images.length + 8 * (images.length - 1) + widths[0];
-if (window.innerWidth - 48 < listWidth) {
-  let newWidth = 0;
-  for (let i = 1; i <= Math.floor(images.length / 3); i++) {
-    const val = widths[0] + widths[2] * 3 * i + 8 * (3 * i - 1);
-    if (val > window.innerWidth - 48) break;
-    newWidth = val;
-  }
-  if (newWidth === 0) {
-    widths = [160, 96, 48];
-    newWidth = widths[0] + widths[2] * 3 + 8 * 2;
-    listWidth = widths[2] * images.length + 8 * (images.length - 1) + widths[0];
-    gsap.set(".carousel-img", { borderRadius: 24 });
-  }
-  gsap.set(".carousel-container", { width: newWidth + 8 });
-  maxScrollWidth = Math.max(listWidth - newWidth + 8, 0);
-}
-initAnim();
-initDraggable();
+// uncheck radio buttons (unfortunatley this can't be done with CSS alone)
+document.querySelectorAll('input[type="radio"]').forEach(radio => {
+    radio.addEventListener('click', (e) => {
+        e.preventDefault();
+        // setting a timeout enables this hack to work
+        setTimeout(() => radio.checked = !radio.checked, 0);
+    });
+});
+

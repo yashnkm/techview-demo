@@ -12,6 +12,9 @@ export default {
         'familjen': ['Familjen Grotesk', 'sans-serif'],
         'edu-hand': ['Edu NSW ACT Hand', 'cursive'],
       },
+      animation: {
+        'spin-slow': 'spin-slow 20s linear infinite',
+      },
     },
   },
   plugins: [],

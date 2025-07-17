@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import phoneImage from '../../../assets/isometric-style-photo-gray-smartphone-similar-iphone-without-background-template-mockup_946657-19392.avif';
 
 
 interface SimplePhoneProps {
@@ -73,7 +72,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
 
   return (
     <div className={`phone-container ${className}`}>
-      {/* Phone using actual image */}
+      {/* Phone using HTML/CSS mockup */}
       <div className="relative">
         <div 
           className={`phone-body transition-all duration-300 ${
@@ -82,28 +81,27 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
           style={{
             width: '320px',
             height: '650px',
-            backgroundImage: `url(${phoneImage})`,
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundColor: '#f3f4f6', // Fallback background
-            filter: animationState === 'wiping' ? 'drop-shadow(0 0 20px rgba(116, 245, 162, 0.5))' : 'drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3))',
+            backgroundColor: '#1a1a1a',
+            borderRadius: '45px',
+            padding: '8px',
+            boxShadow: animationState === 'wiping' 
+              ? '0 0 20px rgba(116, 245, 162, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 0 0 3px #2a2a2a' 
+              : '0 10px 30px rgba(0, 0, 0, 0.3), inset 0 0 0 3px #2a2a2a',
             animation: animationState === 'wiping' ? 'phoneGlow 1s ease-in-out' : 'none',
-            border: '2px solid red' // Temporary debug border
+            border: '2px solid #333',
+            transform: 'none',
+            position: 'relative'
           }}
         >
-          {/* Screen container - positioned to match the actual phone screen in the image */}
+          {/* Screen container - full screen within phone body */}
           <div 
             className="phone-screen bg-black overflow-hidden relative"
             style={{
-              position: 'absolute',
-              top: '12%',
-              left: '8%',
-              width: '84%',
-              height: '76%',
+              width: '100%',
+              height: '100%',
               background: '#000000',
-              borderRadius: '35px',
-              transform: 'perspective(1000px) rotateY(-2deg)'
+              borderRadius: '37px',
+              position: 'relative'
             }}
           >
             {/* Dynamic Island */}
@@ -417,7 +415,11 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
           </div>
         </div>
 
-        {/* No need for side buttons since they're part of the image */}
+        {/* Add physical phone buttons */}
+        <div className="absolute right-[-2px] top-[120px] w-1 h-12 bg-gray-700 rounded-r-sm"></div>
+        <div className="absolute right-[-2px] top-[160px] w-1 h-8 bg-gray-700 rounded-r-sm"></div>
+        <div className="absolute right-[-2px] top-[200px] w-1 h-8 bg-gray-700 rounded-r-sm"></div>
+        <div className="absolute left-[-2px] top-[180px] w-1 h-16 bg-gray-700 rounded-l-sm"></div>
       </div>
     </div>
   );

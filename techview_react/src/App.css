@@ -43,6 +43,15 @@
   }
 }
 
+@keyframes spin-slow {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 @keyframes techGrid {
   0% {
     opacity: 0.1;
