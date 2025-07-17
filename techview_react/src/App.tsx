@@ -6,6 +6,8 @@ import Solutions from './components/Solutions/Solutions'
 import Results from './components/Results/Results'
 import Blog from './components/Blog/Blog'
 import OurTeams from './components/OurTeams/OurTeams'
+import Contact from './components/Contact/Contact'
+import Footer from './components/Footer/Footer'
 import { scrollManager } from './utils/scrollSmoother'
 
 function App() {
@@ -42,6 +44,12 @@ function App() {
           </div>
           <div id="ourteams" className="debug-outline">
             <OurTeams />
+          </div>
+          <div id="contact" className="debug-outline">
+            <Contact />
+          </div>
+          <div id="footer" className="debug-outline">
+            <Footer />
           </div>
         </div>
       </div>

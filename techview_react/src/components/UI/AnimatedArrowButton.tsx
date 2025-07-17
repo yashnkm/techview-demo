@@ -1,4 +1,3 @@
-import React from 'react';
 
 interface AnimatedArrowButtonProps {
   arrowDirection?: 'down' | 'top-right';

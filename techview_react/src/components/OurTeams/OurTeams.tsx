@@ -1,70 +1,15 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Draggable } from 'gsap/Draggable';
 import AnimatedArrowButton from '../UI/AnimatedArrowButton';
+import MarqueeCards, { type MarqueeCardsRef } from '../UI/MarqueeCards';
+import CustomNavButton from '../UI/CustomNavButton';
 
-gsap.registerPlugin(ScrollTrigger, Draggable);
-
-interface TeamMember {
-  id: string;
-  name: string;
-  role: string;
-  bio: string;
-  skills: string[];
-  image: string;
-  linkedin?: string;
-  github?: string;
-  email?: string;
-}
-
-const teamMembers: TeamMember[] = [
-  {
-    id: 'founder-ceo',
-    name: 'Alex Chen',
-    role: 'Founder & CEO',
-    bio: 'Visionary leader with 12+ years in AI and tech innovation.',
-    skills: ['AI Strategy', 'Product Vision', 'Team Leadership'],
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-    linkedin: 'https://linkedin.com/in/alexchen',
-    github: 'https://github.com/alexchen',
-    email: 'alex@techview.ai'
-  },
-  {
-    id: 'cto',
-    name: 'Sarah Kim',
-    role: 'Chief Technology Officer',
-    bio: 'Full-stack architect specializing in scalable systems.',
-    skills: ['System Architecture', 'Cloud Computing', 'DevOps'],
-    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b0e7?w=400&h=400&fit=crop&crop=face',
-    linkedin: 'https://linkedin.com/in/sarahkim',
-    github: 'https://github.com/sarahkim'
-  },
-  {
-    id: 'lead-dev',
-    name: 'Michael Torres',
-    role: 'Lead Developer',
-    bio: 'Expert in React, Node.js, and modern web technologies.',
-    skills: ['React', 'Node.js', 'TypeScript', 'GraphQL'],
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-    github: 'https://github.com/michaeltorres',
-    email: 'michael@techview.ai'
-  },
-  {
-    id: 'ai-engineer',
-    name: 'Dr. Emily Watson',
-    role: 'AI Research Engineer',
-    bio: 'PhD in Machine Learning with focus on NLP and computer vision.',
-    skills: ['Machine Learning', 'NLP', 'Computer Vision', 'Python'],
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
-    linkedin: 'https://linkedin.com/in/emilywatson',
-    github: 'https://github.com/emilywatson'
-  }
-];
-
+gsap.registerPlugin(ScrollTrigger);
 
 const OurTeams = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const marqueeRef = useRef<MarqueeCardsRef>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -150,9 +95,22 @@ const OurTeams = () => {
 
             {/* Right Section - 40% */}
             <div className="w-[40%] pl-4 debug-outline-green">
-              <div className="relative p-8 h-full debug-outline-yellow">
+              <div className="relative h-full debug-outline-yellow">
+                {/* Navigation Buttons - positioned at top-right of section */}
+                <div className="absolute top-8 right-8 flex space-x-2 z-20">
+                  <CustomNavButton
+                    direction="left"
+                    onClick={() => marqueeRef.current?.handleLeftClick()}
+                    disabled={false}
+                  />
+                  <CustomNavButton
+                    direction="right"
+                    onClick={() => marqueeRef.current?.handleRightClick()}
+                    disabled={false}
+                  />
+                </div>
                 <div className="h-full flex items-center justify-center debug-outline">
-                  {/* Right side - clean and empty */}
+                  <MarqueeCards ref={marqueeRef} className="w-full h-[500px]" />
                 </div>
               </div>
             </div>

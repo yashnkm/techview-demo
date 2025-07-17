@@ -11,7 +11,6 @@ interface Testimonial {
   name: string;
   title: string;
   company: string;
-  avatar: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -19,29 +18,25 @@ const testimonials: Testimonial[] = [
     quote: "We saw a 300% increase in efficiency with TechView's AI solutions",
     name: "Sarah Johnson",
     title: "CTO",
-    company: "InnovateCorp",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b0e7?w=80&h=80&fit=crop&crop=face"
+    company: "InnovateCorp"
   },
   {
     quote: "TechView transformed our entire business workflow with intelligent automation",
     name: "Michael Chen", 
     title: "Operations Director",
-    company: "TechFlow Solutions",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face"
+    company: "TechFlow Solutions"
   },
   {
     quote: "The most responsive and innovative development team we've worked with",
     name: "Emily Rodriguez",
     title: "Product Manager",
-    company: "StartupLab",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face"
+    company: "StartupLab"
   },
   {
     quote: "Their custom web applications doubled our customer engagement rates",
     name: "David Kim",
     title: "Marketing Head",
-    company: "GrowthCo",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face"
+    company: "GrowthCo"
   }
 ];
 

@@ -141,7 +141,9 @@ const Blog = () => {
                 {blogCards.map((card, index) => (
                   <div
                     key={card.id}
-                    ref={(el) => el && (cardsRef.current[index] = el)}
+                    ref={(el) => {
+                      if (el) cardsRef.current[index] = el;
+                    }}
                     className="min-h-screen flex flex-col justify-center py-16 px-8 debug-outline-yellow"
                   >
                     <div className="max-w-3xl">
