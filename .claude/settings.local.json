@@ -15,7 +15,17 @@
       "WebFetch(domain:www.pexels.com)",
       "WebFetch(domain:www.peakpx.com)",
       "WebFetch(domain:www.figma.com)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)"
     ],
     "deny": []
   }

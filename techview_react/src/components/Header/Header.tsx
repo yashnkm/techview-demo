@@ -140,7 +140,7 @@ const Header = () => {
           {/* Logo - Left side */}
           <div className="flex items-center space-x-2 sm:space-x-3 px-3 sm:px-6">
             <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg" style={{backgroundColor: '#74f5a2'}}></div>
-            <span className="text-lg sm:text-xl font-bold text-slate-800 font-tenor-sans">TechView</span>
+            <span className="text-lg sm:text-xl font-bold text-slate-800">TechView</span>
           </div>
 
           {/* Desktop Navigation - Centered */}
@@ -150,7 +150,7 @@ const Header = () => {
               onMouseEnter={() => handleMouseEnter('services')}
               onMouseLeave={handleMouseLeave}
             >
-              <a href="#services" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg flex items-center space-x-1 group font-tenor-sans">
+              <a href="#services" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg flex items-center space-x-1 group">
                 <span>Services</span>
                 <svg className="w-3 h-3 fill-current transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 12 8">
                   <path d="M6 8L0 0h12L6 8z"/>
@@ -163,7 +163,7 @@ const Header = () => {
               onMouseEnter={() => handleMouseEnter('cases')}
               onMouseLeave={handleMouseLeave}
             >
-              <a href="#cases" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg flex items-center space-x-1 group font-tenor-sans">
+              <a href="#cases" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg flex items-center space-x-1 group">
                 <span>Cases</span>
                 <svg className="w-3 h-3 fill-current transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 12 8">
                   <path d="M6 8L0 0h12L6 8z"/>
@@ -171,13 +171,13 @@ const Header = () => {
               </a>
             </div>
             
-            <a href="#about" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg font-tenor-sans">About</a>
-            <a href="#contact" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg font-tenor-sans">Contact</a>
+            <a href="#about" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg">About</a>
+            <a href="#contact" className="text-slate-700 hover:text-slate-700 hover:bg-gray-100 font-bold transition-all duration-200 px-5 py-3 rounded-lg">Contact</a>
           </nav>
 
           {/* Text and Square Button - Right side */}
           <div className="hidden md:flex items-center space-x-2 sm:space-x-3 px-3 sm:px-6">
-            <span className="text-slate-700 font-bold font-tenor-sans text-sm sm:text-base">Talk with us</span>
+            <span className="text-slate-700 font-bold text-sm sm:text-base">Talk with us</span>
             <AnimatedArrowButton arrowDirection="top-right" size="md" />
           </div>
 

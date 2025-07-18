@@ -55,14 +55,14 @@ const OurTeams = () => {
                 <div className="mb-8">
                   <div className="inline-flex items-center space-x-2">
                     <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                    <span className="text-xl sm:text-2xl font-bold text-black font-tenor-sans">Our Team</span>
+                    <span className="text-xl sm:text-2xl font-bold text-black">Our Team</span>
                   </div>
                 </div>
                 
                 <div className="w-full">
                   <div ref={containerRef} className="space-y-8">
                     {/* Main Heading */}
-                    <h1 className="text-[3.6rem] sm:text-[4.1rem] md:text-[4.6rem] lg:text-[5.6rem] font-bold text-slate-900 leading-[1.1] tracking-tight font-tenor-sans">
+                    <h1 className="text-[3.6rem] sm:text-[4.1rem] md:text-[4.6rem] lg:text-[5.6rem] font-bold text-slate-900 leading-[1.1] tracking-tight">
                       Meet the innovators<br />
                       <span className="italic font-normal">behind</span> TechView
                     </h1>
@@ -70,11 +70,11 @@ const OurTeams = () => {
                     
                     {/* Description */}
                     <div className="max-w-4xl space-y-4">
-                      <p className="text-lg sm:text-xl lg:text-2xl text-black leading-relaxed font-medium font-tenor-sans tracking-normal">
+                      <p className="text-lg sm:text-xl lg:text-2xl text-black leading-relaxed font-medium tracking-normal">
                         Our diverse team combines technical expertise with creative vision to deliver 
                         exceptional results for every project.
                       </p>
-                      <p className="text-lg sm:text-xl lg:text-2xl text-black leading-relaxed font-medium font-tenor-sans tracking-normal">
+                      <p className="text-lg sm:text-xl lg:text-2xl text-black leading-relaxed font-medium tracking-normal">
                         From AI engineers to UX designers, we're united by our passion for innovation 
                         and commitment to excellence.
                       </p>
@@ -82,7 +82,7 @@ const OurTeams = () => {
                     
                     {/* Call to Action */}
                     <div className="flex items-center space-x-4 cursor-pointer group pt-4">
-                      <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors font-tenor-sans">
+                      <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
                         Join our team
                       </span>
                       <div className="group-hover:scale-110 transition-transform flex items-center">

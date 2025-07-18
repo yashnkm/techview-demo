@@ -20,8 +20,6 @@
 - **VS Code** (recommended) - [Download](https://code.visualstudio.com/)
 - **GitHub Account** - [Sign up](https://github.com/)
 
-### Optional
-- **WSL2** (Windows Subsystem for Linux) for Windows users
 
 ---
 

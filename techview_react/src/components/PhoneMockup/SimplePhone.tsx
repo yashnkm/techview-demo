@@ -216,7 +216,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                           <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
                         )}
                       </div>
-                      <span className="text-white text-xs font-medium font-familjen">TechView</span>
+                      <span className="text-white text-xs font-medium">TechView</span>
                     </div>
 
                     {/* Chat App */}
@@ -234,7 +234,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                           <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
                         </svg>
                       </div>
-                      <span className="text-white text-xs font-medium font-familjen">Chat</span>
+                      <span className="text-white text-xs font-medium">Chat</span>
                     </div>
 
                     {/* Phone App */}
@@ -249,7 +249,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                           <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                         </svg>
                       </div>
-                      <span className="text-white text-xs font-medium font-familjen">Phone</span>
+                      <span className="text-white text-xs font-medium">Phone</span>
                     </div>
 
                     {/* Settings App */}
@@ -265,7 +265,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
                       </div>
-                      <span className="text-white text-xs font-medium font-familjen">Settings</span>
+                      <span className="text-white text-xs font-medium">Settings</span>
                     </div>
 
                     {/* Calendar App */}
@@ -280,7 +280,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                         </svg>
                       </div>
-                      <span className="text-white text-xs font-medium font-familjen">Calendar</span>
+                      <span className="text-white text-xs font-medium">Calendar</span>
                     </div>
 
                     {/* Photos App */}
@@ -295,7 +295,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                         </svg>
                       </div>
-                      <span className="text-white text-xs font-medium font-familjen">Photos</span>
+                      <span className="text-white text-xs font-medium">Photos</span>
                     </div>
 
                     {/* Mail App */}
@@ -313,7 +313,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                           <span className="text-white text-xs font-bold">3</span>
                         </div>
                       </div>
-                      <span className="text-white text-xs font-medium font-familjen">Mail</span>
+                      <span className="text-white text-xs font-medium">Mail</span>
                     </div>
 
                     {/* Notes App */}
@@ -328,7 +328,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
                         </svg>
                       </div>
-                      <span className="text-white text-xs font-medium font-familjen">Notes</span>
+                      <span className="text-white text-xs font-medium">Notes</span>
                     </div>
 
                   </div>
@@ -392,7 +392,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                   className="absolute inset-0 z-30 flex items-center justify-center bg-black bg-opacity-80 backdrop-blur-sm"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <div className="bg-white rounded-3xl px-8 py-6 shadow-2xl border border-gray-200 font-familjen">
+                  <div className="bg-white rounded-3xl px-8 py-6 shadow-2xl border border-gray-200">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poiret+One:wght@400&family=Familjen+Grotesk:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 /* Akkurat Font Fallback - using Inter as substitute */
 /* Note: Akkurat font files are not available, using Inter as primary font */
@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Akkurat', 'Inter', sans-serif;
   background-color: #ffffff;
   color: #1f2937;
   line-height: 1.6;
@@ -26,18 +26,13 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Ensure fonts load properly */
-.font-poiret-one {
-  font-family: 'Poiret One', cursive !important;
+/* Font utility classes */
+.font-akkurat {
+  font-family: 'Akkurat', 'Inter', sans-serif !important;
 }
 
-.font-familjen {
-  font-family: 'Familjen Grotesk', sans-serif !important;
+.font-inter {
+  font-family: 'Inter', sans-serif !important;
 }
 
-.tenor-sans-regular {
-  font-family: "Tenor Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 

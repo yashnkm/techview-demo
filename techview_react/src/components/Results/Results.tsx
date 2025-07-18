@@ -43,14 +43,14 @@ const testimonials: Testimonial[] = [
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <div className="bg-white p-20 rounded-xl shadow-sm border border-gray-100 min-w-[900px] lg:min-w-[1200px] transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-gray-200 group cursor-grab">
     <div className="mb-16">
-      <p className="text-3xl lg:text-4xl text-slate-800 leading-relaxed font-tenor-sans group-hover:text-slate-900 transition-colors duration-300">
+      <p className="text-3xl lg:text-4xl text-slate-800 leading-relaxed group-hover:text-slate-900 transition-colors duration-300">
         "{testimonial.quote}"
       </p>
     </div>
     <div className="flex items-center justify-end">
       <div className="text-right">
-        <p className="font-semibold text-slate-900 font-tenor-sans text-lg group-hover:text-black transition-colors duration-300">{testimonial.name}</p>
-        <p className="text-slate-600 font-tenor-sans text-base group-hover:text-slate-700 transition-colors duration-300">{testimonial.title} - {testimonial.company}</p>
+        <p className="font-semibold text-slate-900 text-lg group-hover:text-black transition-colors duration-300">{testimonial.name}</p>
+        <p className="text-slate-600 text-base group-hover:text-slate-700 transition-colors duration-300">{testimonial.title} - {testimonial.company}</p>
       </div>
     </div>
   </div>
@@ -166,23 +166,23 @@ const Results = () => {
             <div className="absolute top-6 left-8">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black font-tenor-sans">Results</span>
+                <span className="text-xl sm:text-2xl font-bold text-black">Results</span>
               </div>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center pt-8">
               <div className="lg:col-span-6">
-                <h2 className="text-[3.6rem] sm:text-[4.1rem] md:text-[4.6rem] lg:text-[5.6rem] font-bold text-slate-900 leading-[1.1] tracking-tight font-tenor-sans">
+                <h2 className="text-[3.6rem] sm:text-[4.1rem] md:text-[4.6rem] lg:text-[5.6rem] font-bold text-slate-900 leading-[1.1] tracking-tight">
                   Driven by an<br />
                   <span className="italic font-normal">innovation</span> mindset
                 </h2>
               </div>
               <div className="lg:col-span-6 flex flex-col">
-                <p className="text-base sm:text-lg lg:text-xl text-black leading-relaxed mb-6 font-medium font-tenor-sans tracking-normal">
+                <p className="text-base sm:text-lg lg:text-xl text-black leading-relaxed mb-6 font-medium tracking-normal">
                   We are a team of creative problem-solvers who love a good challenge and are focused on making a real difference for you. We find better ways to get you results. Your goals become our goals, and we'll be just as excited to see you succeed.
                 </p>
                 <div className="flex items-center space-x-4 cursor-pointer group">
-                  <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors font-tenor-sans">
+                  <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
                     Explore our work
                   </span>
                   <div className="group-hover:scale-110 transition-transform flex items-center">

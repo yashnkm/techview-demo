@@ -35,66 +35,66 @@ const Footer = () => {
               
               {/* Contact Section */}
               <div className="lg:col-span-1">
-                <h3 className="text-white font-semibold text-lg mb-4 font-familjen">Contact TechView</h3>
+                <h3 className="text-white font-semibold text-lg mb-4">Contact TechView</h3>
                 <div className="space-y-2">
-                  <p className="text-gray-300 text-sm font-familjen">hello@techview.ai</p>
-                  <p className="text-gray-300 text-sm font-familjen">+1 (555) 123-4567</p>
+                  <p className="text-gray-300 text-sm">hello@techview.ai</p>
+                  <p className="text-gray-300 text-sm">+1 (555) 123-4567</p>
                 </div>
               </div>
 
               {/* Address Section */}
               <div className="lg:col-span-1">
-                <h3 className="text-white font-semibold text-lg mb-4 font-familjen">TechView San Francisco</h3>
+                <h3 className="text-white font-semibold text-lg mb-4">TechView San Francisco</h3>
                 <div className="space-y-2">
-                  <p className="text-gray-300 text-sm font-familjen">123 Innovation St, 5th floor</p>
-                  <p className="text-gray-300 text-sm font-familjen">94105 San Francisco</p>
+                  <p className="text-gray-300 text-sm">123 Innovation St, 5th floor</p>
+                  <p className="text-gray-300 text-sm">94105 San Francisco</p>
                 </div>
               </div>
 
               {/* Services Section */}
               <div className="lg:col-span-1">
-                <h3 className="text-white font-semibold text-lg mb-4 font-familjen">Services</h3>
+                <h3 className="text-white font-semibold text-lg mb-4">Services</h3>
                 <div className="space-y-2">
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">AI Development</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Web Applications</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Data Analytics</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Cloud Solutions</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Consulting</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">AI Development</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Web Applications</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Data Analytics</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Cloud Solutions</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Consulting</p>
                 </div>
               </div>
 
               {/* Expertise Section */}
               <div className="lg:col-span-1">
-                <h3 className="text-white font-semibold text-lg mb-4 font-familjen">Expertise</h3>
+                <h3 className="text-white font-semibold text-lg mb-4">Expertise</h3>
                 <div className="space-y-2">
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Machine Learning</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">React & TypeScript</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Node.js & Python</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Cloud Architecture</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">DevOps</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Machine Learning</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">React & TypeScript</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Node.js & Python</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Cloud Architecture</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">DevOps</p>
                 </div>
               </div>
 
               {/* Resources Section */}
               <div className="lg:col-span-1">
-                <h3 className="text-white font-semibold text-lg mb-4 font-familjen">Resources</h3>
+                <h3 className="text-white font-semibold text-lg mb-4">Resources</h3>
                 <div className="space-y-2">
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Case Studies</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Blog</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Documentation</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Newsletter</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Case Studies</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Blog</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Documentation</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Newsletter</p>
                 </div>
               </div>
 
               {/* Company Section */}
               <div className="lg:col-span-1">
-                <h3 className="text-white font-semibold text-lg mb-4 font-familjen">Company</h3>
+                <h3 className="text-white font-semibold text-lg mb-4">Company</h3>
                 <div className="space-y-2">
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">About</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Careers</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Contact</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Privacy Policy</p>
-                  <p className="text-gray-300 text-sm font-familjen hover:text-white transition-colors cursor-pointer">Terms of Service</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">About</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Careers</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Contact</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Privacy Policy</p>
+                  <p className="text-gray-300 text-sm hover:text-white transition-colors cursor-pointer">Terms of Service</p>
                 </div>
               </div>
 
@@ -111,21 +111,21 @@ const Footer = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <span className="text-2xl font-bold text-white font-familjen">TechView</span>
+                  <span className="text-2xl font-bold text-white">TechView</span>
                 </div>
               </div>
 
               {/* Bottom Info */}
               <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-8">
                 <div className="flex items-center space-x-6">
-                  <p className="text-gray-400 text-sm font-familjen">© 2025 TechView</p>
-                  <p className="text-gray-400 text-sm font-familjen">Privacy Policy</p>
-                  <p className="text-gray-400 text-sm font-familjen">Terms and Conditions</p>
+                  <p className="text-gray-400 text-sm">© 2025 TechView</p>
+                  <p className="text-gray-400 text-sm">Privacy Policy</p>
+                  <p className="text-gray-400 text-sm">Terms and Conditions</p>
                 </div>
                 
                 <div className="flex items-center space-x-6">
-                  <p className="text-gray-400 text-sm font-familjen">Design by TechView</p>
-                  <p className="text-gray-400 text-sm font-familjen">Code by TechView</p>
+                  <p className="text-gray-400 text-sm">Design by TechView</p>
+                  <p className="text-gray-400 text-sm">Code by TechView</p>
                 </div>
 
                 {/* Social Links */}

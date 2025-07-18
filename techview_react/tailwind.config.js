@@ -7,11 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'akkurat': ['Inter', 'sans-serif'],
+        'akkurat': ['Akkurat', 'Inter', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
-        'familjen': ['Familjen Grotesk', 'sans-serif'],
-        'poiret-one': ['Poiret One', 'cursive'],
-        'tenor-sans': ['Tenor Sans', 'sans-serif'],
       },
     },
   },

@@ -107,14 +107,14 @@ const Hero = () => {
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 justify-center lg:justify-start mb-6">
               <div ref={dotRef} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-              <span className="text-xl sm:text-2xl font-bold text-black font-familjen">
+              <span className="text-xl sm:text-2xl font-bold text-black">
                 Intelligent Business Solutions
               </span>
             </div>
 
             {/* Main Heading */}
             <div className="mb-8">
-              <h1 ref={headingRef} className="text-[3.8rem] sm:text-[4.3rem] md:text-[5rem] lg:text-[6.2rem] font-bold text-black leading-[1.1] tracking-tight font-tenor-sans">
+              <h1 ref={headingRef} className="text-[3.8rem] sm:text-[4.3rem] md:text-[5rem] lg:text-[6.2rem] font-bold text-black leading-[1.1] tracking-tight">
                 {/* Mobile & Tablet - Static text */}
                 <span className="lg:hidden">
                   One partner,<br />
@@ -134,13 +134,13 @@ const Hero = () => {
             {/* Subtext */}
             <div className="mt-16 w-full">
               <div ref={subtextRef} className="w-full space-y-2">
-                <p className="text-xl sm:text-2xl lg:text-3xl text-black leading-[1.6] font-normal font-tenor-sans">
+                <p className="text-xl sm:text-2xl lg:text-3xl text-black leading-[1.6] font-normal">
                   We build, automate and engineer personalized tech solutions
                 </p>
-                <p className="text-xl sm:text-2xl lg:text-3xl text-black leading-[1.6] font-normal font-tenor-sans">
+                <p className="text-xl sm:text-2xl lg:text-3xl text-black leading-[1.6] font-normal">
                   that help you and your business
                 </p>
-                <p className="text-xl sm:text-2xl lg:text-3xl text-black leading-[1.6] font-normal font-tenor-sans">
+                <p className="text-xl sm:text-2xl lg:text-3xl text-black leading-[1.6] font-normal">
                   to gain a competitive edge.
                 </p>
               </div>
@@ -152,7 +152,7 @@ const Hero = () => {
               className="mt-16 flex items-center justify-center lg:justify-start space-x-4 cursor-pointer group"
               onClick={handleSolutionsClick}
             >
-              <span className="text-xl sm:text-2xl font-bold text-black font-tenor-sans transition-colors">
+              <span className="text-xl sm:text-2xl font-bold text-black transition-colors">
                 See Our Solutions
               </span>
               <div className="group-hover:scale-110 transition-transform flex items-center">

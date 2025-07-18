@@ -145,7 +145,7 @@ const Blog = () => {
               <div className="sticky top-0 bg-[#efeeef] z-10 pt-8 pb-4 px-8">
                 <div className="inline-flex items-center space-x-2 mb-6">
                   <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                  <span className="text-xl sm:text-2xl font-bold text-black font-tenor-sans">Blogs & Resources</span>
+                  <span className="text-xl sm:text-2xl font-bold text-black">Blogs & Resources</span>
                 </div>
                 
               </div>
@@ -161,15 +161,15 @@ const Blog = () => {
                     className="min-h-screen flex flex-col justify-center py-16 px-8"
                   >
                     <div className="w-full h-full bg-white rounded-2xl p-8 shadow-lg border border-gray-200 mx-4 my-4">
-                      <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-900 leading-tight mb-6 font-tenor-sans">
+                      <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-900 leading-tight mb-6">
                         {card.title}
                       </h2>
                       
-                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-slate-700 mb-12 font-tenor-sans">
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-slate-700 mb-12">
                         {card.subtitle}
                       </h3>
                       
-                      <div className="space-y-8 text-base lg:text-lg text-slate-700 leading-relaxed font-tenor-sans">
+                      <div className="space-y-8 text-base lg:text-lg text-slate-700 leading-relaxed">
                         <p className="font-semibold mb-8">{card.content}</p>
                         {card.additionalContent && (
                           <p className="mb-8">{card.additionalContent}</p>
@@ -181,7 +181,7 @@ const Blog = () => {
                         {/* Tips section */}
                         {card.tips && (
                           <div className="mt-8 p-6 bg-green-50 border-l-4 border-green-400 rounded-r-lg">
-                            <h4 className="text-xl font-bold text-slate-900 mb-3 font-tenor-sans">
+                            <h4 className="text-xl font-bold text-slate-900 mb-3">
                               💡 Expert Tips
                             </h4>
                             <p className="text-sm lg:text-base text-slate-700">{card.tips}</p>
@@ -190,11 +190,11 @@ const Blog = () => {
                         
                         {/* The result section */}
                         <div className="mt-12 pt-8 border-t border-slate-300">
-                          <h4 className="text-3xl font-bold text-slate-900 mb-6 font-tenor-sans">
+                          <h4 className="text-3xl font-bold text-slate-900 mb-6">
                             Ready to get started?
                           </h4>
                           <div className="flex items-center space-x-4 cursor-pointer group">
-                            <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors font-tenor-sans">
+                            <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
                               Read full guide
                             </span>
                             <div className="group-hover:scale-110 transition-transform flex items-center">

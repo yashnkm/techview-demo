@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import AnimatedArrowButton from '../UI/AnimatedArrowButton';
 
 interface ServiceOption {
   id: string;
@@ -133,7 +132,7 @@ const Contact = () => {
             <div ref={badgeRef} className="mb-8">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black font-tenor-sans">Contact</span>
+                <span className="text-xl sm:text-2xl font-bold text-black">Contact</span>
               </div>
             </div>
 
@@ -151,9 +150,9 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-black font-tenor-sans mb-2 group-hover:text-slate-800 transition-colors">Chat to us</h3>
-                    <p className="text-base text-slate-600 font-tenor-sans mb-3">Our friendly team is here to help.</p>
-                    <a href="mailto:hello@techview.ai" className="text-base text-black font-semibold font-tenor-sans hover:underline">
+                    <h3 className="text-xl font-bold text-black mb-2 group-hover:text-slate-800 transition-colors">Chat to us</h3>
+                    <p className="text-base text-slate-600 mb-3">Our friendly team is here to help.</p>
+                    <a href="mailto:hello@techview.ai" className="text-base text-black font-semibold hover:underline">
                       hello@techview.ai
                     </a>
                   </div>
@@ -169,9 +168,9 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-black font-tenor-sans mb-2 group-hover:text-slate-800 transition-colors">Visit us</h3>
-                    <p className="text-base text-slate-600 font-tenor-sans mb-3">Come say hello at our office HQ.</p>
-                    <div className="text-base text-black font-semibold font-tenor-sans">
+                    <h3 className="text-xl font-bold text-black mb-2 group-hover:text-slate-800 transition-colors">Visit us</h3>
+                    <p className="text-base text-slate-600 mb-3">Come say hello at our office HQ.</p>
+                    <div className="text-base text-black font-semibold">
                       <p>100 Smith Street</p>
                       <p>San Francisco, CA 94102</p>
                     </div>
@@ -188,9 +187,9 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-black font-tenor-sans mb-2 group-hover:text-slate-800 transition-colors">Call us</h3>
-                    <p className="text-base text-slate-600 font-tenor-sans mb-3">Mon-Fri from 8am to 5pm.</p>
-                    <a href="tel:+15551234567" className="text-base text-black font-semibold font-tenor-sans hover:underline">
+                    <h3 className="text-xl font-bold text-black mb-2 group-hover:text-slate-800 transition-colors">Call us</h3>
+                    <p className="text-base text-slate-600 mb-3">Mon-Fri from 8am to 5pm.</p>
+                    <a href="tel:+15551234567" className="text-base text-black font-semibold hover:underline">
                       +1 (555) 123-4567
                     </a>
                   </div>
@@ -204,12 +203,12 @@ const Contact = () => {
                 
                 {/* Hero Text */}
                 <div className="mb-8">
-                  <h1 ref={headingRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-[1.1] tracking-tight font-tenor-sans mb-4">
+                  <h1 ref={headingRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-[1.1] tracking-tight mb-4">
                     Got <span className="italic font-normal">ideas</span>?<br />
                     We've got the skills.<br />
                     <span className="text-black">Let's team up.</span>
                   </h1>
-                  <p className="text-lg sm:text-xl text-black font-tenor-sans leading-relaxed opacity-90">
+                  <p className="text-lg sm:text-xl text-black leading-relaxed opacity-90">
                     Tell us more about yourself and what you've got in mind.
                   </p>
                 </div>
@@ -227,7 +226,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black font-tenor-sans text-lg placeholder-black placeholder-opacity-70 focus:outline-none transition-colors"
+                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black text-lg placeholder-black placeholder-opacity-70 focus:outline-none transition-colors"
                         placeholder="Your name"
                       />
                     </div>
@@ -240,7 +239,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black font-tenor-sans text-lg placeholder-black placeholder-opacity-70 focus:outline-none transition-colors"
+                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black text-lg placeholder-black placeholder-opacity-70 focus:outline-none transition-colors"
                         placeholder="you@company.com"
                       />
                     </div>
@@ -255,14 +254,14 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black font-tenor-sans text-lg placeholder-black focus:outline-none transition-colors"
+                      className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black text-lg placeholder-black focus:outline-none transition-colors"
                       placeholder="Tell us a little about the project..."
                     />
                   </div>
 
                   {/* Service Selection */}
                   <div>
-                    <p className="text-lg font-semibold text-black font-tenor-sans mb-6">How can we help?</p>
+                    <p className="text-lg font-semibold text-black mb-6">How can we help?</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {services.map((service) => (
                         <label key={service.id} className="flex items-center space-x-3 cursor-pointer group">
@@ -283,7 +282,7 @@ const Contact = () => {
                               )}
                             </div>
                           </div>
-                          <span className="text-base text-black font-tenor-sans group-hover:text-slate-800 transition-colors">{service.label}</span>
+                          <span className="text-base text-black group-hover:text-slate-800 transition-colors">{service.label}</span>
                         </label>
                       ))}
                     </div>
@@ -293,7 +292,7 @@ const Contact = () => {
                   <div className="pt-8">
                     <button
                       type="submit"
-                      className="w-full py-4 bg-black text-white font-bold text-lg font-tenor-sans rounded-lg hover:bg-gray-800 transition-colors duration-200"
+                      className="w-full py-4 bg-black text-white font-bold text-lg rounded-lg hover:bg-gray-800 transition-colors duration-200"
                     >
                       Let's get started!
                     </button>
