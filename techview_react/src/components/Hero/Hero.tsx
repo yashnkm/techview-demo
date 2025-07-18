@@ -1,6 +1,5 @@
 import AnimatedArrowButton from '../UI/AnimatedArrowButton';
 import SimplePhone from '../PhoneMockup/SimplePhone';
-import SplitTextReveal from '../UI/SplitTextReveal';
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { scrollManager } from '../../utils/scrollSmoother';
@@ -9,6 +8,7 @@ const Hero = () => {
   const phoneRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
+  const subtextRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
   const handleSolutionsClick = () => {
@@ -17,7 +17,7 @@ const Hero = () => {
 
   useEffect(() => {
     // Hide elements initially
-    gsap.set([phoneRef.current, dotRef.current, headingRef.current, ctaRef.current], {
+    gsap.set([phoneRef.current, dotRef.current, headingRef.current, subtextRef.current, ctaRef.current], {
       opacity: 0
     });
     
@@ -25,15 +25,37 @@ const Hero = () => {
       scale: 0.8,
       opacity: 0
     });
+    
+    gsap.set(headingRef.current, {
+      y: 30,
+      opacity: 0
+    });
+    
+    gsap.set(subtextRef.current, {
+      y: 30,
+      opacity: 0
+    });
 
     // All animations at 4.2s - synchronized (faster loading)
     const tl = gsap.timeline();
     
-    tl.to([dotRef.current, headingRef.current], {
+    tl.to(dotRef.current, {
       opacity: 1,
       duration: 0.64,
       ease: "power2.out"
     }, 4.2)
+    .to(headingRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out"
+    }, 4.3)
+    .to(subtextRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out"
+    }, 4.4)
     .to(phoneRef.current, {
       scale: 1,
       opacity: 1,
@@ -81,47 +103,47 @@ const Hero = () => {
       <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-32">
         <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-0 items-center min-h-[50rem]">
-          <div className="lg:col-span-8 space-y-6 text-center lg:text-left p-2 pt-16 h-full">
+          <div className="lg:col-span-8 text-center lg:text-left pt-16 h-full">
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 justify-center lg:justify-start mb-6">
               <div ref={dotRef} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-              <SplitTextReveal 
-                className="text-xl sm:text-2xl font-bold text-black font-familjen"
-                delay={4.2}
-                stagger={0.04}
-              >
+              <span className="text-xl sm:text-2xl font-bold text-black font-familjen">
                 Intelligent Business Solutions
-              </SplitTextReveal>
+              </span>
             </div>
 
             {/* Main Heading */}
-            <h1 ref={headingRef} className="text-[3.15rem] sm:text-[3.75rem] md:text-[4.38rem] lg:text-[6.3rem] font-bold text-slate-900 leading-[0.9] tracking-tight font-familjen mb-6">
-              {/* Mobile & Tablet - Static text */}
-              <span className="lg:hidden">
-                One partner,<br />
-                for all your <span className="font-edu-hand font-normal italic">Tech Solutions</span><br />
-                <span className="text-slate-600 font-bold">Step into TechView</span>
-              </span>
-              
-              {/* Desktop - Static text */}
-              <span className="hidden lg:block">
-                One partner,<br />
-                for all your <span className="font-edu-hand font-normal italic">Tech Solutions</span><br />
-                <span className="text-slate-600 font-bold">Step into TechView</span>
-              </span>
-            </h1>
+            <div className="mb-8">
+              <h1 ref={headingRef} className="text-[3.8rem] sm:text-[4.3rem] md:text-[5rem] lg:text-[6.2rem] font-bold text-black leading-[1.1] tracking-tight font-tenor-sans">
+                {/* Mobile & Tablet - Static text */}
+                <span className="lg:hidden">
+                  One partner,<br />
+                  for all your <span className="italic font-normal">Tech Solutions</span><br />
+                  <span className="text-black font-bold">Step into TechView</span>
+                </span>
+                
+                {/* Desktop - Static text */}
+                <span className="hidden lg:block">
+                  One partner,<br />
+                  for all your <span className="italic font-normal">Tech Solutions</span><br />
+                  <span className="text-black font-bold">Step into TechView</span>
+                </span>
+              </h1>
+            </div>
 
             {/* Subtext */}
-            <div className="max-w-4xl mx-auto lg:mx-0 mt-16">
-              <SplitTextReveal 
-                className="text-xl sm:text-2xl lg:text-3xl text-slate-600 leading-relaxed font-semibold font-familjen tracking-wide"
-                delay={4.2}
-                stagger={0.08}
-              >
-                We build, automate and engineer<br />
-                personalized tech solutions that helps you<br />
-                and your business to gain a competitive edge.
-              </SplitTextReveal>
+            <div className="mt-16 w-full">
+              <div ref={subtextRef} className="w-full space-y-2">
+                <p className="text-xl sm:text-2xl lg:text-3xl text-black leading-[1.6] font-normal font-tenor-sans">
+                  We build, automate and engineer personalized tech solutions
+                </p>
+                <p className="text-xl sm:text-2xl lg:text-3xl text-black leading-[1.6] font-normal font-tenor-sans">
+                  that help you and your business
+                </p>
+                <p className="text-xl sm:text-2xl lg:text-3xl text-black leading-[1.6] font-normal font-tenor-sans">
+                  to gain a competitive edge.
+                </p>
+              </div>
             </div>
 
             {/* CTA */}
@@ -130,7 +152,7 @@ const Hero = () => {
               className="mt-16 flex items-center justify-center lg:justify-start space-x-4 cursor-pointer group"
               onClick={handleSolutionsClick}
             >
-              <span className="text-xl sm:text-2xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
+              <span className="text-xl sm:text-2xl font-bold text-black font-tenor-sans transition-colors">
                 See Our Solutions
               </span>
               <div className="group-hover:scale-110 transition-transform flex items-center">

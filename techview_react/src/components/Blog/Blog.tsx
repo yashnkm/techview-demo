@@ -12,22 +12,35 @@ interface BlogCard {
   subtitle: string;
   content: string;
   additionalContent?: string;
+  detailedContent?: string;
+  methods?: string[];
+  tips?: string;
 }
 
 const blogCards: BlogCard[] = [
   {
-    id: 'demand-gen',
-    title: 'Demand Gen',
-    subtitle: 'Become famous in your niche and build demand',
-    content: 'B2B buyers buy differently. You cannot "force" a need. But as soon as a need arises, you want to be the first one your prospect thinks of.',
-    additionalContent: 'That is why you want your brand to be top-of-mind in your niche category. So when a need arises, the ideal client thinks of you. We call this Niche Famous™ at TechView.'
+    id: 'gemini-pro-free',
+    title: 'How to Use Gemini Pro for Free',
+    subtitle: 'Complete guide to accessing Google\'s most powerful AI without paying',
+    content: 'Google has made its advanced Gemini Pro AI accessible for free through multiple channels in 2025. Whether you\'re a student, developer, or casual user, there are several ways to harness this powerful AI technology without spending a dime.',
+    additionalContent: 'Gemini 2.5 Pro stands at the forefront of AI models when it comes to complex reasoning tasks, delivering top-tier performance on challenging math and science evaluations. The best part? It integrates deeply with Google products like Gmail, Drive, and Workspace.',
+    detailedContent: 'Students in the US, UK, Brazil, Japan, and Indonesia can access Gemini Advanced for free through June 2026 - that\'s up to 15 months of premium AI access! For developers, Google AI Studio provides free API access to build applications. Plus, discover insider tips like enabling Smart Features in Gmail settings to maximize your Gemini experience.',
+    methods: [
+      '1. Free Student Access - Visit google.com/ai/students with your .edu email',
+      '2. Google AI Studio - Free API access for developers at aistudio.google.com',
+      '3. Direct Integration - Use Gemini within Gmail, Drive, and Google Workspace',
+      '4. Mobile Apps - Download Gemini app for iOS and Android with free tier'
+    ],
+    tips: 'Pro tip: Always default to the Pro Gemini model for complex tasks, and enable Smart Features in your Gmail settings under General > Smart Features to get the most out of Google Gemini integration.'
   },
   {
-    id: 'demand-capture',
-    title: 'Demand Capture',
-    subtitle: 'Turn active demand into pipeline',
-    content: 'B2B buyers will research solutions themselves when they are ready to buy. And when that moment comes, you want to capture that active need.',
-    additionalContent: 'That is why you need to understand how your prospect searches and what touchpoints and information will persuade them to buy from you.'
+    id: 'ai-automation-business',
+    title: 'AI for Non-Tech Business Owners',
+    subtitle: 'How artificial intelligence transforms businesses without coding knowledge',
+    content: 'In 2025, AI automation has become accessible to every business owner, regardless of technical background. No-code platforms have slashed implementation costs by 95% and put sophisticated automation tools in the hands of entrepreneurs who previously couldn\'t afford custom development.',
+    additionalContent: 'Real businesses are seeing 30% productivity increases, cutting task completion times from hours to minutes, and saving millions annually. AI agents are becoming digital workers that can double your knowledge workforce without requiring a single line of code.',
+    detailedContent: 'Today\'s no-code AI platforms replace complex coding with intuitive visual interfaces. Small business owners can now build intelligent automations for customer service, data management, inventory forecasting, and business process automation. Platforms like Durable AI ($59/month) and PulseAI ($69/month) make enterprise-level automation affordable for any business.',
+    tips: 'Start small with one repetitive task in your business - whether it\'s customer inquiries, data entry, or report generation. Modern AI platforms can automate these tasks in minutes, not months. Focus on tasks that consume the most time but require the least human creativity.'
   }
 ];
 
@@ -79,7 +92,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden border-4 border-red-500" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* Background textures */}
       <div className="absolute inset-0" 
            style={{
@@ -100,14 +113,14 @@ const Blog = () => {
            }}>
       </div>
 
-      <div ref={containerRef} className="w-full border-4 border-blue-500">
-        <div className="max-w-[9.24xl] mx-auto border-4 border-green-500" style={{maxWidth: '110.88rem'}}>
-          <div className="flex">
+      <div ref={containerRef} className="w-full border-4 border-red-500">
+        <div className="max-w-[9.24xl] mx-auto border-4 border-blue-500" style={{maxWidth: '110.88rem'}}>
+          <div className="flex border-4 border-green-500">
             
             {/* Left Side - Sticky (30% width) */}
             <div 
               ref={leftSideRef}
-              className="w-[30%] relative"
+              className="w-[30%] relative border-4 border-yellow-500"
             >
               <div className="sticky top-0 h-screen flex items-center justify-center p-8">
                 <div className="relative">
@@ -127,13 +140,14 @@ const Blog = () => {
             </div>
 
             {/* Right Side - Scrollable (70% width) */}
-            <div className="w-[70%] relative">
+            <div className="w-[70%] relative border-4 border-purple-500">
               {/* Section Header */}
               <div className="sticky top-0 bg-[#efeeef] z-10 pt-8 pb-4 px-8">
                 <div className="inline-flex items-center space-x-2 mb-6">
                   <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                  <span className="text-xl sm:text-2xl font-bold text-black font-familjen">Our Approach</span>
+                  <span className="text-xl sm:text-2xl font-bold text-black font-tenor-sans">Blogs & Resources</span>
                 </div>
+                
               </div>
 
               {/* Content Cards */}
@@ -144,33 +158,46 @@ const Blog = () => {
                     ref={(el) => {
                       if (el) cardsRef.current[index] = el;
                     }}
-                    className="min-h-screen flex flex-col justify-center py-16 px-8"
+                    className="min-h-screen flex flex-col justify-center py-16 px-8 border-4 border-orange-500"
                   >
-                    <div className="max-w-3xl">
-                      <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight mb-6 font-familjen">
+                    <div className="w-full h-full bg-white rounded-2xl p-8 shadow-lg border border-gray-200 mx-4 my-4">
+                      <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-900 leading-tight mb-6 font-tenor-sans">
                         {card.title}
                       </h2>
                       
-                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-normal italic text-slate-700 mb-8 font-familjen">
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-slate-700 mb-12 font-tenor-sans">
                         {card.subtitle}
                       </h3>
                       
-                      <div className="space-y-6 text-lg lg:text-xl text-slate-700 leading-relaxed font-familjen">
-                        <p className="font-semibold">{card.content}</p>
+                      <div className="space-y-8 text-base lg:text-lg text-slate-700 leading-relaxed font-tenor-sans">
+                        <p className="font-semibold mb-8">{card.content}</p>
                         {card.additionalContent && (
-                          <p>{card.additionalContent}</p>
+                          <p className="mb-8">{card.additionalContent}</p>
+                        )}
+                        {card.detailedContent && (
+                          <p className="bg-slate-50 p-6 rounded-lg mb-8">{card.detailedContent}</p>
+                        )}
+                        
+                        {/* Tips section */}
+                        {card.tips && (
+                          <div className="mt-8 p-6 bg-green-50 border-l-4 border-green-400 rounded-r-lg">
+                            <h4 className="text-xl font-bold text-slate-900 mb-3 font-tenor-sans">
+                              💡 Expert Tips
+                            </h4>
+                            <p className="text-sm lg:text-base text-slate-700">{card.tips}</p>
+                          </div>
                         )}
                         
                         {/* The result section */}
                         <div className="mt-12 pt-8 border-t border-slate-300">
-                          <h4 className="text-3xl font-bold text-slate-900 mb-6 font-familjen">
-                            The result?
+                          <h4 className="text-3xl font-bold text-slate-900 mb-6 font-tenor-sans">
+                            Ready to get started?
                           </h4>
                           <div className="flex items-center space-x-4 cursor-pointer group">
-                            <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors font-familjen">
-                              Discover more
+                            <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors font-tenor-sans">
+                              Read full guide
                             </span>
-                            <div className="group-hover:scale-110 transition-transform">
+                            <div className="group-hover:scale-110 transition-transform flex items-center">
                               <AnimatedArrowButton arrowDirection="top-right" size="md" />
                             </div>
                           </div>

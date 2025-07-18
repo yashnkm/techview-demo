@@ -22,25 +22,19 @@ const SplitTextReveal = ({
     if (!textRef.current) return;
 
     const element = textRef.current;
-    const text = element.textContent || '';
+    const text = element.innerHTML || '';
     
-    // Split text into lines manually (since we don't have SplitText plugin)
-    const words = text.split(' ');
+    // Split text by manual line breaks first
+    const manualLines = text.split('<br />');
     const lines: string[] = [];
-    let currentLine = '';
     
-    // Simple line breaking (approximate)
-    words.forEach((word, index) => {
-      if (currentLine.length + word.length > 40 && currentLine.length > 0) {
-        lines.push(currentLine.trim());
-        currentLine = word + ' ';
-      } else {
-        currentLine += word + ' ';
+    // Process each manual line
+    manualLines.forEach(line => {
+      const cleanLine = line.trim();
+      if (cleanLine) {
+        lines.push(cleanLine);
       }
     });
-    if (currentLine.trim()) {
-      lines.push(currentLine.trim());
-    }
 
     // Clear original content
     element.innerHTML = '';
@@ -48,7 +42,7 @@ const SplitTextReveal = ({
     // Create masked lines
     lines.forEach(lineText => {
       const mask = document.createElement('div');
-      mask.className = 'overflow-hidden block px-2';
+      mask.className = 'overflow-hidden block';
       
       const inner = document.createElement('div');
       inner.className = 'line-inner';

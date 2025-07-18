@@ -7,10 +7,11 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'akkurat': ['Akkurat', 'Inter', 'sans-serif'],
+        'akkurat': ['Inter', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
         'familjen': ['Familjen Grotesk', 'sans-serif'],
-        'edu-hand': ['Edu NSW ACT Hand', 'cursive'],
+        'poiret-one': ['Poiret One', 'cursive'],
+        'tenor-sans': ['Tenor Sans', 'sans-serif'],
       },
     },
   },

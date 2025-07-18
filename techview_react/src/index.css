@@ -1,32 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poiret+One:wght@400&family=Familjen+Grotesk:wght@400;500;600;700;800;900&display=swap');
 
-/* Akkurat Font Face Declarations */
-@font-face {
-  font-family: 'Akkurat';
-  src: url('./assets/fonts/Akkurat-Regular.woff2') format('woff2'),
-       url('./assets/fonts/Akkurat-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Akkurat';
-  src: url('./assets/fonts/Akkurat-Bold.woff2') format('woff2'),
-       url('./assets/fonts/Akkurat-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Akkurat';
-  src: url('./assets/fonts/Akkurat-Light.woff2') format('woff2'),
-       url('./assets/fonts/Akkurat-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+/* Akkurat Font Fallback - using Inter as substitute */
+/* Note: Akkurat font files are not available, using Inter as primary font */
 
 @tailwind base;
 @tailwind components;
@@ -39,7 +14,7 @@
 }
 
 body {
-  font-family: 'Akkurat', 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: #ffffff;
   color: #1f2937;
   line-height: 1.6;
@@ -49,5 +24,20 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Ensure fonts load properly */
+.font-poiret-one {
+  font-family: 'Poiret One', cursive !important;
+}
+
+.font-familjen {
+  font-family: 'Familjen Grotesk', sans-serif !important;
+}
+
+.tenor-sans-regular {
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 

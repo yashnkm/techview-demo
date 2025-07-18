@@ -43,14 +43,14 @@ const testimonials: Testimonial[] = [
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <div className="bg-white p-20 rounded-xl shadow-sm border border-gray-100 min-w-[900px] lg:min-w-[1200px] transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-gray-200 group cursor-grab">
     <div className="mb-16">
-      <p className="text-3xl lg:text-4xl text-slate-800 leading-relaxed font-familjen group-hover:text-slate-900 transition-colors duration-300">
+      <p className="text-3xl lg:text-4xl text-slate-800 leading-relaxed font-tenor-sans group-hover:text-slate-900 transition-colors duration-300">
         "{testimonial.quote}"
       </p>
     </div>
     <div className="flex items-center justify-end">
       <div className="text-right">
-        <p className="font-semibold text-slate-900 font-familjen text-lg group-hover:text-black transition-colors duration-300">{testimonial.name}</p>
-        <p className="text-slate-600 font-familjen text-base group-hover:text-slate-700 transition-colors duration-300">{testimonial.title} - {testimonial.company}</p>
+        <p className="font-semibold text-slate-900 font-tenor-sans text-lg group-hover:text-black transition-colors duration-300">{testimonial.name}</p>
+        <p className="text-slate-600 font-tenor-sans text-base group-hover:text-slate-700 transition-colors duration-300">{testimonial.title} - {testimonial.company}</p>
       </div>
     </div>
   </div>
@@ -135,7 +135,7 @@ const Results = () => {
   }, [currentIndex, maxScroll, cardWidth]);
 
   return (
-    <section className="relative min-h-screen overflow-hidden border-4 border-red-500" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* Same background textures as Hero */}
       <div className="absolute inset-0" 
            style={{
@@ -156,9 +156,9 @@ const Results = () => {
            }}>
       </div>
 
-      <div className="absolute inset-0 flex items-center justify-center border-4 border-blue-500">
+      <div className="absolute inset-0 flex items-center justify-center">
         <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
-        <div className="max-w-[9.24xl] mx-auto border-4 border-green-500" style={{maxWidth: '110.88rem'}}>
+        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
           <div className="flex flex-col gap-4 min-h-[41.25rem]">
           
           {/* Top Section - Hero Content */}
@@ -167,25 +167,23 @@ const Results = () => {
             <div className="absolute top-6 left-8">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black font-familjen">Results</span>
+                <span className="text-xl sm:text-2xl font-bold text-black font-tenor-sans">Results</span>
               </div>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center pt-8">
               <div className="lg:col-span-6">
-                <h2 className="text-[3.15rem] sm:text-[3.75rem] md:text-[4.38rem] lg:text-[6.3rem] font-medium text-slate-900 leading-[0.9] tracking-tight font-familjen">
+                <h2 className="text-[3.6rem] sm:text-[4.1rem] md:text-[4.6rem] lg:text-[5.6rem] font-bold text-slate-900 leading-[1.1] tracking-tight font-tenor-sans">
                   Driven by an<br />
-                  innovation mindset
+                  <span className="italic font-normal">innovation</span> mindset
                 </h2>
               </div>
               <div className="lg:col-span-6 flex flex-col">
-                <p className="text-xl sm:text-2xl lg:text-3xl text-slate-600 leading-relaxed mb-6 font-normal font-familjen tracking-normal">
-                  You don't just hire developers - you hire innovators with a drive to deliver 
-                  exceptional results. The TechView team thrives on impact. When you work with 
-                  us, you'll work with a team as ambitious about growth as you are.
+                <p className="text-base sm:text-lg lg:text-xl text-black leading-relaxed mb-6 font-medium font-tenor-sans tracking-normal">
+                  We are a team of creative problem-solvers who love a good challenge and are focused on making a real difference for you. We find better ways to get you results. Your goals become our goals, and we'll be just as excited to see you succeed.
                 </p>
                 <div className="flex items-center space-x-4 cursor-pointer group">
-                  <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors font-familjen">
+                  <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors font-tenor-sans">
                     Explore our work
                   </span>
                   <div className="group-hover:scale-110 transition-transform flex items-center">
