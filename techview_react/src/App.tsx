@@ -25,30 +25,30 @@ function App() {
   }, [isLoading])
 
   return (
-    <div className="min-h-screen bg-white debug-outline">
+    <div className="min-h-screen bg-white">
       {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
       <Header />
       
       {/* ScrollSmoother wrapper */}
-      <div id="smooth-wrapper" className="debug-outline-blue">
-        <div id="smooth-content" className="debug-outline-green">
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
           <Hero />
-          <div id="solutions" className="debug-outline-yellow">
+          <div id="solutions">
             <Solutions />
           </div>
-          <div id="results" className="debug-outline-purple">
+          <div id="results">
             <Results />
           </div>
-          <div id="blog" className="debug-outline">
+          <div id="blog">
             <Blog />
           </div>
-          <div id="ourteams" className="debug-outline">
+          <div id="ourteams">
             <OurTeams />
           </div>
-          <div id="contact" className="debug-outline">
+          <div id="contact">
             <Contact />
           </div>
-          <div id="footer" className="debug-outline">
+          <div id="footer">
             <Footer />
           </div>
         </div>

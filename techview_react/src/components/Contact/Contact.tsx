@@ -22,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden debug-outline" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* Background textures - same as other sections */}
       <div className="absolute inset-0" 
            style={{
@@ -43,9 +43,9 @@ const Contact = () => {
            }}>
       </div>
 
-      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28 debug-outline-blue">
-        <div className="max-w-[9.24xl] mx-auto debug-outline-green" style={{maxWidth: '110.88rem'}}>
-          <div className="relative min-h-[41.25rem] flex flex-col items-center justify-center debug-outline-yellow">
+      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
+        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
+          <div className="relative min-h-[41.25rem] flex flex-col items-center justify-center">
             
             {/* Contact Badge - Centered */}
             <div className="absolute top-8 left-1/2 transform -translate-x-1/2">

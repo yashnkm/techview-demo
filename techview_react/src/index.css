@@ -51,28 +51,3 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Temporary Design Outline Utility */
-.debug-outline {
-  outline: 2px solid #ff0000 !important;
-  outline-offset: -2px !important;
-}
-
-.debug-outline-blue {
-  outline: 2px solid #0000ff !important;
-  outline-offset: -2px !important;
-}
-
-.debug-outline-green {
-  outline: 2px solid #00ff00 !important;
-  outline-offset: -2px !important;
-}
-
-.debug-outline-yellow {
-  outline: 2px solid #ffff00 !important;
-  outline-offset: -2px !important;
-}
-
-.debug-outline-purple {
-  outline: 2px solid #ff00ff !important;
-  outline-offset: -2px !important;
-}

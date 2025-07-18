@@ -23,7 +23,7 @@ const OurTeams = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden debug-outline" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* Same background textures as Hero and Results */}
       <div className="absolute inset-0" 
            style={{
@@ -44,13 +44,13 @@ const OurTeams = () => {
            }}>
       </div>
 
-      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28 debug-outline-blue">
-        <div className="max-w-[9.24xl] mx-auto debug-outline-green" style={{maxWidth: '110.88rem'}}>
-          <div className="flex min-h-[41.25rem] debug-outline-yellow">
+      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
+        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
+          <div className="flex min-h-[41.25rem]">
             
             {/* Left Section - 60% */}
-            <div className="w-[60%] pr-4 debug-outline-purple">
-              <div className="relative p-8 h-full debug-outline-blue">
+            <div className="w-[60%] pr-4">
+              <div className="relative p-8 h-full">
                 {/* Section Header */}
                 <div className="absolute top-6 left-8">
                   <div className="inline-flex items-center space-x-2">
@@ -59,7 +59,7 @@ const OurTeams = () => {
                   </div>
                 </div>
                 
-                <div className="w-full pt-16 h-full flex flex-col justify-center debug-outline">
+                <div className="w-full pt-16 h-full flex flex-col justify-center">
                   <div ref={containerRef} className="space-y-8">
                     {/* Main Heading */}
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight font-familjen">
@@ -94,8 +94,8 @@ const OurTeams = () => {
             </div>
 
             {/* Right Section - 40% */}
-            <div className="w-[40%] pl-4 debug-outline-green">
-              <div className="relative h-full debug-outline-yellow">
+            <div className="w-[40%] pl-4">
+              <div className="relative h-full">
                 {/* Navigation Buttons - positioned at top-right of section */}
                 <div className="absolute top-8 right-8 flex space-x-2 z-20">
                   <CustomNavButton
@@ -109,7 +109,7 @@ const OurTeams = () => {
                     disabled={false}
                   />
                 </div>
-                <div className="h-full flex items-center justify-center debug-outline">
+                <div className="h-full flex items-center justify-center">
                   <MarqueeCards ref={marqueeRef} className="w-full h-[500px]" />
                 </div>
               </div>

@@ -136,15 +136,15 @@ const Header = () => {
   return (
     <>
       {/* Fixed Navigation Card */}
-      <header ref={headerRef} className="fixed top-4 sm:top-6 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-between bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl py-2 shadow-lg w-[95%] max-w-[1104px] min-w-[320px] debug-outline">
+      <header ref={headerRef} className="fixed top-4 sm:top-6 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-between bg-white/90 backdrop-blur-sm border border-gray-200 rounded-xl py-2 shadow-lg w-[95%] max-w-[1104px] min-w-[320px]">
           {/* Logo - Left side */}
-          <div className="flex items-center space-x-2 sm:space-x-3 px-3 sm:px-6 debug-outline-blue">
+          <div className="flex items-center space-x-2 sm:space-x-3 px-3 sm:px-6">
             <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg" style={{backgroundColor: '#74f5a2'}}></div>
             <span className="text-lg sm:text-xl font-bold text-slate-800 font-akkurat">TechView</span>
           </div>
 
           {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex items-center space-x-2 relative debug-outline-green">
+          <nav className="hidden md:flex items-center space-x-2 relative">
             <div 
               className="relative"
               onMouseEnter={() => handleMouseEnter('services')}
@@ -176,7 +176,7 @@ const Header = () => {
           </nav>
 
           {/* Text and Square Button - Right side */}
-          <div className="hidden md:flex items-center space-x-2 sm:space-x-3 px-3 sm:px-6 debug-outline-yellow">
+          <div className="hidden md:flex items-center space-x-2 sm:space-x-3 px-3 sm:px-6">
             <span className="text-slate-700 font-bold font-akkurat text-sm sm:text-base">Talk with us</span>
             <AnimatedArrowButton arrowDirection="top-right" size="md" />
           </div>
@@ -196,11 +196,11 @@ const Header = () => {
       {activeDropdown && (
         <div 
           ref={megaMenuRef}
-          className="fixed top-28 left-1/2 transform -translate-x-1/2 z-40 w-[95%] max-w-[1104px] md:w-[800px] lg:w-[1104px] debug-outline-purple"
+          className="fixed top-28 left-1/2 transform -translate-x-1/2 z-40 w-[95%] max-w-[1104px] md:w-[800px] lg:w-[1104px]"
           onMouseEnter={handleMegaMenuEnter}
           onMouseLeave={handleMegaMenuLeave}
         >
-          <div className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-2xl p-4 md:p-6 lg:p-8 shadow-2xl w-full debug-outline">
+          <div className="bg-white/95 backdrop-blur-sm border border-gray-200 rounded-2xl p-4 md:p-6 lg:p-8 shadow-2xl w-full">
             {activeDropdown === 'services' && (
               <div className="flex flex-col gap-2">
                 {/* Top row - 3 cards */}
@@ -330,8 +330,8 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed top-16 sm:top-20 left-1/2 transform -translate-x-1/2 z-40 md:hidden w-[90%] max-w-sm debug-outline-blue">
-          <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl px-4 sm:px-6 py-4 shadow-lg debug-outline-green">
+        <div className="fixed top-16 sm:top-20 left-1/2 transform -translate-x-1/2 z-40 md:hidden w-[90%] max-w-sm">
+          <div className="bg-white/90 backdrop-blur-sm border border-gray-200 rounded-2xl px-4 sm:px-6 py-4 shadow-lg">
             <nav className="flex flex-col space-y-2">
               {/* Services Dropdown */}
               <div>

@@ -2,7 +2,7 @@ import AnimatedArrowButton from '../UI/AnimatedArrowButton'
 
 const Solutions = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden debug-outline" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* Same background textures as Hero */}
       <div className="absolute inset-0" 
            style={{
@@ -23,12 +23,12 @@ const Solutions = () => {
            }}>
       </div>
 
-      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28 debug-outline-blue">
-        <div className="max-w-[9.24xl] mx-auto debug-outline-green" style={{maxWidth: '110.88rem'}}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-2 items-center min-h-[41.25rem] debug-outline-yellow">
+      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
+        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-2 items-center min-h-[41.25rem]">
           
           {/* Left Side - Professional Image */}
-          <div className="lg:col-span-5 relative p-4 h-full flex flex-col mr-1 debug-outline-purple">
+          <div className="lg:col-span-5 relative p-4 h-full flex flex-col mr-1">
             {/* Our Services Badge */}
             <div className="mb-6">
               <div className="inline-flex items-center space-x-2">
@@ -61,7 +61,7 @@ const Solutions = () => {
           </div>
 
           {/* Right Side - Services Content */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left p-2 debug-outline">
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left p-2">
 
             {/* Main Heading */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-slate-900 leading-[0.85] tracking-tight font-familjen">
@@ -72,10 +72,10 @@ const Solutions = () => {
 
 
             {/* Services Grid - Bigger megamenu without outer border */}
-            <div className="pt-[2rem] debug-outline-blue">
-              <div className="flex flex-col gap-1 debug-outline-green">
+            <div className="pt-[2rem]">
+              <div className="flex flex-col gap-1">
                 {/* Top row - 3 cards */}
-                <div className="flex flex-col md:flex-row gap-1 debug-outline-yellow">
+                <div className="flex flex-col md:flex-row gap-1">
                   {/* AI Solutions */}
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.1s both'}}>
                     <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
@@ -114,7 +114,7 @@ const Solutions = () => {
                 </div>
 
                 {/* Bottom row - 2 cards */}
-                <div className="flex gap-1 debug-outline-purple">
+                <div className="flex gap-1">
                   {/* Cloud Solutions */}
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.4s both'}}>
                     <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">

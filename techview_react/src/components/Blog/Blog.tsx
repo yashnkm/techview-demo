@@ -79,7 +79,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden debug-outline" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* Background textures */}
       <div className="absolute inset-0" 
            style={{
@@ -100,14 +100,14 @@ const Blog = () => {
            }}>
       </div>
 
-      <div ref={containerRef} className="w-full debug-outline-blue">
-        <div className="max-w-[9.24xl] mx-auto debug-outline-green" style={{maxWidth: '110.88rem'}}>
-          <div className="flex debug-outline-yellow">
+      <div ref={containerRef} className="w-full">
+        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
+          <div className="flex">
             
             {/* Left Side - Sticky (30% width) */}
             <div 
               ref={leftSideRef}
-              className="w-[30%] relative debug-outline-purple"
+              className="w-[30%] relative"
             >
               <div className="sticky top-0 h-screen flex items-center justify-center p-8">
                 <div className="relative">
@@ -127,9 +127,9 @@ const Blog = () => {
             </div>
 
             {/* Right Side - Scrollable (70% width) */}
-            <div className="w-[70%] relative debug-outline">
+            <div className="w-[70%] relative">
               {/* Section Header */}
-              <div className="sticky top-0 bg-[#efeeef] z-10 pt-8 pb-4 px-8 debug-outline-blue">
+              <div className="sticky top-0 bg-[#efeeef] z-10 pt-8 pb-4 px-8">
                 <div className="inline-flex items-center space-x-2 mb-6">
                   <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
                   <span className="text-xl sm:text-2xl font-bold text-black font-familjen">Our Approach</span>
@@ -137,14 +137,14 @@ const Blog = () => {
               </div>
 
               {/* Content Cards */}
-              <div className="space-y-0 debug-outline-green">
+              <div className="space-y-0">
                 {blogCards.map((card, index) => (
                   <div
                     key={card.id}
                     ref={(el) => {
                       if (el) cardsRef.current[index] = el;
                     }}
-                    className="min-h-screen flex flex-col justify-center py-16 px-8 debug-outline-yellow"
+                    className="min-h-screen flex flex-col justify-center py-16 px-8"
                   >
                     <div className="max-w-3xl">
                       <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight mb-6 font-familjen">

@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="bg-white p-20 rounded-xl shadow-sm border border-gray-100 min-w-[900px] lg:min-w-[1200px] transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-gray-200 group cursor-grab debug-outline-blue">
+  <div className="bg-white p-20 rounded-xl shadow-sm border border-gray-100 min-w-[900px] lg:min-w-[1200px] transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-gray-200 group cursor-grab">
     <div className="mb-16">
       <p className="text-3xl lg:text-4xl text-slate-800 leading-relaxed font-familjen group-hover:text-slate-900 transition-colors duration-300">
         "{testimonial.quote}"
@@ -135,7 +135,7 @@ const Results = () => {
   }, [currentIndex, maxScroll, cardWidth]);
 
   return (
-    <section className="relative min-h-screen overflow-hidden debug-outline" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* Same background textures as Hero */}
       <div className="absolute inset-0" 
            style={{
@@ -156,12 +156,12 @@ const Results = () => {
            }}>
       </div>
 
-      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28 debug-outline-blue">
-        <div className="max-w-[9.24xl] mx-auto debug-outline-green" style={{maxWidth: '110.88rem'}}>
-          <div className="flex flex-col gap-4 min-h-[41.25rem] debug-outline-yellow">
+      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
+        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
+          <div className="flex flex-col gap-4 min-h-[41.25rem]">
           
           {/* Top Section - Hero Content */}
-          <div className="relative p-8 flex-1 flex items-center debug-outline-purple">
+          <div className="relative p-8 flex-1 flex items-center">
             {/* Results Badge */}
             <div className="absolute top-6 left-8">
               <div className="inline-flex items-center space-x-2">
@@ -170,14 +170,14 @@ const Results = () => {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center pt-8 debug-outline">
-              <div className="lg:col-span-6 debug-outline-blue">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center pt-8">
+              <div className="lg:col-span-6">
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight font-familjen">
                   Driven by an<br />
                   <span className="italic font-normal">innovation</span> mindset
                 </h2>
               </div>
-              <div className="lg:col-span-6 flex flex-col debug-outline-green">
+              <div className="lg:col-span-6 flex flex-col">
                 <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-6 font-familjen">
                   You don't just hire developers - you hire innovators with a drive to deliver 
                   exceptional results. The TechView team thrives on impact. When you work with 
@@ -196,8 +196,8 @@ const Results = () => {
           </div>
 
           {/* Bottom Section - Testimonial Carousel */}
-          <div className="relative p-8 flex-1 overflow-hidden debug-outline-yellow">
-            <div className="flex items-center justify-end mb-8 debug-outline-purple">
+          <div className="relative p-8 flex-1 overflow-hidden">
+            <div className="flex items-center justify-end mb-8">
               <div className="flex space-x-2">
                 <CustomNavButton
                   direction="left"
@@ -212,7 +212,7 @@ const Results = () => {
               </div>
             </div>
             
-            <div ref={containerRef} className="overflow-hidden cursor-grab active:cursor-grabbing debug-outline">
+            <div ref={containerRef} className="overflow-hidden cursor-grab active:cursor-grabbing">
               <div 
                 ref={carouselRef}
                 className="flex space-x-5"
