@@ -78,13 +78,12 @@ const Hero = () => {
            }}>
       </div>
 
-
       <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-32">
         <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-0 items-center min-h-[50rem]">
           <div className="lg:col-span-8 space-y-6 text-center lg:text-left p-2 pt-16 h-full">
             {/* Badge */}
-            <div className="inline-flex items-center space-x-2 justify-center lg:justify-start">
+            <div className="inline-flex items-center space-x-2 justify-center lg:justify-start mb-6">
               <div ref={dotRef} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
               <SplitTextReveal 
                 className="text-xl sm:text-2xl font-bold text-black font-familjen"
@@ -96,7 +95,7 @@ const Hero = () => {
             </div>
 
             {/* Main Heading */}
-            <h1 ref={headingRef} className="text-[3.15rem] sm:text-[3.75rem] md:text-[4.38rem] lg:text-[6.3rem] font-bold text-slate-900 leading-[1.1] tracking-tight font-familjen">
+            <h1 ref={headingRef} className="text-[3.15rem] sm:text-[3.75rem] md:text-[4.38rem] lg:text-[6.3rem] font-bold text-slate-900 leading-[0.9] tracking-tight font-familjen mb-6">
               {/* Mobile & Tablet - Static text */}
               <span className="lg:hidden">
                 One partner,<br />
@@ -113,21 +112,22 @@ const Hero = () => {
             </h1>
 
             {/* Subtext */}
-            <div className="max-w-2xl mx-auto lg:mx-0 mt-8">
+            <div className="max-w-4xl mx-auto lg:mx-0 mt-16">
               <SplitTextReveal 
-                className="text-xl sm:text-2xl lg:text-3xl text-slate-600 leading-relaxed font-semibold font-familjen"
+                className="text-xl sm:text-2xl lg:text-3xl text-slate-600 leading-relaxed font-semibold font-familjen tracking-wide"
                 delay={4.2}
                 stagger={0.08}
               >
-                We build simple, effective tech solutions, workflows and systems tailored to your specific business needs.<br />
-                Custom automation that solves your exact problems and actually save time.
+                We build, automate and engineer<br />
+                personalized tech solutions that helps you<br />
+                and your business to gain a competitive edge.
               </SplitTextReveal>
             </div>
 
             {/* CTA */}
             <div 
               ref={ctaRef}
-              className="pt-6 flex items-center justify-center lg:justify-start space-x-4 cursor-pointer group"
+              className="mt-16 flex items-center justify-center lg:justify-start space-x-4 cursor-pointer group"
               onClick={handleSolutionsClick}
             >
               <span className="text-xl sm:text-2xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">

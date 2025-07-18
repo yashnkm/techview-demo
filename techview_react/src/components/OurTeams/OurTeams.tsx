@@ -23,7 +23,7 @@ const OurTeams = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative min-h-screen overflow-hidden border-4 border-red-500" style={{backgroundColor: '#efeeef'}}>
       {/* Same background textures as Hero and Results */}
       <div className="absolute inset-0" 
            style={{
@@ -44,8 +44,9 @@ const OurTeams = () => {
            }}>
       </div>
 
-      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
-        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
+      <div className="absolute inset-0 flex items-center justify-center border-4 border-blue-500">
+        <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
+        <div className="max-w-[9.24xl] mx-auto border-4 border-green-500" style={{maxWidth: '110.88rem'}}>
           <div className="flex min-h-[41.25rem]">
             
             {/* Left Section - 60% */}
@@ -62,18 +63,19 @@ const OurTeams = () => {
                 <div className="w-full pt-16 h-full flex flex-col justify-center">
                   <div ref={containerRef} className="space-y-8">
                     {/* Main Heading */}
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight font-familjen">
+                    <h1 className="text-[3.15rem] sm:text-[3.75rem] md:text-[4.38rem] lg:text-[6.3rem] font-bold text-slate-900 leading-[0.9] tracking-tight font-familjen">
                       Meet the innovators<br />
-                      <span className="italic font-normal">behind</span> TechView
+                      <span className="font-edu-hand font-normal italic">behind</span> TechView
                     </h1>
                     
+                    
                     {/* Description */}
-                    <div className="max-w-lg space-y-4">
-                      <p className="text-lg lg:text-xl text-slate-600 leading-relaxed font-familjen">
+                    <div className="max-w-4xl space-y-4">
+                      <p className="text-xl sm:text-2xl lg:text-3xl text-slate-600 leading-relaxed font-semibold font-familjen tracking-wide">
                         Our diverse team combines technical expertise with creative vision to deliver 
                         exceptional results for every project.
                       </p>
-                      <p className="text-lg lg:text-xl text-slate-600 leading-relaxed font-familjen">
+                      <p className="text-xl sm:text-2xl lg:text-3xl text-slate-600 leading-relaxed font-semibold font-familjen tracking-wide">
                         From AI engineers to UX designers, we're united by our passion for innovation 
                         and commitment to excellence.
                       </p>
@@ -116,6 +118,7 @@ const OurTeams = () => {
             </div>
 
           </div>
+        </div>
         </div>
       </div>
     </section>

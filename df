@@ -1,0 +1,101 @@
+[33mcommit 36c7e083818bb5bf9c503701bd5a5a76e84f42f3[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/herSection_v2[m[33m, [m[1;31morigin/feature/herSection_v2[m[33m)[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Fri Jul 18 15:49:47 2025 +0530
+
+    removed teh outlines
+
+[33mcommit d58092227015fb00bada7312f03d7ce53101f93e[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Fri Jul 18 04:07:43 2025 +0530
+
+    added footer and contact us
+
+[33mcommit 9c3f57d86310fafa9f6fa6214c5eec1035805acb[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Fri Jul 18 02:22:34 2025 +0530
+
+    added teams page
+
+[33mcommit 7ab3fc7d72a86ea0d1291c5ac95fad00321f39c5[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Wed Jul 16 18:17:35 2025 +0530
+
+    added logs and claude md
+
+[33mcommit 0e8b965aa87190733e30d7f8a11f024e37f2fb34[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Tue Jul 15 16:57:58 2025 +0530
+
+    blog section added
+
+[33mcommit 81eedc46b9470195a22d84ec97cb37d794d9432d[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Sun Jul 13 00:13:04 2025 +0530
+
+    added 3rd page
+
+[33mcommit 10a5f6171179d4e5b7ea1f86b1663aee3032655c[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Sat Jul 12 21:06:56 2025 +0530
+
+    a stable version
+
+[33mcommit 10e87898bc192f7ae229e9b62ff1e450a73f9800[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Sat Jul 12 20:58:48 2025 +0530
+
+    centralized styling
+
+[33mcommit 6188cefd55eb866019dd4af3814594940ba69895[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Sat Jul 12 20:07:57 2025 +0530
+
+    introduced containers
+
+[33mcommit e62d92b8f6b81a6492bba903f6d5d8284abd59a3[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Sat Jul 12 14:47:24 2025 +0530
+
+    added cards to solutions page
+
+[33mcommit 4eca4d6c62ddebc8db1f31838a2f5c537e7aff05[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Sat Jul 12 03:07:30 2025 +0530
+
+    loading animations updated
+
+[33mcommit 8a5f59a707a448da038d91141ae75efbafed11d7[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Sat Jul 12 02:41:22 2025 +0530
+
+    added loading animations
+
+[33mcommit fe4a1a3f6f2683a5eefef93efc344dac9aed0b96[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Sat Jul 12 00:34:55 2025 +0530
+
+    added font sunny
+
+[33mcommit 738b788c1ed70887cf96355ecc2c2291624a6936[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Fri Jul 11 23:56:31 2025 +0530
+
+    phone upgrade
+
+[33mcommit 9fc169406120fe091e1065976fd103bce695b6c9[m[33m ([m[1;32mfeature/heroSection_v1[m[33m)[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Fri Jul 11 23:17:01 2025 +0530
+
+    navbar changes added megamenu
+
+[33mcommit cf92badf37693567bda979e66584a0810a66d690[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Fri Jul 11 21:11:00 2025 +0530
+
+    changes in phone screen
+
+[33mcommit 540c035f815413409b4fbc200895dca2138110e7[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: weGGC <ggcommunityy@gmail.com>
+Date:   Fri Jul 11 19:42:23 2025 +0530
+
+    initial commit

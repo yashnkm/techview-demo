@@ -19,14 +19,15 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="relative min-h-[50vh] overflow-hidden" style={{backgroundColor: '#1a1a1a'}}>
+    <footer className="relative min-h-[50vh] overflow-hidden border-4 border-red-500" style={{backgroundColor: '#1a1a1a'}}>
       {/* Decorative elements */}
       <div className="absolute top-4 right-4 w-8 h-8 rounded-sm" style={{backgroundColor: '#74f5a2'}}></div>
       <div className="absolute top-16 right-16 w-6 h-6 rounded-sm" style={{backgroundColor: '#74f5a2'}}></div>
       <div className="absolute top-8 right-32 w-4 h-4 rounded-sm" style={{backgroundColor: '#74f5a2'}}></div>
 
-      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
+      <div className="absolute inset-0 flex items-center justify-center border-4 border-blue-500">
+        <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="max-w-[9.24xl] mx-auto border-4 border-green-500" style={{maxWidth: '110.88rem'}}>
           <div ref={containerRef} className="space-y-16">
             
             {/* Main Footer Content */}
@@ -145,6 +146,7 @@ const Footer = () => {
             </div>
 
           </div>
+        </div>
         </div>
       </div>
     </footer>

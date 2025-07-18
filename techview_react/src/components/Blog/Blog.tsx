@@ -79,7 +79,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative overflow-hidden border-4 border-red-500" style={{backgroundColor: '#efeeef'}}>
       {/* Background textures */}
       <div className="absolute inset-0" 
            style={{
@@ -100,8 +100,8 @@ const Blog = () => {
            }}>
       </div>
 
-      <div ref={containerRef} className="w-full">
-        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
+      <div ref={containerRef} className="w-full border-4 border-blue-500">
+        <div className="max-w-[9.24xl] mx-auto border-4 border-green-500" style={{maxWidth: '110.88rem'}}>
           <div className="flex">
             
             {/* Left Side - Sticky (30% width) */}

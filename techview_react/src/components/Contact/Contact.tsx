@@ -4,6 +4,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
     message: ''
   });
@@ -22,7 +23,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative min-h-screen overflow-hidden border-4 border-red-500" style={{backgroundColor: '#efeeef'}}>
       {/* Background textures - same as other sections */}
       <div className="absolute inset-0" 
            style={{
@@ -43,8 +44,9 @@ const Contact = () => {
            }}>
       </div>
 
-      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
-        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
+      <div className="absolute inset-0 flex items-center justify-center border-4 border-blue-500">
+        <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
+        <div className="max-w-[9.24xl] mx-auto border-4 border-green-500" style={{maxWidth: '110.88rem'}}>
           <div className="relative min-h-[41.25rem] flex flex-col items-center justify-center">
             
             {/* Contact Badge - Centered */}
@@ -59,31 +61,21 @@ const Contact = () => {
             <div className="w-full max-w-4xl mx-auto text-center space-y-12 mt-16">
               
               {/* Heading */}
-              <div className="space-y-6">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight font-familjen">
-                  Let's create something
+              <div className="space-y-2">
+                <h1 className="text-[3.15rem] sm:text-[3.75rem] md:text-[4.38rem] lg:text-[6.3rem] font-bold text-slate-900 leading-[0.9] tracking-tight font-familjen">
+                  Let's create something<br />
+                  together
                 </h1>
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal italic text-slate-900 leading-tight font-familjen">
-                  extraordinary together
-                </h2>
-              </div>
-
-              {/* Description */}
-              <div className="max-w-2xl mx-auto">
-                <p className="text-lg lg:text-xl text-slate-600 leading-relaxed font-familjen">
-                  Ready to transform your vision into reality? Let's discuss how our team of experts 
-                  can help accelerate your business growth and create innovative solutions.
-                </p>
               </div>
 
               {/* Main Form Card */}
-              <div className="relative bg-white/70 backdrop-blur-lg rounded-2xl p-8 lg:p-12 shadow-lg border border-white/20 max-w-2xl mx-auto">
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="relative bg-white/70 backdrop-blur-lg rounded-2xl p-12 lg:p-16 shadow-lg border border-white/20 max-w-2xl mx-auto min-h-[600px]">
+                <form onSubmit={handleSubmit} className="space-y-8">
                   
                   {/* Name and Email Row */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2 font-familjen">
+                      <label htmlFor="name" className="block text-base font-medium text-slate-700 mb-3 font-familjen">
                         Full Name *
                       </label>
                       <input
@@ -93,13 +85,13 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition-all duration-200 font-familjen"
+                        className="w-full px-5 py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition-all duration-200 font-familjen text-base"
                         placeholder="Enter your name"
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2 font-familjen">
+                      <label htmlFor="email" className="block text-base font-medium text-slate-700 mb-3 font-familjen">
                         Email Address *
                       </label>
                       <input
@@ -109,31 +101,49 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition-all duration-200 font-familjen"
+                        className="w-full px-5 py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition-all duration-200 font-familjen text-base"
                         placeholder="Enter your email"
                       />
                     </div>
                   </div>
 
-                  {/* Company Field */}
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-2 font-familjen">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition-all duration-200 font-familjen"
-                      placeholder="Enter your company name"
-                    />
+                  {/* Phone and Company Row */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <label htmlFor="phone" className="block text-base font-medium text-slate-700 mb-3 font-familjen">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        className="w-full px-5 py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition-all duration-200 font-familjen text-base"
+                        placeholder="Enter your phone number"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="company" className="block text-base font-medium text-slate-700 mb-3 font-familjen">
+                        Company
+                      </label>
+                      <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleInputChange}
+                        className="w-full px-5 py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition-all duration-200 font-familjen text-base"
+                        placeholder="Enter your company name"
+                      />
+                    </div>
                   </div>
+
 
                   {/* Message Field */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2 font-familjen">
+                    <label htmlFor="message" className="block text-base font-medium text-slate-700 mb-3 font-familjen">
                       Message *
                     </label>
                     <textarea
@@ -142,17 +152,17 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      rows={4}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition-all duration-200 resize-none font-familjen"
+                      rows={6}
+                      className="w-full px-5 py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition-all duration-200 resize-none font-familjen text-base"
                       placeholder="Tell us about your project..."
                     />
                   </div>
 
                   {/* Submit Button */}
-                  <div className="pt-4">
+                  <div className="pt-6">
                     <button
                       type="submit"
-                      className="w-full px-8 py-4 rounded-lg font-semibold text-slate-800 font-familjen transition-all duration-200 hover:bg-green-500 hover:text-white"
+                      className="w-full px-8 py-5 rounded-lg font-semibold text-slate-800 font-familjen transition-all duration-200 hover:bg-green-500 hover:text-white text-lg"
                       style={{backgroundColor: '#74f5a2'}}
                     >
                       Send Message
@@ -163,64 +173,65 @@ const Contact = () => {
             </div>
 
             {/* Floating Contact Info Cards - Bigger and Cleaner */}
-            <div className="absolute top-24 left-12 bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/30 hover:scale-105 transition-transform duration-200">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
-                  <svg className="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="absolute top-24 left-12 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/30 hover:scale-105 transition-transform duration-200">
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
+                  <svg className="w-8 h-8 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-base font-semibold text-slate-800 font-familjen">Email</p>
-                  <p className="text-sm text-slate-600 font-familjen">hello@techview.ai</p>
+                  <p className="text-lg font-semibold text-slate-800 font-familjen">Email</p>
+                  <p className="text-base text-slate-600 font-familjen">hello@techview.ai</p>
                 </div>
               </div>
             </div>
 
-            <div className="absolute top-24 right-12 bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/30 hover:scale-105 transition-transform duration-200">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
-                  <svg className="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="absolute top-24 right-12 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/30 hover:scale-105 transition-transform duration-200">
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
+                  <svg className="w-8 h-8 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-base font-semibold text-slate-800 font-familjen">Phone</p>
-                  <p className="text-sm text-slate-600 font-familjen">+1 (555) 123-4567</p>
+                  <p className="text-lg font-semibold text-slate-800 font-familjen">Phone</p>
+                  <p className="text-base text-slate-600 font-familjen">+1 (555) 123-4567</p>
                 </div>
               </div>
             </div>
 
-            <div className="absolute bottom-24 left-12 bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/30 hover:scale-105 transition-transform duration-200">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
-                  <svg className="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="absolute bottom-24 left-12 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/30 hover:scale-105 transition-transform duration-200">
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
+                  <svg className="w-8 h-8 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-base font-semibold text-slate-800 font-familjen">Office</p>
-                  <p className="text-sm text-slate-600 font-familjen">San Francisco, CA</p>
+                  <p className="text-lg font-semibold text-slate-800 font-familjen">Office</p>
+                  <p className="text-base text-slate-600 font-familjen">San Francisco, CA</p>
                 </div>
               </div>
             </div>
 
-            <div className="absolute bottom-24 right-12 bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/30 hover:scale-105 transition-transform duration-200">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
-                  <svg className="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="absolute bottom-24 right-12 bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/30 hover:scale-105 transition-transform duration-200">
+              <div className="flex items-center space-x-6">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
+                  <svg className="w-8 h-8 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
-                  <p className="text-base font-semibold text-slate-800 font-familjen">Response</p>
-                  <p className="text-sm text-slate-600 font-familjen">Within 24 hours</p>
+                  <p className="text-lg font-semibold text-slate-800 font-familjen">Response</p>
+                  <p className="text-base text-slate-600 font-familjen">Within 24 hours</p>
                 </div>
               </div>
             </div>
 
           </div>
+        </div>
         </div>
       </div>
     </section>

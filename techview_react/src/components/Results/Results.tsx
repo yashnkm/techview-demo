@@ -135,7 +135,7 @@ const Results = () => {
   }, [currentIndex, maxScroll, cardWidth]);
 
   return (
-    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative min-h-screen overflow-hidden border-4 border-red-500" style={{backgroundColor: '#efeeef'}}>
       {/* Same background textures as Hero */}
       <div className="absolute inset-0" 
            style={{
@@ -156,8 +156,9 @@ const Results = () => {
            }}>
       </div>
 
-      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
-        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
+      <div className="absolute inset-0 flex items-center justify-center border-4 border-blue-500">
+        <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
+        <div className="max-w-[9.24xl] mx-auto border-4 border-green-500" style={{maxWidth: '110.88rem'}}>
           <div className="flex flex-col gap-4 min-h-[41.25rem]">
           
           {/* Top Section - Hero Content */}
@@ -172,13 +173,13 @@ const Results = () => {
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center pt-8">
               <div className="lg:col-span-6">
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight font-familjen">
+                <h2 className="text-[3.15rem] sm:text-[3.75rem] md:text-[4.38rem] lg:text-[6.3rem] font-medium text-slate-900 leading-[0.9] tracking-tight font-familjen">
                   Driven by an<br />
-                  <span className="italic font-normal">innovation</span> mindset
+                  innovation mindset
                 </h2>
               </div>
               <div className="lg:col-span-6 flex flex-col">
-                <p className="text-lg lg:text-xl text-slate-600 leading-relaxed mb-6 font-familjen">
+                <p className="text-xl sm:text-2xl lg:text-3xl text-slate-600 leading-relaxed mb-6 font-normal font-familjen tracking-normal">
                   You don't just hire developers - you hire innovators with a drive to deliver 
                   exceptional results. The TechView team thrives on impact. When you work with 
                   us, you'll work with a team as ambitious about growth as you are.
@@ -225,6 +226,7 @@ const Results = () => {
             </div>
           </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
