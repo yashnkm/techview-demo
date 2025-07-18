@@ -75,7 +75,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* Grainy Texture Background */}
       <div className="absolute inset-0" 
            style={{

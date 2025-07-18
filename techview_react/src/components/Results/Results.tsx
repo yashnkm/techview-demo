@@ -135,7 +135,7 @@ const Results = () => {
   }, [currentIndex, maxScroll, cardWidth]);
 
   return (
-    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* Same background textures as Hero */}
       <div className="absolute inset-0" 
            style={{
@@ -156,8 +156,7 @@ const Results = () => {
            }}>
       </div>
 
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
+      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
         <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
           <div className="flex flex-col gap-4 min-h-[41.25rem]">
           
@@ -224,7 +223,6 @@ const Results = () => {
             </div>
           </div>
           </div>
-        </div>
         </div>
       </div>
     </section>

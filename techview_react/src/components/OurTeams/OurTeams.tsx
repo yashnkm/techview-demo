@@ -23,7 +23,7 @@ const OurTeams = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* Same background textures as Hero and Results */}
       <div className="absolute inset-0" 
            style={{
@@ -44,23 +44,22 @@ const OurTeams = () => {
            }}>
       </div>
 
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
+      <div className="w-full px-4 sm:px-6 md:px-8 py-32">
         <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
-          <div className="flex min-h-[41.25rem]">
+          <div className="flex">
             
             {/* Left Section - 60% */}
             <div className="w-[60%] pr-4">
-              <div className="relative p-8 h-full">
+              <div className="relative p-8">
                 {/* Section Header */}
-                <div className="absolute top-6 left-8">
+                <div className="mb-8">
                   <div className="inline-flex items-center space-x-2">
                     <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
                     <span className="text-xl sm:text-2xl font-bold text-black font-tenor-sans">Our Team</span>
                   </div>
                 </div>
                 
-                <div className="w-full pt-16 h-full flex flex-col justify-center">
+                <div className="w-full">
                   <div ref={containerRef} className="space-y-8">
                     {/* Main Heading */}
                     <h1 className="text-[3.6rem] sm:text-[4.1rem] md:text-[4.6rem] lg:text-[5.6rem] font-bold text-slate-900 leading-[1.1] tracking-tight font-tenor-sans">
@@ -97,7 +96,7 @@ const OurTeams = () => {
 
             {/* Right Section - 40% */}
             <div className="w-[40%] pl-4">
-              <div className="relative h-full">
+              <div className="relative">
                 {/* Navigation Buttons - positioned at top-right of section */}
                 <div className="absolute top-8 right-8 flex space-x-2 z-20">
                   <CustomNavButton
@@ -111,14 +110,13 @@ const OurTeams = () => {
                     disabled={false}
                   />
                 </div>
-                <div className="h-full flex items-center justify-center">
+                <div className="pt-16">
                   <MarqueeCards ref={marqueeRef} className="w-full h-[500px]" />
                 </div>
               </div>
             </div>
 
           </div>
-        </div>
         </div>
       </div>
     </section>

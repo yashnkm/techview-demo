@@ -2,7 +2,7 @@ import AnimatedArrowButton from '../UI/AnimatedArrowButton'
 
 const Solutions = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* Same background textures as Hero */}
       <div className="absolute inset-0" 
            style={{

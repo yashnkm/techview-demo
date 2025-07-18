@@ -53,55 +53,58 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    // Hide elements initially
-    gsap.set([badgeRef.current, headingRef.current, leftCardsRef.current, formRef.current], {
-      opacity: 0
-    });
-    
-    gsap.set(headingRef.current, {
-      y: 30,
-      opacity: 0
-    });
-    
-    gsap.set([leftCardsRef.current, formRef.current], {
-      y: 20,
-      opacity: 0
-    });
+    const ctx = gsap.context(() => {
+      if (!badgeRef.current || !headingRef.current || !leftCardsRef.current || !formRef.current) return;
 
-    // Synchronized animations at 4.2s timing
-    const tl = gsap.timeline();
-    
-    tl.to(badgeRef.current, {
-      opacity: 1,
-      duration: 0.64,
-      ease: "power2.out"
-    }, 4.2)
-    .to(headingRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    }, 4.3)
-    .to(leftCardsRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    }, 4.4)
-    .to(formRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    }, 4.5);
+      // Hide elements initially
+      gsap.set([badgeRef.current, headingRef.current, leftCardsRef.current, formRef.current], {
+        opacity: 0
+      });
+      
+      gsap.set(headingRef.current, {
+        y: 30,
+        opacity: 0
+      });
+      
+      gsap.set([leftCardsRef.current, formRef.current], {
+        y: 20,
+        opacity: 0
+      });
 
-    return () => {
-      tl.kill();
-    };
+      // Synchronized animations at 4.2s timing
+      const tl = gsap.timeline();
+      
+      tl.to(badgeRef.current, {
+        opacity: 1,
+        duration: 0.64,
+        ease: "power2.out"
+      }, 4.2)
+      .to(headingRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      }, 4.3)
+      .to(leftCardsRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      }, 4.4)
+      .to(formRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      }, 4.5);
+
+    }, containerRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={containerRef} className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section ref={containerRef} className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* TechView signature background textures */}
       <div className="absolute inset-0" 
            style={{
@@ -122,21 +125,22 @@ const Contact = () => {
            }}>
       </div>
 
-      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-28">
+      <div ref={containerRef} className="w-full">
         <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
-          
-          {/* Contact Badge */}
-          <div ref={badgeRef} className="mb-16">
-            <div className="inline-flex items-center space-x-2">
-              <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-              <span className="text-xl sm:text-2xl font-bold text-black font-tenor-sans">Contact</span>
+          <div className="px-4 sm:px-6 md:px-8 py-16">
+            
+            {/* Contact Badge */}
+            <div ref={badgeRef} className="mb-8">
+              <div className="inline-flex items-center space-x-2">
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
+                <span className="text-xl sm:text-2xl font-bold text-black font-tenor-sans">Contact</span>
+              </div>
             </div>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-8 items-start min-h-[41.25rem]">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-8 items-stretch">
             
             {/* Left Side - Contact Information Cards */}
-            <div ref={leftCardsRef} className="lg:col-span-4 space-y-6">
+            <div ref={leftCardsRef} className="lg:col-span-4 flex flex-col gap-6 h-full">
               
               {/* Chat to us Card */}
               <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group">
@@ -195,23 +199,23 @@ const Contact = () => {
             </div>
 
             {/* Right Side - Main Form Area */}
-            <div ref={formRef} className="lg:col-span-8">
-              <div className="rounded-2xl p-12 lg:p-16 shadow-xl" style={{backgroundColor: '#74f5a2'}}>
+            <div ref={formRef} className="lg:col-span-8 h-full">
+              <div className="rounded-2xl p-8 lg:p-12 shadow-xl h-full flex flex-col" style={{backgroundColor: '#74f5a2'}}>
                 
                 {/* Hero Text */}
-                <div className="mb-12">
-                  <h1 ref={headingRef} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black leading-[1.1] tracking-tight font-tenor-sans mb-6">
+                <div className="mb-8">
+                  <h1 ref={headingRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-[1.1] tracking-tight font-tenor-sans mb-4">
                     Got <span className="italic font-normal">ideas</span>?<br />
                     We've got the skills.<br />
                     <span className="text-black">Let's team up.</span>
                   </h1>
-                  <p className="text-xl sm:text-2xl text-black font-tenor-sans leading-relaxed opacity-90">
+                  <p className="text-lg sm:text-xl text-black font-tenor-sans leading-relaxed opacity-90">
                     Tell us more about yourself and what you've got in mind.
                   </p>
                 </div>
 
                 {/* Contact Form */}
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col justify-between">
                   
                   {/* Name and Email Row */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -223,7 +227,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black font-tenor-sans text-lg placeholder-black focus:outline-none transition-colors"
+                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black font-tenor-sans text-lg placeholder-black placeholder-opacity-70 focus:outline-none transition-colors"
                         placeholder="Your name"
                       />
                     </div>
@@ -236,7 +240,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black font-tenor-sans text-lg placeholder-black focus:outline-none transition-colors"
+                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black font-tenor-sans text-lg placeholder-black placeholder-opacity-70 focus:outline-none transition-colors"
                         placeholder="you@company.com"
                       />
                     </div>
@@ -297,6 +301,7 @@ const Contact = () => {
                 </form>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>

@@ -113,14 +113,14 @@ const Blog = () => {
            }}>
       </div>
 
-      <div ref={containerRef} className="w-full border-4 border-red-500">
-        <div className="max-w-[9.24xl] mx-auto border-4 border-blue-500" style={{maxWidth: '110.88rem'}}>
-          <div className="flex border-4 border-green-500">
+      <div ref={containerRef} className="w-full">
+        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
+          <div className="flex">
             
             {/* Left Side - Sticky (30% width) */}
             <div 
               ref={leftSideRef}
-              className="w-[30%] relative border-4 border-yellow-500"
+              className="w-[30%] relative"
             >
               <div className="sticky top-0 h-screen flex items-center justify-center p-8">
                 <div className="relative">
@@ -140,7 +140,7 @@ const Blog = () => {
             </div>
 
             {/* Right Side - Scrollable (70% width) */}
-            <div className="w-[70%] relative border-4 border-purple-500">
+            <div className="w-[70%] relative">
               {/* Section Header */}
               <div className="sticky top-0 bg-[#efeeef] z-10 pt-8 pb-4 px-8">
                 <div className="inline-flex items-center space-x-2 mb-6">
@@ -158,7 +158,7 @@ const Blog = () => {
                     ref={(el) => {
                       if (el) cardsRef.current[index] = el;
                     }}
-                    className="min-h-screen flex flex-col justify-center py-16 px-8 border-4 border-orange-500"
+                    className="min-h-screen flex flex-col justify-center py-16 px-8"
                   >
                     <div className="w-full h-full bg-white rounded-2xl p-8 shadow-lg border border-gray-200 mx-4 my-4">
                       <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-900 leading-tight mb-6 font-tenor-sans">
