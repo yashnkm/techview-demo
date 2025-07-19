@@ -117,10 +117,10 @@ const Blog = () => {
         <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
           <div className="flex">
             
-            {/* Left Side - Sticky (30% width) */}
+            {/* Left Side - Sticky (30% width) - Hidden on mobile */}
             <div 
               ref={leftSideRef}
-              className="w-[30%] relative"
+              className="hidden lg:block w-[30%] relative"
             >
               <div className="sticky top-0 h-screen flex items-center justify-center p-8">
                 <div className="relative">
@@ -139,11 +139,11 @@ const Blog = () => {
               </div>
             </div>
 
-            {/* Right Side - Scrollable (70% width) */}
-            <div className="w-[70%] relative">
+            {/* Right Side - Scrollable (70% width on desktop, 100% on mobile) */}
+            <div className="w-full lg:w-[70%] relative">
               {/* Section Header */}
-              <div className="sticky top-0 bg-[#efeeef] z-10 pt-8 pb-4 px-8">
-                <div className="inline-flex items-center space-x-2 mb-6">
+              <div className="sticky top-0 bg-[#efeeef] z-10 pt-4 sm:pt-8 pb-2 sm:pb-4 px-4 sm:px-8">
+                <div className="inline-flex items-center space-x-2 mb-4 sm:mb-6">
                   <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
                   <span className="text-xl sm:text-2xl font-bold text-black">Blogs & Resources</span>
                 </div>
@@ -158,43 +158,43 @@ const Blog = () => {
                     ref={(el) => {
                       if (el) cardsRef.current[index] = el;
                     }}
-                    className="min-h-screen flex flex-col justify-center py-16 px-8"
+                    className="min-h-screen flex flex-col justify-center py-8 sm:py-12 lg:py-16 px-4 sm:px-8"
                   >
-                    <div className="w-full h-full bg-white rounded-2xl p-8 shadow-lg border border-gray-200 mx-4 my-4">
-                      <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-slate-900 leading-tight mb-6">
+                    <div className="w-full h-full bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-200 mx-0 sm:mx-2 lg:mx-4 my-2 sm:my-4">
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-slate-900 leading-tight mb-3 sm:mb-4 lg:mb-6">
                         {card.title}
                       </h2>
                       
-                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-slate-700 mb-12">
+                      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-slate-700 mb-6 sm:mb-8 lg:mb-12">
                         {card.subtitle}
                       </h3>
                       
-                      <div className="space-y-8 text-base lg:text-lg text-slate-700 leading-relaxed">
-                        <p className="font-semibold mb-8">{card.content}</p>
+                      <div className="space-y-4 sm:space-y-6 lg:space-y-8 text-sm sm:text-base lg:text-lg text-slate-700 leading-relaxed">
+                        <p className="font-semibold mb-4 sm:mb-6 lg:mb-8">{card.content}</p>
                         {card.additionalContent && (
-                          <p className="mb-8">{card.additionalContent}</p>
+                          <p className="mb-4 sm:mb-6 lg:mb-8">{card.additionalContent}</p>
                         )}
                         {card.detailedContent && (
-                          <p className="bg-slate-50 p-6 rounded-lg mb-8">{card.detailedContent}</p>
+                          <p className="bg-slate-50 p-3 sm:p-4 lg:p-6 rounded-lg mb-4 sm:mb-6 lg:mb-8">{card.detailedContent}</p>
                         )}
                         
                         {/* Tips section */}
                         {card.tips && (
-                          <div className="mt-8 p-6 bg-green-50 border-l-4 border-green-400 rounded-r-lg">
-                            <h4 className="text-xl font-bold text-slate-900 mb-3">
+                          <div className="mt-4 sm:mt-6 lg:mt-8 p-3 sm:p-4 lg:p-6 bg-green-50 border-l-4 border-green-400 rounded-r-lg">
+                            <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">
                               💡 Expert Tips
                             </h4>
-                            <p className="text-sm lg:text-base text-slate-700">{card.tips}</p>
+                            <p className="text-xs sm:text-sm lg:text-base text-slate-700">{card.tips}</p>
                           </div>
                         )}
                         
                         {/* The result section */}
-                        <div className="mt-12 pt-8 border-t border-slate-300">
-                          <h4 className="text-3xl font-bold text-slate-900 mb-6">
+                        <div className="mt-6 sm:mt-8 lg:mt-12 pt-4 sm:pt-6 lg:pt-8 border-t border-slate-300">
+                          <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-3 sm:mb-4 lg:mb-6">
                             Ready to get started?
                           </h4>
-                          <div className="flex items-center space-x-4 cursor-pointer group">
-                            <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
+                          <div className="flex items-center space-x-3 sm:space-x-4 cursor-pointer group">
+                            <span className="text-lg sm:text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
                               Read full guide
                             </span>
                             <div className="group-hover:scale-110 transition-transform flex items-center">

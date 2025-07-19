@@ -114,7 +114,7 @@ const Hero = () => {
 
             {/* Main Heading */}
             <div className="mb-8">
-              <h1 ref={headingRef} className="text-[3.8rem] sm:text-[4.3rem] md:text-[5rem] lg:text-[6.2rem] font-bold text-black leading-[1.1] tracking-tight">
+              <h1 ref={headingRef} className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-black leading-[1.1] tracking-tight">
                 {/* Mobile & Tablet - Static text */}
                 <span className="lg:hidden">
                   One partner,<br />

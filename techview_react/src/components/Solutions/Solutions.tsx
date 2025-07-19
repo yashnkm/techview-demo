@@ -27,8 +27,8 @@ const Solutions = () => {
         <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-2 items-center min-h-[41.25rem]">
           
-          {/* Left Side - Professional Image */}
-          <div className="lg:col-span-5 relative p-4 h-full flex flex-col mr-1">
+          {/* Left Side - Professional Image - Hidden on mobile */}
+          <div className="hidden lg:flex lg:col-span-5 relative p-4 h-full flex-col mr-1">
             {/* Our Services Badge */}
             <div className="mb-6">
               <div className="inline-flex items-center space-x-2">
@@ -60,8 +60,16 @@ const Solutions = () => {
             </div>
           </div>
 
-          {/* Right Side - Services Content */}
+          {/* Services Content - Full width on mobile, partial on desktop */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left p-2">
+            
+            {/* Mobile Our Services Badge */}
+            <div className="lg:hidden mb-6">
+              <div className="inline-flex items-center space-x-2">
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
+                <span className="text-xl sm:text-2xl font-bold text-black">Our Services</span>
+              </div>
+            </div>
 
             {/* Main Heading */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-slate-900 leading-[0.85] tracking-tight">
@@ -71,69 +79,75 @@ const Solutions = () => {
             </h1>
 
 
-            {/* Services Grid - Bigger megamenu without outer border */}
+            {/* Services Grid - Mobile optimized: equal height cards stacked vertically */}
             <div className="pt-[2rem]">
-              <div className="flex flex-col gap-1">
-                {/* Top row - 3 cards */}
-                <div className="flex flex-col md:flex-row gap-1">
+              <div className="flex flex-col gap-3 md:gap-1">
+                {/* Mobile: All cards stacked vertically with equal height */}
+                {/* Desktop: Top row - 3 cards */}
+                <div className="flex flex-col md:flex-row gap-3 md:gap-1">
                   {/* AI Solutions */}
-                  <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.1s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                  <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.1s both'}}>
+                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-base md:text-lg lg:text-xl">AI Solutions</h3>
+                        <h3 className="font-bold text-slate-800 text-lg md:text-lg lg:text-xl">AI Solutions</h3>
+                        <p className="text-sm text-slate-600 mt-2 md:hidden">Custom AI models and machine learning solutions</p>
                       </div>
-                      <div className="absolute bottom-6 right-6 group-hover/card:scale-110 transition-transform duration-300">
+                      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
                     </div>
                   </div>
 
                   {/* Web Development */}
-                  <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.2s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                  <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.2s both'}}>
+                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-base md:text-lg lg:text-xl">Web<br />Development</h3>
+                        <h3 className="font-bold text-slate-800 text-lg md:text-lg lg:text-xl">Web Development</h3>
+                        <p className="text-sm text-slate-600 mt-2 md:hidden">Modern web applications and responsive designs</p>
                       </div>
-                      <div className="absolute bottom-6 right-6 group-hover/card:scale-110 transition-transform duration-300">
+                      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
                     </div>
                   </div>
 
                   {/* Business Intelligence */}
-                  <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.3s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                  <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.3s both'}}>
+                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-base md:text-lg lg:text-xl">Business<br />Intelligence</h3>
+                        <h3 className="font-bold text-slate-800 text-lg md:text-lg lg:text-xl">Business Intelligence</h3>
+                        <p className="text-sm text-slate-600 mt-2 md:hidden">Data analytics and intelligent reporting tools</p>
                       </div>
-                      <div className="absolute bottom-6 right-6 group-hover/card:scale-110 transition-transform duration-300">
+                      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Bottom row - 2 cards */}
-                <div className="flex gap-1">
+                {/* Mobile: Continue vertical stack | Desktop: Bottom row - 2 cards */}
+                <div className="flex flex-col md:flex-row gap-3 md:gap-1">
                   {/* Cloud Solutions */}
-                  <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.4s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                  <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.4s both'}}>
+                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-base md:text-lg lg:text-xl">Cloud Solutions</h3>
+                        <h3 className="font-bold text-slate-800 text-lg md:text-lg lg:text-xl">Cloud Solutions</h3>
+                        <p className="text-sm text-slate-600 mt-2 md:hidden">Scalable cloud infrastructure and deployment</p>
                       </div>
-                      <div className="absolute bottom-6 right-6 group-hover/card:scale-110 transition-transform duration-300">
+                      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
                     </div>
                   </div>
 
                   {/* Mobile Apps */}
-                  <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.5s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-40 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                  <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.5s both'}}>
+                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-base md:text-lg lg:text-xl">Mobile Apps</h3>
+                        <h3 className="font-bold text-slate-800 text-lg md:text-lg lg:text-xl">Mobile Apps</h3>
+                        <p className="text-sm text-slate-600 mt-2 md:hidden">Native and cross-platform mobile applications</p>
                       </div>
-                      <div className="absolute bottom-6 right-6 group-hover/card:scale-110 transition-transform duration-300">
+                      <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
                     </div>

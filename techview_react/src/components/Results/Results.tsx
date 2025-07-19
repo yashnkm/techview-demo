@@ -41,16 +41,16 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="bg-white p-20 rounded-xl shadow-sm border border-gray-100 min-w-[900px] lg:min-w-[1200px] transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-gray-200 group cursor-grab">
-    <div className="mb-16">
-      <p className="text-3xl lg:text-4xl text-slate-800 leading-relaxed group-hover:text-slate-900 transition-colors duration-300">
+  <div className="bg-white p-6 sm:p-10 md:p-16 lg:p-20 rounded-xl shadow-sm border border-gray-100 min-w-[280px] sm:min-w-[400px] md:min-w-[600px] lg:min-w-[1000px] transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-gray-200 group cursor-grab">
+    <div className="mb-6 sm:mb-10 md:mb-14 lg:mb-16">
+      <p className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl text-slate-800 leading-relaxed group-hover:text-slate-900 transition-colors duration-300">
         "{testimonial.quote}"
       </p>
     </div>
     <div className="flex items-center justify-end">
       <div className="text-right">
-        <p className="font-semibold text-slate-900 text-lg group-hover:text-black transition-colors duration-300">{testimonial.name}</p>
-        <p className="text-slate-600 text-base group-hover:text-slate-700 transition-colors duration-300">{testimonial.title} - {testimonial.company}</p>
+        <p className="font-semibold text-slate-900 text-sm sm:text-base lg:text-lg group-hover:text-black transition-colors duration-300">{testimonial.name}</p>
+        <p className="text-slate-600 text-xs sm:text-sm lg:text-base group-hover:text-slate-700 transition-colors duration-300">{testimonial.title} - {testimonial.company}</p>
       </div>
     </div>
   </div>
@@ -62,7 +62,19 @@ const Results = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
 
-  const cardWidth = 1240; // Card width + gap
+  // Responsive card widths
+  const getCardWidth = () => {
+    if (typeof window !== 'undefined') {
+      const width = window.innerWidth;
+      if (width < 640) return 300; // Mobile: 280px card + 20px gap
+      if (width < 768) return 420; // SM: 400px card + 20px gap
+      if (width < 1024) return 620; // MD: 600px card + 20px gap
+      return 1020; // LG+: 1000px card + 20px gap
+    }
+    return 1020; // Default for SSR
+  };
+
+  const [cardWidth, setCardWidth] = useState(getCardWidth());
   const maxScroll = (testimonials.length - 1) * cardWidth;
 
   const nextSlide = () => {
@@ -87,9 +99,19 @@ const Results = () => {
     }
   };
 
+  // Handle window resize for responsive card widths
+  useEffect(() => {
+    const handleResize = () => {
+      setCardWidth(getCardWidth());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   useEffect(() => {
     updatePosition(currentIndex);
-  }, [currentIndex, isDragging]);
+  }, [currentIndex, isDragging, cardWidth]);
 
   useEffect(() => {
     if (!carouselRef.current || !containerRef.current) return;
@@ -132,7 +154,7 @@ const Results = () => {
         draggable[0].kill();
       }
     };
-  }, [currentIndex, maxScroll, cardWidth]);
+  }, [currentIndex, cardWidth, maxScroll]);
 
   return (
     <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
@@ -172,7 +194,7 @@ const Results = () => {
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center pt-8">
               <div className="lg:col-span-6">
-                <h2 className="text-[3.6rem] sm:text-[4.1rem] md:text-[4.6rem] lg:text-[5.6rem] font-bold text-slate-900 leading-[1.1] tracking-tight">
+                <h2 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-slate-900 leading-[1.1] tracking-tight">
                   Driven by an<br />
                   <span className="italic font-normal">innovation</span> mindset
                 </h2>
@@ -213,8 +235,8 @@ const Results = () => {
             <div ref={containerRef} className="overflow-hidden cursor-grab active:cursor-grabbing">
               <div 
                 ref={carouselRef}
-                className="flex space-x-5"
-                style={{ width: `${testimonials.length * 1240}px` }}
+                className="flex space-x-3 sm:space-x-4 md:space-x-5"
+                style={{ width: `${testimonials.length * cardWidth}px` }}
               >
                 {testimonials.map((testimonial, index) => (
                   <TestimonialCard key={index} testimonial={testimonial} />
