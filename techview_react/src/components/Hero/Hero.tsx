@@ -1,13 +1,81 @@
 import AnimatedArrowButton from '../UI/AnimatedArrowButton';
-import ScrambleText from '../UI/ScrambleText';
-import PhoneMockup from '../PhoneMockup/PhoneMockup';
-import { useRef } from 'react';
+import SimplePhone from '../PhoneMockup/SimplePhone';
+import { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { scrollManager } from '../../utils/scrollSmoother';
 
 const Hero = () => {
-  const rightSideRef = useRef<HTMLDivElement>(null);
+  const phoneRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const subtextRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  const handleSolutionsClick = () => {
+    scrollManager.scrollTo('#solutions');
+  };
+
+  useEffect(() => {
+    // Hide elements initially
+    gsap.set([phoneRef.current, dotRef.current, headingRef.current, subtextRef.current, ctaRef.current], {
+      opacity: 0
+    });
+    
+    gsap.set(phoneRef.current, {
+      scale: 0.8,
+      opacity: 0
+    });
+    
+    gsap.set(headingRef.current, {
+      y: 30,
+      opacity: 0
+    });
+    
+    gsap.set(subtextRef.current, {
+      y: 30,
+      opacity: 0
+    });
+
+    // All animations at 4.2s - synchronized (faster loading)
+    const tl = gsap.timeline();
+    
+    tl.to(dotRef.current, {
+      opacity: 1,
+      duration: 0.64,
+      ease: "power2.out"
+    }, 4.2)
+    .to(headingRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out"
+    }, 4.3)
+    .to(subtextRef.current, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out"
+    }, 4.4)
+    .to(phoneRef.current, {
+      scale: 1,
+      opacity: 1,
+      duration: 0.96,
+      ease: "power2.out"
+    }, 4.2)
+    // CTA (text + arrow) simple fade-in animation
+    .to(ctaRef.current, {
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out"
+    }, 4.2); // Same exact timing as SplitText delay
+
+    return () => {
+      tl.kill();
+    };
+  }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
       {/* Grainy Texture Background */}
       <div className="absolute inset-0" 
            style={{
@@ -32,54 +100,73 @@ const Hero = () => {
            }}>
       </div>
 
-      {/* Background decorative elements - Green shapes removed */}
-      <div className="absolute inset-0 pointer-events-none">
-      </div>
-
-      <div className="w-full px-10 lg:px-12 py-32">
-        <div className="grid lg:grid-cols-12 gap-16 items-start min-h-[calc(100vh-200px)] w-full">
-          {/* Left Content - Takes up more space like original */}
-          <div className="lg:col-span-6 space-y-6">
-            {/* Badge - Simple text with dot */}
-            <div className="inline-flex items-center space-x-2 ml-4">
-              <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-              <span className="text-xl font-bold text-black">
+      <div className="w-full px-4 sm:px-6 md:px-8 py-12 sm:py-24 lg:py-32">
+        <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-0 items-center min-h-[50rem]">
+          <div className="lg:col-span-8 text-center lg:text-left pt-16 h-full">
+            {/* Badge */}
+            <div className="inline-flex items-center space-x-2 justify-center lg:justify-start mb-6">
+              <div ref={dotRef} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
+              <span className="text-xl sm:text-2xl font-bold text-black">
                 Intelligent Business Solutions
               </span>
             </div>
 
-            {/* Main Heading - New structure with scramble text */}
-            <h1 className="text-6xl lg:text-7xl xl:text-8xl font-extrabold text-slate-900 leading-[0.9] tracking-tight" style={{fontFamily: "'Space Grotesk', sans-serif", fontWeight: '900'}}>
-              One partner,<br />
-              for all your<br />
-              <ScrambleText 
-                texts={['tech solutions', 'business needs', 'digital goals', 'growth plans']}
-                duration={2500}
-                scrambleDuration={0.6}
-              /><br />
-              <span className="text-slate-600 font-extrabold" style={{fontWeight: '900'}}>Step into TechView</span>
-            </h1>
-
-            {/* Subtext - Positioned lower like original */}
-            <div className="pt-4 max-w-2xl">
-              <p className="text-xl lg:text-2xl text-slate-600 leading-relaxed font-light">
-                Custom AI solutions and modern web applications designed specifically for your need. We build intelligent business tools that works for you.
-              </p>
+            {/* Main Heading */}
+            <div className="mb-8">
+              <h1 ref={headingRef} className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-black leading-[1.1] tracking-tight">
+                {/* Mobile & Tablet - Static text */}
+                <span className="lg:hidden">
+                  One partner,<br />
+                  for all your <span className="italic font-normal">Tech Solutions</span><br />
+                  <span className="text-black font-bold">Step into TechView</span>
+                </span>
+                
+                {/* Desktop - Static text */}
+                <span className="hidden lg:block">
+                  One partner,<br />
+                  for all your <span className="italic font-normal">Tech Solutions</span><br />
+                  <span className="text-black font-bold">Step into TechView</span>
+                </span>
+              </h1>
             </div>
 
-            {/* CTA Section */}
-            <div className="pt-12 flex items-center space-x-4">
-              {/* Text */}
-              <span className="text-xl font-semibold text-slate-800">See Our Solutions</span>
-              
-              {/* Standardized Animated Arrow Button */}
-              <AnimatedArrowButton arrowDirection="down" size="md" />
+            {/* Subtext */}
+            <div className="mt-16 w-full">
+              <div ref={subtextRef} className="w-full space-y-2">
+                <p className="text-xl sm:text-2xl lg:text-3xl text-black leading-[1.6] font-normal">
+                  We build, automate and engineer personalized tech solutions
+                </p>
+                <p className="text-xl sm:text-2xl lg:text-3xl text-black leading-[1.6] font-normal">
+                  that help you and your business
+                </p>
+                <p className="text-xl sm:text-2xl lg:text-3xl text-black leading-[1.6] font-normal">
+                  to gain a competitive edge.
+                </p>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div 
+              ref={ctaRef}
+              className="mt-16 flex items-center justify-center lg:justify-start space-x-4 cursor-pointer group"
+              onClick={handleSolutionsClick}
+            >
+              <span className="text-xl sm:text-2xl font-bold text-black transition-colors">
+                See Our Solutions
+              </span>
+              <div className="group-hover:scale-110 transition-transform flex items-center">
+                <AnimatedArrowButton arrowDirection="down" size="md" />
+              </div>
             </div>
           </div>
 
-          {/* Right Content - Phone Mockup */}
-          <div className="lg:col-span-6 relative flex items-start justify-center mt-20" ref={rightSideRef}>
-            <PhoneMockup className="scale-125" />
+          {/* Phone - Hidden on mobile/tablet */}
+          <div className="hidden lg:flex lg:col-span-4 relative items-center justify-end pr-48 h-full">
+            <div ref={phoneRef}>
+              <SimplePhone className="scale-110" />
+            </div>
+          </div>
           </div>
         </div>
       </div>

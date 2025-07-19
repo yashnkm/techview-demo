@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        'akkurat': ['Akkurat', 'Inter', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
       },
     },
