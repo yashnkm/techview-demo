@@ -5,11 +5,11 @@ import AnimatedArrowButton from '../UI/AnimatedArrowButton';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [hoverTimeout, setHoverTimeout] = useState<number | null>(null);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const megaMenuRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
-  const headerRef = useRef<HTMLHeaderElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     // Hide header initially

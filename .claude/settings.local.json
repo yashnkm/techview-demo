@@ -25,7 +25,11 @@
       "Bash(cd:*)",
       "Bash(cd:*)",
       "Bash(cd:*)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "WebFetch(domain:www.cssscript.com)",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:tailwindflex.com)",
+      "WebFetch(domain:freefrontend.com)"
     ],
     "deny": []
   }

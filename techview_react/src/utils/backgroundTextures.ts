@@ -5,29 +5,18 @@ export const backgroundTextures = {
   radialGradient: `radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0.05) 0%, transparent 50%)`
 };
 
-export const TechViewBackground = ({ children }: { children: React.ReactNode }) => (
-  <div className="relative">
-    <div 
-      className="absolute inset-0" 
-      style={{
-        backgroundImage: backgroundTextures.noiseFilter,
-        backgroundSize: '180px 180px'
-      }}
-    />
-    <div 
-      className="absolute inset-0 opacity-15"
-      style={{
-        backgroundImage: backgroundTextures.grain,
-        backgroundSize: '50px 50px'
-      }}
-    />
-    <div 
-      className="absolute inset-0 opacity-10"
-      style={{
-        backgroundImage: backgroundTextures.radialGradient,
-        backgroundSize: '400px 400px, 300px 300px, 200px 200px'
-      }}
-    />
-    {children}
-  </div>
-);
+// Style objects for background layers
+export const backgroundStyles = {
+  noiseLayer: {
+    backgroundImage: backgroundTextures.noiseFilter,
+    backgroundSize: '180px 180px'
+  },
+  grainLayer: {
+    backgroundImage: backgroundTextures.grain,
+    backgroundSize: '50px 50px'
+  },
+  radialLayer: {
+    backgroundImage: backgroundTextures.radialGradient,
+    backgroundSize: '400px 400px, 300px 300px, 200px 200px'
+  }
+};

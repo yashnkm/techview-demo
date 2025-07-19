@@ -63,7 +63,7 @@ const Blog = () => {
       });
 
       // Animate cards on scroll
-      cardsRef.current.forEach((card, index) => {
+      cardsRef.current.forEach((card) => {
         if (!card) return;
 
         gsap.fromTo(card,

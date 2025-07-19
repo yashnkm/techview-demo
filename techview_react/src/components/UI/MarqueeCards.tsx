@@ -86,7 +86,7 @@ export interface MarqueeCardsRef {
 const MarqueeCards = forwardRef<MarqueeCardsRef, MarqueeCardsProps>(({ className = '' }, ref) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isPaused] = useState(false);
   const [isCardHovered, setIsCardHovered] = useState(false);
   const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);
   const animationRef = useRef<gsap.core.Timeline | null>(null);
@@ -299,4 +299,3 @@ const MarqueeCards = forwardRef<MarqueeCardsRef, MarqueeCardsProps>(({ className
 MarqueeCards.displayName = 'MarqueeCards';
 
 export default MarqueeCards;
-export type { MarqueeCardsRef };
