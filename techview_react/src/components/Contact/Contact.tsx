@@ -103,24 +103,54 @@ const Contact = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section ref={containerRef} className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
       {/* TechView signature background textures */}
-      <div className="absolute inset-0" 
+      {/* Heavy Random Grain Texture - Light */}
+      <div className="absolute inset-0 opacity-60 dark:opacity-40 transition-opacity duration-500" 
            style={{
-             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E")`,
-             backgroundSize: '180px 180px'
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='contactHeavyGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.3 1 1 1 0 0.3 1 1 1 0 0.3 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23contactHeavyGrain)' fill='white' opacity='0.4'/%3E%3C/svg%3E")`,
+             backgroundSize: '200px 200px'
            }}>
       </div>
-      <div className="absolute inset-0 opacity-15"
+
+      {/* Fine Random Grain Overlay */}
+      <div className="absolute inset-0 opacity-40 dark:opacity-25 transition-opacity duration-500"
            style={{
-             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.95' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.05'/%3E%3C/svg%3E")`,
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='contactFineGrain'%3E%3CfeTurbulence type='turbulence' baseFrequency='3.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.4 1 1 1 0 0.4 1 1 1 0 0.4 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23contactFineGrain)' fill='white' opacity='0.3'/%3E%3C/svg%3E")`,
+             backgroundSize: '100px 100px'
+           }}>
+      </div>
+
+      {/* Ultra Fine Grain Detail */}
+      <div className="absolute inset-0 opacity-30 dark:opacity-20 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='contactUltraFineGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.2' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.5 1 1 1 0 0.5 1 1 1 0 0.5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23contactUltraFineGrain)' fill='white' opacity='0.25'/%3E%3C/svg%3E")`,
              backgroundSize: '50px 50px'
            }}>
       </div>
-      <div className="absolute inset-0 opacity-10"
+
+      {/* Dark grain textures for light mode */}
+      {/* Heavy Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-25 dark:opacity-0 transition-opacity duration-500" 
            style={{
-             backgroundImage: `radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0.05) 0%, transparent 50%)`,
-             backgroundSize: '400px 400px, 300px 300px, 200px 200px'
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='contactDarkHeavyGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23contactDarkHeavyGrain)' fill='black' opacity='0.3'/%3E%3C/svg%3E")`,
+             backgroundSize: '200px 200px'
+           }}>
+      </div>
+
+      {/* Fine Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-20 dark:opacity-0 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='contactDarkFineGrain'%3E%3CfeTurbulence type='turbulence' baseFrequency='3.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23contactDarkFineGrain)' fill='black' opacity='0.25'/%3E%3C/svg%3E")`,
+             backgroundSize: '100px 100px'
+           }}>
+      </div>
+
+      {/* Ultra Fine Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-15 dark:opacity-0 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='contactDarkUltraFineGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.2' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23contactDarkUltraFineGrain)' fill='black' opacity='0.2'/%3E%3C/svg%3E")`,
+             backgroundSize: '50px 50px'
            }}>
       </div>
 
@@ -132,7 +162,7 @@ const Contact = () => {
             <div ref={badgeRef} className="mb-8">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black">Contact</span>
+                <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Contact</span>
               </div>
             </div>
 
@@ -142,7 +172,7 @@ const Contact = () => {
             <div ref={leftCardsRef} className="lg:col-span-4 flex flex-col gap-6 h-full">
               
               {/* Chat to us Card */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+              <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-transparent hover:shadow-xl dark:hover:shadow-none transition-all duration-300 group">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
                     <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
@@ -150,9 +180,9 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-black mb-2 group-hover:text-slate-800 transition-colors">Chat to us</h3>
-                    <p className="text-base text-slate-600 mb-3">Our friendly team is here to help.</p>
-                    <a href="mailto:hello@techview.ai" className="text-base text-black font-semibold hover:underline">
+                    <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-slate-800 dark:group-hover:text-gray-200 transition-colors duration-500">Chat to us</h3>
+                    <p className="text-base text-slate-600 dark:text-gray-300 mb-3 transition-colors duration-500">Our friendly team is here to help.</p>
+                    <a href="mailto:hello@techview.ai" className="text-base text-black dark:text-white font-semibold hover:underline transition-colors duration-500">
                       hello@techview.ai
                     </a>
                   </div>
@@ -160,7 +190,7 @@ const Contact = () => {
               </div>
 
               {/* Visit us Card */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+              <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-transparent hover:shadow-xl dark:hover:shadow-none transition-all duration-300 group">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
                     <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
@@ -168,9 +198,9 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-black mb-2 group-hover:text-slate-800 transition-colors">Visit us</h3>
-                    <p className="text-base text-slate-600 mb-3">Come say hello at our office HQ.</p>
-                    <div className="text-base text-black font-semibold">
+                    <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-slate-800 dark:group-hover:text-gray-200 transition-colors duration-500">Visit us</h3>
+                    <p className="text-base text-slate-600 dark:text-gray-300 mb-3 transition-colors duration-500">Come say hello at our office HQ.</p>
+                    <div className="text-base text-black dark:text-white font-semibold transition-colors duration-500">
                       <p>100 Smith Street</p>
                       <p>San Francisco, CA 94102</p>
                     </div>
@@ -179,7 +209,7 @@ const Contact = () => {
               </div>
 
               {/* Call us Card */}
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+              <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-transparent hover:shadow-xl dark:hover:shadow-none transition-all duration-300 group">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
                     <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
@@ -187,9 +217,9 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-black mb-2 group-hover:text-slate-800 transition-colors">Call us</h3>
-                    <p className="text-base text-slate-600 mb-3">Mon-Fri from 8am to 5pm.</p>
-                    <a href="tel:+15551234567" className="text-base text-black font-semibold hover:underline">
+                    <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-slate-800 dark:group-hover:text-gray-200 transition-colors duration-500">Call us</h3>
+                    <p className="text-base text-slate-600 dark:text-gray-300 mb-3 transition-colors duration-500">Mon-Fri from 8am to 5pm.</p>
+                    <a href="tel:+15551234567" className="text-base text-black dark:text-white font-semibold hover:underline transition-colors duration-500">
                       +1 (555) 123-4567
                     </a>
                   </div>
@@ -292,7 +322,7 @@ const Contact = () => {
                   <div className="pt-8">
                     <button
                       type="submit"
-                      className="w-full py-4 bg-black text-white font-bold text-lg rounded-lg hover:bg-gray-800 transition-colors duration-200"
+                      className="w-full py-4 bg-black text-white font-bold text-lg rounded-lg hover:bg-black dark:hover:bg-black transition-colors duration-200"
                     >
                       Let's get started!
                     </button>

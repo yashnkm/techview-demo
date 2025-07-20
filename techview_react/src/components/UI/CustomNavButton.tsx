@@ -39,7 +39,7 @@ const CustomNavButton: React.FC<CustomNavButtonProps> = ({ direction, onClick, d
         w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-sm transition-all duration-300 flex items-center justify-center p-1 sm:p-1.5 md:p-2
         ${disabled 
           ? 'bg-gray-300 cursor-not-allowed' 
-          : 'bg-black hover:bg-gray-800'
+          : 'bg-black hover:bg-black dark:hover:bg-black'
         }
       `}
     >

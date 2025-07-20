@@ -8,6 +8,7 @@ import Blog from './components/Blog/Blog'
 import OurTeams from './components/OurTeams/OurTeams'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
+import DarkModeToggle from './components/UI/DarkModeToggle'
 import { scrollManager } from './utils/scrollSmoother'
 
 function App() {
@@ -25,9 +26,10 @@ function App() {
   }, [isLoading])
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-dark-bg transition-colors duration-500">
       {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
       <Header />
+      <DarkModeToggle />
       
       {/* ScrollSmoother wrapper */}
       <div id="smooth-wrapper">

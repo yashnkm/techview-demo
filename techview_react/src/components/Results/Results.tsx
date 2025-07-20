@@ -41,16 +41,16 @@ const testimonials: Testimonial[] = [
 ];
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-  <div className="bg-white p-6 sm:p-10 md:p-16 lg:p-20 rounded-xl shadow-sm border border-gray-100 min-w-[280px] sm:min-w-[400px] md:min-w-[600px] lg:min-w-[1000px] transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-gray-200 group cursor-grab">
+  <div className="bg-white dark:bg-black p-6 sm:p-10 md:p-16 lg:p-20 rounded-xl shadow-sm dark:shadow-none border border-gray-100 dark:border-transparent min-w-[280px] sm:min-w-[400px] md:min-w-[600px] lg:min-w-[1000px] transition-all duration-300 hover:shadow-lg dark:hover:shadow-none hover:scale-[1.02] hover:border-gray-200 dark:hover:border-transparent group cursor-grab">
     <div className="mb-6 sm:mb-10 md:mb-14 lg:mb-16">
-      <p className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl text-slate-800 leading-relaxed group-hover:text-slate-900 transition-colors duration-300">
+      <p className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl text-slate-800 dark:text-white leading-relaxed group-hover:text-slate-900 dark:group-hover:text-gray-200 transition-colors duration-300">
         "{testimonial.quote}"
       </p>
     </div>
     <div className="flex items-center justify-end">
       <div className="text-right">
-        <p className="font-semibold text-slate-900 text-sm sm:text-base lg:text-lg group-hover:text-black transition-colors duration-300">{testimonial.name}</p>
-        <p className="text-slate-600 text-xs sm:text-sm lg:text-base group-hover:text-slate-700 transition-colors duration-300">{testimonial.title} - {testimonial.company}</p>
+        <p className="font-semibold text-slate-900 dark:text-white text-sm sm:text-base lg:text-lg group-hover:text-black dark:group-hover:text-gray-200 transition-colors duration-300">{testimonial.name}</p>
+        <p className="text-slate-600 dark:text-gray-300 text-xs sm:text-sm lg:text-base group-hover:text-slate-700 dark:group-hover:text-gray-400 transition-colors duration-300">{testimonial.title} - {testimonial.company}</p>
       </div>
     </div>
   </div>
@@ -157,24 +157,54 @@ const Results = () => {
   }, [currentIndex, cardWidth, maxScroll]);
 
   return (
-    <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
       {/* Same background textures as Hero */}
-      <div className="absolute inset-0" 
+      {/* Heavy Random Grain Texture - Light */}
+      <div className="absolute inset-0 opacity-60 dark:opacity-40 transition-opacity duration-500" 
            style={{
-             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E")`,
-             backgroundSize: '180px 180px'
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='resultsHeavyGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.3 1 1 1 0 0.3 1 1 1 0 0.3 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23resultsHeavyGrain)' fill='white' opacity='0.4'/%3E%3C/svg%3E")`,
+             backgroundSize: '200px 200px'
            }}>
       </div>
-      <div className="absolute inset-0 opacity-15"
+
+      {/* Fine Random Grain Overlay */}
+      <div className="absolute inset-0 opacity-40 dark:opacity-25 transition-opacity duration-500"
            style={{
-             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.95' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.05'/%3E%3C/svg%3E")`,
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='resultsFineGrain'%3E%3CfeTurbulence type='turbulence' baseFrequency='3.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.4 1 1 1 0 0.4 1 1 1 0 0.4 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23resultsFineGrain)' fill='white' opacity='0.3'/%3E%3C/svg%3E")`,
+             backgroundSize: '100px 100px'
+           }}>
+      </div>
+
+      {/* Ultra Fine Grain Detail */}
+      <div className="absolute inset-0 opacity-30 dark:opacity-20 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='resultsUltraFineGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.2' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.5 1 1 1 0 0.5 1 1 1 0 0.5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23resultsUltraFineGrain)' fill='white' opacity='0.25'/%3E%3C/svg%3E")`,
              backgroundSize: '50px 50px'
            }}>
       </div>
-      <div className="absolute inset-0 opacity-10"
+
+      {/* Dark grain textures for light mode */}
+      {/* Heavy Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-25 dark:opacity-0 transition-opacity duration-500" 
            style={{
-             backgroundImage: `radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0.05) 0%, transparent 50%)`,
-             backgroundSize: '400px 400px, 300px 300px, 200px 200px'
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='resultsDarkHeavyGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23resultsDarkHeavyGrain)' fill='black' opacity='0.3'/%3E%3C/svg%3E")`,
+             backgroundSize: '200px 200px'
+           }}>
+      </div>
+
+      {/* Fine Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-20 dark:opacity-0 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='resultsDarkFineGrain'%3E%3CfeTurbulence type='turbulence' baseFrequency='3.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23resultsDarkFineGrain)' fill='black' opacity='0.25'/%3E%3C/svg%3E")`,
+             backgroundSize: '100px 100px'
+           }}>
+      </div>
+
+      {/* Ultra Fine Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-15 dark:opacity-0 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='resultsDarkUltraFineGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.2' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23resultsDarkUltraFineGrain)' fill='black' opacity='0.2'/%3E%3C/svg%3E")`,
+             backgroundSize: '50px 50px'
            }}>
       </div>
 
@@ -188,23 +218,23 @@ const Results = () => {
             <div className="absolute top-6 left-8">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black">Results</span>
+                <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Results</span>
               </div>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center pt-8">
               <div className="lg:col-span-6">
-                <h2 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-slate-900 leading-[1.1] tracking-tight">
+                <h2 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-slate-900 dark:text-white leading-[1.1] tracking-tight transition-colors duration-500">
                   Driven by an<br />
                   <span className="italic font-normal">innovation</span> mindset
                 </h2>
               </div>
               <div className="lg:col-span-6 flex flex-col">
-                <p className="text-base sm:text-lg lg:text-xl text-black leading-relaxed mb-6 font-medium tracking-normal">
+                <p className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300 leading-relaxed mb-6 font-medium tracking-normal transition-colors duration-500">
                   We are a team of creative problem-solvers who love a good challenge and are focused on making a real difference for you. We find better ways to get you results. Your goals become our goals, and we'll be just as excited to see you succeed.
                 </p>
                 <div className="flex items-center space-x-4 cursor-pointer group">
-                  <span className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
+                  <span className="text-xl font-bold text-slate-800 dark:text-gray-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-500">
                     Explore our work
                   </span>
                   <div className="group-hover:scale-110 transition-transform flex items-center">

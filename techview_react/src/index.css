@@ -13,6 +13,26 @@
   box-sizing: border-box;
 }
 
+/* Remove default focus outlines and blue effects in dark mode */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Remove default browser button and input focus styles in dark mode */
+.dark button:focus,
+.dark a:focus,
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
 body {
   font-family: 'Akkurat', 'Inter', sans-serif;
   background-color: #ffffff;

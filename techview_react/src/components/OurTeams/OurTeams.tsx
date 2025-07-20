@@ -63,24 +63,54 @@ const OurTeams = () => {
 
 
   return (
-    <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
       {/* Same background textures as Hero and Results */}
-      <div className="absolute inset-0" 
+      {/* Heavy Random Grain Texture - Light */}
+      <div className="absolute inset-0 opacity-60 dark:opacity-40 transition-opacity duration-500" 
            style={{
-             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E")`,
-             backgroundSize: '180px 180px'
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='teamsHeavyGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.3 1 1 1 0 0.3 1 1 1 0 0.3 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23teamsHeavyGrain)' fill='white' opacity='0.4'/%3E%3C/svg%3E")`,
+             backgroundSize: '200px 200px'
            }}>
       </div>
-      <div className="absolute inset-0 opacity-15"
+
+      {/* Fine Random Grain Overlay */}
+      <div className="absolute inset-0 opacity-40 dark:opacity-25 transition-opacity duration-500"
            style={{
-             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.95' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.05'/%3E%3C/svg%3E")`,
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='teamsFineGrain'%3E%3CfeTurbulence type='turbulence' baseFrequency='3.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.4 1 1 1 0 0.4 1 1 1 0 0.4 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23teamsFineGrain)' fill='white' opacity='0.3'/%3E%3C/svg%3E")`,
+             backgroundSize: '100px 100px'
+           }}>
+      </div>
+
+      {/* Ultra Fine Grain Detail */}
+      <div className="absolute inset-0 opacity-30 dark:opacity-20 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='teamsUltraFineGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.2' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.5 1 1 1 0 0.5 1 1 1 0 0.5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23teamsUltraFineGrain)' fill='white' opacity='0.25'/%3E%3C/svg%3E")`,
              backgroundSize: '50px 50px'
            }}>
       </div>
-      <div className="absolute inset-0 opacity-10"
+
+      {/* Dark grain textures for light mode */}
+      {/* Heavy Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-25 dark:opacity-0 transition-opacity duration-500" 
            style={{
-             backgroundImage: `radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0.05) 0%, transparent 50%)`,
-             backgroundSize: '400px 400px, 300px 300px, 200px 200px'
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='teamsDarkHeavyGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23teamsDarkHeavyGrain)' fill='black' opacity='0.3'/%3E%3C/svg%3E")`,
+             backgroundSize: '200px 200px'
+           }}>
+      </div>
+
+      {/* Fine Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-20 dark:opacity-0 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='teamsDarkFineGrain'%3E%3CfeTurbulence type='turbulence' baseFrequency='3.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23teamsDarkFineGrain)' fill='black' opacity='0.25'/%3E%3C/svg%3E")`,
+             backgroundSize: '100px 100px'
+           }}>
+      </div>
+
+      {/* Ultra Fine Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-15 dark:opacity-0 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='teamsDarkUltraFineGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.2' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23teamsDarkUltraFineGrain)' fill='black' opacity='0.2'/%3E%3C/svg%3E")`,
+             backgroundSize: '50px 50px'
            }}>
       </div>
 
@@ -93,31 +123,27 @@ const OurTeams = () => {
             <div className="mb-6">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black">Our Team</span>
+                <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Our Team</span>
               </div>
             </div>
             
             {/* Main Heading */}
-            <h1 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-slate-900 leading-[1.1] tracking-tight mb-8">
+            <h1 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-slate-900 dark:text-white leading-[1.1] tracking-tight mb-8 transition-colors duration-500">
               Meet the innovators<br />
               <span className="italic font-normal">behind</span> TechView
             </h1>
             
             {/* Description */}
             <div className="max-w-4xl mx-auto space-y-4 mb-8">
-              <p className="text-base sm:text-lg lg:text-xl text-black leading-relaxed font-medium tracking-normal">
+              <p className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300 leading-relaxed font-medium tracking-normal transition-colors duration-500">
                 Our diverse team combines technical expertise with creative vision to deliver 
                 exceptional results for every project.
-              </p>
-              <p className="text-base sm:text-lg lg:text-xl text-black leading-relaxed font-medium tracking-normal">
-                From AI engineers to UX designers, we're united by our passion for innovation 
-                and commitment to excellence.
               </p>
             </div>
             
             {/* Call to Action */}
             <div className="flex items-center justify-center space-x-4 cursor-pointer group">
-              <span className="text-lg sm:text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
+              <span className="text-lg sm:text-xl font-bold text-slate-800 dark:text-gray-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-500">
                 Join our team
               </span>
               <div className="group-hover:scale-110 transition-transform flex items-center">
@@ -127,11 +153,11 @@ const OurTeams = () => {
           </div>
 
           {/* Team Cards Grid */}
-          <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto lg:max-w-4xl lg:grid-cols-4 lg:gap-6">
+          <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto lg:max-w-6xl lg:grid-cols-4 lg:gap-8">
             {teamMembers.map((member) => (
               <div
                 key={member.id}
-                className="group relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="group relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg dark:shadow-none hover:shadow-xl dark:hover:shadow-none transition-all duration-300 hover:scale-105"
               >
                 {/* Card Image */}
                 <div className="relative w-full h-full">

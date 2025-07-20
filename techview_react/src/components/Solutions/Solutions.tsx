@@ -2,24 +2,53 @@ import AnimatedArrowButton from '../UI/AnimatedArrowButton'
 
 const Solutions = () => {
   return (
-    <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
-      {/* Same background textures as Hero */}
-      <div className="absolute inset-0" 
+    <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
+      {/* Heavy Random Grain Texture - Light */}
+      <div className="absolute inset-0 opacity-60 dark:opacity-40 transition-opacity duration-500" 
            style={{
-             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E")`,
-             backgroundSize: '180px 180px'
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='solutionsHeavyGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.3 1 1 1 0 0.3 1 1 1 0 0.3 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23solutionsHeavyGrain)' fill='white' opacity='0.4'/%3E%3C/svg%3E")`,
+             backgroundSize: '200px 200px'
            }}>
       </div>
-      <div className="absolute inset-0 opacity-15"
+
+      {/* Fine Random Grain Overlay */}
+      <div className="absolute inset-0 opacity-40 dark:opacity-25 transition-opacity duration-500"
            style={{
-             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.95' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.05'/%3E%3C/svg%3E")`,
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='solutionsFineGrain'%3E%3CfeTurbulence type='turbulence' baseFrequency='3.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.4 1 1 1 0 0.4 1 1 1 0 0.4 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23solutionsFineGrain)' fill='white' opacity='0.3'/%3E%3C/svg%3E")`,
+             backgroundSize: '100px 100px'
+           }}>
+      </div>
+
+      {/* Ultra Fine Grain Detail */}
+      <div className="absolute inset-0 opacity-30 dark:opacity-20 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='solutionsUltraFineGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.2' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.5 1 1 1 0 0.5 1 1 1 0 0.5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23solutionsUltraFineGrain)' fill='white' opacity='0.25'/%3E%3C/svg%3E")`,
              backgroundSize: '50px 50px'
            }}>
       </div>
-      <div className="absolute inset-0 opacity-10"
+
+      {/* Dark grain textures for light mode */}
+      {/* Heavy Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-25 dark:opacity-0 transition-opacity duration-500" 
            style={{
-             backgroundImage: `radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0.05) 0%, transparent 50%)`,
-             backgroundSize: '400px 400px, 300px 300px, 200px 200px'
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='solutionsDarkHeavyGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23solutionsDarkHeavyGrain)' fill='black' opacity='0.3'/%3E%3C/svg%3E")`,
+             backgroundSize: '200px 200px'
+           }}>
+      </div>
+
+      {/* Fine Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-20 dark:opacity-0 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='solutionsDarkFineGrain'%3E%3CfeTurbulence type='turbulence' baseFrequency='3.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23solutionsDarkFineGrain)' fill='black' opacity='0.25'/%3E%3C/svg%3E")`,
+             backgroundSize: '100px 100px'
+           }}>
+      </div>
+
+      {/* Ultra Fine Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-15 dark:opacity-0 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='solutionsDarkUltraFineGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.2' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23solutionsDarkUltraFineGrain)' fill='black' opacity='0.2'/%3E%3C/svg%3E")`,
+             backgroundSize: '50px 50px'
            }}>
       </div>
 
@@ -33,7 +62,7 @@ const Solutions = () => {
             <div className="mb-6">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black">Our Services</span>
+                <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Our Services</span>
               </div>
             </div>
             
@@ -67,15 +96,15 @@ const Solutions = () => {
             <div className="lg:hidden mb-6">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black">Our Services</span>
+                <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Our Services</span>
               </div>
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-slate-900 leading-[0.85] tracking-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-slate-900 dark:text-white leading-[0.85] tracking-tight transition-colors duration-500">
               Comprehensive<br />
               Tech Solutions<br />
-              <span className="text-slate-600 font-bold">for Modern Business</span>
+              <span className="text-slate-600 dark:text-gray-300 font-bold transition-colors duration-500">for Modern Business</span>
             </h1>
 
 
@@ -87,10 +116,10 @@ const Solutions = () => {
                 <div className="flex flex-col md:flex-row gap-3 md:gap-1">
                   {/* AI Solutions */}
                   <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.1s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                    <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-lg md:text-lg lg:text-xl">AI Solutions</h3>
-                        <p className="text-sm text-slate-600 mt-2 md:hidden">Custom AI models and machine learning solutions</p>
+                        <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">AI Solutions</h3>
+                        <p className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Custom AI models and machine learning solutions</p>
                       </div>
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
@@ -100,10 +129,10 @@ const Solutions = () => {
 
                   {/* Web Development */}
                   <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.2s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                    <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-lg md:text-lg lg:text-xl">Web Development</h3>
-                        <p className="text-sm text-slate-600 mt-2 md:hidden">Modern web applications and responsive designs</p>
+                        <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Web Development</h3>
+                        <p className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Modern web applications and responsive designs</p>
                       </div>
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
@@ -113,10 +142,10 @@ const Solutions = () => {
 
                   {/* Business Intelligence */}
                   <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.3s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                    <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-lg md:text-lg lg:text-xl">Business Intelligence</h3>
-                        <p className="text-sm text-slate-600 mt-2 md:hidden">Data analytics and intelligent reporting tools</p>
+                        <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Business Intelligence</h3>
+                        <p className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Data analytics and intelligent reporting tools</p>
                       </div>
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
@@ -129,10 +158,10 @@ const Solutions = () => {
                 <div className="flex flex-col md:flex-row gap-3 md:gap-1">
                   {/* Cloud Solutions */}
                   <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.4s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                    <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-lg md:text-lg lg:text-xl">Cloud Solutions</h3>
-                        <p className="text-sm text-slate-600 mt-2 md:hidden">Scalable cloud infrastructure and deployment</p>
+                        <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Cloud Solutions</h3>
+                        <p className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Scalable cloud infrastructure and deployment</p>
                       </div>
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
@@ -142,10 +171,10 @@ const Solutions = () => {
 
                   {/* Mobile Apps */}
                   <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.5s both'}}>
-                    <div className="bg-white p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100">
+                    <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 text-lg md:text-lg lg:text-xl">Mobile Apps</h3>
-                        <p className="text-sm text-slate-600 mt-2 md:hidden">Native and cross-platform mobile applications</p>
+                        <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Mobile Apps</h3>
+                        <p className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Native and cross-platform mobile applications</p>
                       </div>
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />

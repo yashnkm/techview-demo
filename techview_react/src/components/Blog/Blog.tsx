@@ -92,24 +92,54 @@ const Blog = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden" style={{backgroundColor: '#efeeef'}}>
+    <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
       {/* Background textures */}
-      <div className="absolute inset-0" 
+      {/* Heavy Random Grain Texture - Light */}
+      <div className="absolute inset-0 opacity-60 dark:opacity-40 transition-opacity duration-500" 
            style={{
-             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E")`,
-             backgroundSize: '180px 180px'
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='blogHeavyGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.3 1 1 1 0 0.3 1 1 1 0 0.3 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23blogHeavyGrain)' fill='white' opacity='0.4'/%3E%3C/svg%3E")`,
+             backgroundSize: '200px 200px'
            }}>
       </div>
-      <div className="absolute inset-0 opacity-15"
+
+      {/* Fine Random Grain Overlay */}
+      <div className="absolute inset-0 opacity-40 dark:opacity-25 transition-opacity duration-500"
            style={{
-             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.95' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.05'/%3E%3C/svg%3E")`,
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='blogFineGrain'%3E%3CfeTurbulence type='turbulence' baseFrequency='3.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.4 1 1 1 0 0.4 1 1 1 0 0.4 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23blogFineGrain)' fill='white' opacity='0.3'/%3E%3C/svg%3E")`,
+             backgroundSize: '100px 100px'
+           }}>
+      </div>
+
+      {/* Ultra Fine Grain Detail */}
+      <div className="absolute inset-0 opacity-30 dark:opacity-20 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='blogUltraFineGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.2' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 1 1 0 0.5 1 1 1 0 0.5 1 1 1 0 0.5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23blogUltraFineGrain)' fill='white' opacity='0.25'/%3E%3C/svg%3E")`,
              backgroundSize: '50px 50px'
            }}>
       </div>
-      <div className="absolute inset-0 opacity-10"
+
+      {/* Dark grain textures for light mode */}
+      {/* Heavy Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-25 dark:opacity-0 transition-opacity duration-500" 
            style={{
-             backgroundImage: `radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0.05) 0%, transparent 50%)`,
-             backgroundSize: '400px 400px, 300px 300px, 200px 200px'
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='blogDarkHeavyGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='8' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 0 0.2 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23blogDarkHeavyGrain)' fill='black' opacity='0.3'/%3E%3C/svg%3E")`,
+             backgroundSize: '200px 200px'
+           }}>
+      </div>
+
+      {/* Fine Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-20 dark:opacity-0 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='blogDarkFineGrain'%3E%3CfeTurbulence type='turbulence' baseFrequency='3.8' numOctaves='6' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 0 0.15 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23blogDarkFineGrain)' fill='black' opacity='0.25'/%3E%3C/svg%3E")`,
+             backgroundSize: '100px 100px'
+           }}>
+      </div>
+
+      {/* Ultra Fine Dark Grain - Light Mode Only */}
+      <div className="absolute inset-0 opacity-15 dark:opacity-0 transition-opacity duration-500"
+           style={{
+             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='blogDarkUltraFineGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='5.2' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23blogDarkUltraFineGrain)' fill='black' opacity='0.2'/%3E%3C/svg%3E")`,
+             backgroundSize: '50px 50px'
            }}>
       </div>
 
@@ -121,20 +151,12 @@ const Blog = () => {
             <div 
               ref={leftSideRef}
               className="hidden lg:block w-[30%] relative"
+              style={{height: 'calc(100% - 200px)'}}
             >
-              <div className="sticky top-0 h-screen flex items-center justify-center p-8">
-                <div className="relative">
-                  {/* Decorative Elements */}
-                  <div className="absolute -top-10 -left-10 w-20 h-20 bg-green-200 rounded-lg opacity-60"></div>
-                  <div className="absolute -bottom-8 -right-8 w-14 h-14 bg-green-300 rounded-lg opacity-40"></div>
-                  <div className="absolute top-24 -left-12 w-10 h-10 bg-green-400 rounded-lg opacity-50"></div>
-                  <div className="absolute bottom-16 -right-12 w-16 h-16 bg-green-200 rounded-lg opacity-30"></div>
-                  <div className="absolute top-1/2 -left-8 w-8 h-8 bg-green-300 rounded-lg opacity-45"></div>
-                  
-                  {/* Phone Mockup */}
-                  <div className="relative z-10 transform scale-110">
-                    <SimplePhone />
-                  </div>
+              <div className="sticky top-64 h-screen relative">
+                {/* Phone Mockup - No decorative elements */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{top: '50%'}}>
+                  <SimplePhone />
                 </div>
               </div>
             </div>
@@ -142,12 +164,13 @@ const Blog = () => {
             {/* Right Side - Scrollable (70% width on desktop, 100% on mobile) */}
             <div className="w-full lg:w-[70%] relative">
               {/* Section Header */}
-              <div className="sticky top-0 bg-[#efeeef] z-10 pt-4 sm:pt-8 pb-2 sm:pb-4 px-4 sm:px-8">
-                <div className="inline-flex items-center space-x-2 mb-4 sm:mb-6">
-                  <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                  <span className="text-xl sm:text-2xl font-bold text-black">Blogs & Resources</span>
+              <div className="sticky top-0 z-10 pt-4 sm:pt-8 pb-2 sm:pb-4 px-4 sm:px-8 transition-colors duration-500">
+                <div className="p-4 sm:p-6 lg:p-8 mx-0 sm:mx-2 lg:mx-4">
+                  <div className="inline-flex items-center space-x-2 mb-4 sm:mb-6">
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
+                    <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Blogs & Resources</span>
+                  </div>
                 </div>
-                
               </div>
 
               {/* Content Cards */}
@@ -160,41 +183,41 @@ const Blog = () => {
                     }}
                     className="min-h-screen flex flex-col justify-center py-8 sm:py-12 lg:py-16 px-4 sm:px-8"
                   >
-                    <div className="w-full h-full bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-200 mx-0 sm:mx-2 lg:mx-4 my-2 sm:my-4">
-                      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-slate-900 leading-tight mb-3 sm:mb-4 lg:mb-6">
+                    <div className="w-full h-full bg-white dark:bg-black rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg dark:shadow-none border border-gray-200 dark:border-transparent mx-0 sm:mx-2 lg:mx-4 my-2 sm:my-4 transition-colors duration-500">
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-slate-900 dark:text-white leading-tight mb-3 sm:mb-4 lg:mb-6 transition-colors duration-500">
                         {card.title}
                       </h2>
                       
-                      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-slate-700 mb-6 sm:mb-8 lg:mb-12">
+                      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-slate-700 dark:text-gray-300 mb-6 sm:mb-8 lg:mb-12 transition-colors duration-500">
                         {card.subtitle}
                       </h3>
                       
-                      <div className="space-y-4 sm:space-y-6 lg:space-y-8 text-sm sm:text-base lg:text-lg text-slate-700 leading-relaxed">
+                      <div className="space-y-4 sm:space-y-6 lg:space-y-8 text-sm sm:text-base lg:text-lg text-slate-700 dark:text-gray-300 leading-relaxed transition-colors duration-500">
                         <p className="font-semibold mb-4 sm:mb-6 lg:mb-8">{card.content}</p>
                         {card.additionalContent && (
                           <p className="mb-4 sm:mb-6 lg:mb-8">{card.additionalContent}</p>
                         )}
                         {card.detailedContent && (
-                          <p className="bg-slate-50 p-3 sm:p-4 lg:p-6 rounded-lg mb-4 sm:mb-6 lg:mb-8">{card.detailedContent}</p>
+                          <p className="bg-slate-50 dark:bg-gray-800 p-3 sm:p-4 lg:p-6 rounded-lg mb-4 sm:mb-6 lg:mb-8 transition-colors duration-500">{card.detailedContent}</p>
                         )}
                         
                         {/* Tips section */}
                         {card.tips && (
-                          <div className="mt-4 sm:mt-6 lg:mt-8 p-3 sm:p-4 lg:p-6 bg-green-50 border-l-4 border-green-400 rounded-r-lg">
-                            <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3">
+                          <div className="mt-4 sm:mt-6 lg:mt-8 p-3 sm:p-4 lg:p-6 bg-green-50 dark:bg-green-900/20 border-l-4 border-green-400 rounded-r-lg transition-colors duration-500">
+                            <h4 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3 transition-colors duration-500">
                               💡 Expert Tips
                             </h4>
-                            <p className="text-xs sm:text-sm lg:text-base text-slate-700">{card.tips}</p>
+                            <p className="text-xs sm:text-sm lg:text-base text-slate-700 dark:text-gray-300 transition-colors duration-500">{card.tips}</p>
                           </div>
                         )}
                         
                         {/* The result section */}
-                        <div className="mt-6 sm:mt-8 lg:mt-12 pt-4 sm:pt-6 lg:pt-8 border-t border-slate-300">
-                          <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-3 sm:mb-4 lg:mb-6">
+                        <div className="mt-6 sm:mt-8 lg:mt-12 pt-4 sm:pt-6 lg:pt-8 border-t border-slate-300 dark:border-transparent transition-colors duration-500">
+                          <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4 lg:mb-6 transition-colors duration-500">
                             Ready to get started?
                           </h4>
                           <div className="flex items-center space-x-3 sm:space-x-4 cursor-pointer group">
-                            <span className="text-lg sm:text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
+                            <span className="text-lg sm:text-xl font-bold text-slate-800 dark:text-gray-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-500">
                               Read full guide
                             </span>
                             <div className="group-hover:scale-110 transition-transform flex items-center">

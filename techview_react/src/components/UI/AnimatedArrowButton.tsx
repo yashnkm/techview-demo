@@ -51,8 +51,8 @@ const AnimatedArrowButton: React.FC<AnimatedArrowButtonProps> = ({
       style={{backgroundColor: '#74f5a2'}}
       onClick={onClick}
     >
-      {/* Black wipe overlay */}
-      <div className="absolute inset-0 bg-black transform scale-x-0 origin-left transition-transform duration-[244ms] ease-in-out group-hover:scale-x-100"></div>
+      {/* Black/White wipe overlay */}
+      <div className="absolute inset-0 bg-black dark:bg-white transform scale-x-0 origin-left transition-transform duration-[244ms] ease-in-out group-hover:scale-x-100"></div>
       
       {/* Arrow container */}
       <div className={`relative ${currentSize.arrow} mx-auto my-auto`}>
@@ -68,7 +68,7 @@ const AnimatedArrowButton: React.FC<AnimatedArrowButtonProps> = ({
         
         {/* New arrow - enters based on direction */}
         <svg 
-          className={`${currentSize.arrow} absolute inset-0 z-10 text-white transition-all duration-[244ms] ease-in-out scale-[0.2] ${currentArrow.newEntrance} opacity-0 group-hover:scale-100 group-hover:opacity-100`}
+          className={`${currentSize.arrow} absolute inset-0 z-10 text-white dark:text-black transition-all duration-[244ms] ease-in-out scale-[0.2] ${currentArrow.newEntrance} opacity-0 group-hover:scale-100 group-hover:opacity-100`}
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
