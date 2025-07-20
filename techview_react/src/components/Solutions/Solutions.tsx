@@ -1,6 +1,27 @@
+import { useState } from 'react';
 import AnimatedArrowButton from '../UI/AnimatedArrowButton'
 
+// Service images data
+const serviceImages = {
+  'ai-solutions': 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop', // AI/Robot
+  'web-development': 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=800&auto=format&fit=crop', // Code on screen
+  'business-intelligence': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop', // Data analytics
+  'cloud-solutions': 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop', // Cloud/Server
+  'mobile-apps': 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop', // Mobile phones
+  'default': 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop' // Default tech image
+};
+
+// Service descriptions from navigation megamenu
+const serviceDescriptions = {
+  'ai-solutions': 'Custom AI models and machine learning solutions',
+  'web-development': 'Modern web applications and responsive designs', 
+  'business-intelligence': 'Data analytics and intelligent reporting tools',
+  'cloud-solutions': 'Scalable cloud infrastructure and deployment',
+  'mobile-apps': 'Native and cross-platform mobile applications'
+};
+
 const Solutions = () => {
+  const [currentImage, setCurrentImage] = useState(serviceImages.default);
   return (
     <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
       {/* Heavy Random Grain Texture - Light */}
@@ -67,19 +88,18 @@ const Solutions = () => {
             </div>
             
             <div className="relative flex-1">
-              <div className="w-full h-full bg-gradient-to-br from-slate-200 to-slate-300 rounded-2xl overflow-hidden shadow-xl">
-                {/* Placeholder for professional image */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center text-slate-600">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-slate-400 rounded-full flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                      </svg>
-                    </div>
-                    <p className="font-medium">Professional Image</p>
-                    <p className="text-sm">Coming Soon</p>
-                  </div>
-                </div>
+              <div className="w-full h-full rounded-2xl overflow-hidden shadow-xl">
+                {/* Dynamic service image */}
+                <img 
+                  src={currentImage} 
+                  alt="Service illustration"
+                  className="w-full h-full object-cover transition-all duration-700 ease-out transform hover:scale-105"
+                  style={{
+                    transition: 'opacity 0.7s ease-in-out, transform 0.7s ease-out',
+                  }}
+                />
+                {/* Dark overlay for better text readability */}
+                <div className="absolute inset-0 bg-black/20 transition-opacity duration-700"></div>
               </div>
               
               {/* TechView overlay */}
@@ -115,7 +135,12 @@ const Solutions = () => {
                 {/* Desktop: Top row - 3 cards */}
                 <div className="flex flex-col md:flex-row gap-3 md:gap-1">
                   {/* AI Solutions */}
-                  <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.1s both'}}>
+                  <div 
+                    className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.35] transition-all duration-300 ease-out" 
+                    style={{animation: 'slideInUp 0.4s ease-out 0.1s both'}}
+                    onMouseEnter={() => setCurrentImage(serviceImages['ai-solutions'])}
+                    onMouseLeave={() => setCurrentImage(serviceImages.default)}
+                  >
                     <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
                         <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">AI Solutions</h3>
@@ -124,11 +149,22 @@ const Solutions = () => {
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
+                      {/* Hover text overlay - Desktop only */}
+                      <div className="hidden md:block absolute bottom-4 left-6 md:bottom-6 md:left-8 lg:left-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
+                        <p className="text-sm font-bold text-slate-600 dark:text-gray-300 max-w-[200px]">
+                          {serviceDescriptions['ai-solutions']}
+                        </p>
+                      </div>
                     </div>
                   </div>
 
                   {/* Web Development */}
-                  <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.2s both'}}>
+                  <div 
+                    className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.35] transition-all duration-300 ease-out" 
+                    style={{animation: 'slideInUp 0.4s ease-out 0.2s both'}}
+                    onMouseEnter={() => setCurrentImage(serviceImages['web-development'])}
+                    onMouseLeave={() => setCurrentImage(serviceImages.default)}
+                  >
                     <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
                         <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Web Development</h3>
@@ -137,18 +173,38 @@ const Solutions = () => {
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
+                      {/* Hover text overlay - Desktop only */}
+                      <div className="hidden md:block absolute bottom-4 left-6 md:bottom-6 md:left-8 lg:left-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
+                        <p className="text-sm font-bold text-slate-600 dark:text-gray-300 max-w-[200px]">
+                          {serviceDescriptions['web-development']}
+                        </p>
+                      </div>
                     </div>
                   </div>
 
                   {/* Business Intelligence */}
-                  <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.3s both'}}>
+                  <div 
+                    className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.35] transition-all duration-300 ease-out" 
+                    style={{animation: 'slideInUp 0.4s ease-out 0.3s both'}}
+                    onMouseEnter={() => setCurrentImage(serviceImages['business-intelligence'])}
+                    onMouseLeave={() => setCurrentImage(serviceImages.default)}
+                  >
                     <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Business Intelligence</h3>
+                        <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">
+                          <span className="md:hidden">Business Intelligence</span>
+                          <span className="hidden md:inline">Business<br />Intelligence</span>
+                        </h3>
                         <p className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Data analytics and intelligent reporting tools</p>
                       </div>
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
+                      </div>
+                      {/* Hover text overlay - Desktop only */}
+                      <div className="hidden md:block absolute bottom-4 left-6 md:bottom-6 md:left-8 lg:left-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
+                        <p className="text-sm font-bold text-slate-600 dark:text-gray-300 max-w-[200px]">
+                          {serviceDescriptions['business-intelligence']}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -157,7 +213,12 @@ const Solutions = () => {
                 {/* Mobile: Continue vertical stack | Desktop: Bottom row - 2 cards */}
                 <div className="flex flex-col md:flex-row gap-3 md:gap-1">
                   {/* Cloud Solutions */}
-                  <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.4s both'}}>
+                  <div 
+                    className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.35] transition-all duration-300 ease-out" 
+                    style={{animation: 'slideInUp 0.4s ease-out 0.4s both'}}
+                    onMouseEnter={() => setCurrentImage(serviceImages['cloud-solutions'])}
+                    onMouseLeave={() => setCurrentImage(serviceImages.default)}
+                  >
                     <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
                         <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Cloud Solutions</h3>
@@ -166,11 +227,22 @@ const Solutions = () => {
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
+                      {/* Hover text overlay - Desktop only */}
+                      <div className="hidden md:block absolute bottom-4 left-6 md:bottom-6 md:left-8 lg:left-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
+                        <p className="text-sm font-bold text-slate-600 dark:text-gray-300 max-w-[200px]">
+                          {serviceDescriptions['cloud-solutions']}
+                        </p>
+                      </div>
                     </div>
                   </div>
 
                   {/* Mobile Apps */}
-                  <div className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.5s both'}}>
+                  <div 
+                    className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.35] transition-all duration-300 ease-out" 
+                    style={{animation: 'slideInUp 0.4s ease-out 0.5s both'}}
+                    onMouseEnter={() => setCurrentImage(serviceImages['mobile-apps'])}
+                    onMouseLeave={() => setCurrentImage(serviceImages.default)}
+                  >
                     <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
                         <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Mobile Apps</h3>
@@ -178,6 +250,12 @@ const Solutions = () => {
                       </div>
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
+                      </div>
+                      {/* Hover text overlay - Desktop only */}
+                      <div className="hidden md:block absolute bottom-4 left-6 md:bottom-6 md:left-8 lg:left-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
+                        <p className="text-sm font-bold text-slate-600 dark:text-gray-300 max-w-[200px]">
+                          {serviceDescriptions['mobile-apps']}
+                        </p>
                       </div>
                     </div>
                   </div>

@@ -1,147 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style2.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="card">
-        <div class="imgBx">
-          <img
-            src="https://images.unsplash.com/photo-1525134479668-1bee5c7c6845?q=80&w=940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-        </div>
-        <div class="content">
-          <div class="contentBx">
-            <h3>Jane <br /><span>Web Developer</span></h3>
-          </div>
-          <ul class="sci">
-            <li style="--i: 1">
-              <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            </li>
-            <li style="--i: 2">
-              <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
-            </li>
-            <li style="--i: 3">
-              <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
+<h1>Cursor Trail</h1>
+<svg id="svgCanvas">
+        <defs>
+            <linearGradient id="circleGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop offset="0%" style="stop-color:rgba(18,194,233,1);stop-opacity:1" />
+                <stop offset="50%" style="stop-color:rgba(196,113,237,1);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:rgba(252, 186, 3,1);stop-opacity:1" />
+            </linearGradient>
+        </defs>
+  
+</svg>@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+body{
+  margin:0;
+  padding:0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
-  background: #e0f7fa;
-}
-.container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 40px 0;
-}
-.container .card {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  margin: 20px;
-  overflow: hidden;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container .card img {
-  object-fit: contain;
-  width: 100%;
-}
-.container .card .content {
-  position: absolute;
-  bottom: -160px;
-  width: 100%;
-  height: 160px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  flex-direction: column;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  transition: bottom 0.5s;
-  transition-delay: 0.65s;
-}
-.container .card:hover .content {
-  bottom: 0;
-  transition-delay: 0s;
-}
-.container .card .content .contentBx h3 {
+  
+  font-family: 'Montserrat', 'Roboto';
   text-transform: uppercase;
-  color: #fff;
-  letter-spacing: 2px;
-  font-weight: 500;
-  font-size: 18px;
-  text-align: center;
-  margin: 20px 0 15px;
-  line-height: 1.1em;
-  transition: 0.5s;
-  transition-delay: 0.6s;
-  opacity: 0;
-  transform: translateY(-20px);
 }
-.container .card:hover .content .contentBx h3 {
-  opacity: 1;
-  transform: translateY(0);
-}
-.container .card .content .contentBx h3 span {
-  font-size: 12px;
-  font-weight: 300;
-  text-transform: initial;
-}
-.container .card .content .sci {
-  position: relative;
-  bottom: 10px;
-  display: flex;
-}
-.container .card .content .sci li {
-  list-style: none;
-  margin: 0 10px;
-  transform: translateY(40px);
-  transition: 0.5s;
-  opacity: 0;
-  transition-delay: calc(0.2s * var(--i));
-}
+#svgCanvas{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}document.addEventListener("DOMContentLoaded", function () {
+  const svg = document.getElementById('svgCanvas');
+  const numberOfCircles = 50; 
+  const maxRadius = 60;
+  const minRadius = 1;
+  let points = [];
+  const radiusStep = (maxRadius - minRadius) / (numberOfCircles - 1);
 
-.container .card:hover .content .sci li {
-  transform: translateY(0);
-  opacity: 1;
-}
-.container .card .content .sci li a {
-  color: white;
-  font-size: 24px;
-}
+  for (let i = 0; i < numberOfCircles; i++) {
+    let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    let radius = maxRadius - i * radiusStep;
+    circle.setAttribute("r", radius);
+    circle.setAttribute("fill", "url(#circleGradient)");
+    svg.appendChild(circle);
+    points.push({ element: circle, x: -64, y: -64 });
+  }
+
+  function updateCircles() {
+    for (let i = points.length - 1; i > 0; i--) {
+      points[i].x = points[i - 1].x;
+      points[i].y = points[i - 1].y;
+      points[i].element.setAttribute("cx", points[i].x);
+      points[i].element.setAttribute("cy", points[i].y);
+    }
+  }
+
+  function movePoints(x, y) {
+    points[0].x = x;
+    points[0].y = y;
+    points[0].element.setAttribute("cx", points[0].x);
+    points[0].element.setAttribute("cy", points[0].y);
+    updateCircles();
+  }
+
+  document.addEventListener('mousemove', (event) => {
+    movePoints(event.clientX, event.clientY);
+  });
+});
