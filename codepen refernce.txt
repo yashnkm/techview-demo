@@ -1,64 +1,49 @@
-<h1>Cursor Trail</h1>
-<svg id="svgCanvas">
-        <defs>
-            <linearGradient id="circleGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                <stop offset="0%" style="stop-color:rgba(18,194,233,1);stop-opacity:1" />
-                <stop offset="50%" style="stop-color:rgba(196,113,237,1);stop-opacity:1" />
-                <stop offset="100%" style="stop-color:rgba(252, 186, 3,1);stop-opacity:1" />
-            </linearGradient>
-        </defs>
-  
-</svg>@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+<section>
+  <h1 class="anim-in">Split text experimentation, Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat consequatur provident fugiat!</h1>
+</section>
+<section>
+  <h1 class="anim-in">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero dolores quod molestiae.</h1>
+</section>
+<section>
+  <h1 class="anim-in">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero dolores quod molestiae.</h1>
+</section>@import url('https://fonts.googleapis.com/css?family=Poppins:400,800');
+
 body{
-  margin:0;
-  padding:0;
+  	font-family: 'Poppins', sans-serif;  
+}
+
+section {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  
-  font-family: 'Montserrat', 'Roboto';
-  text-transform: uppercase;
-}
-#svgCanvas{
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-}document.addEventListener("DOMContentLoaded", function () {
-  const svg = document.getElementById('svgCanvas');
-  const numberOfCircles = 50; 
-  const maxRadius = 60;
-  const minRadius = 1;
-  let points = [];
-  const radiusStep = (maxRadius - minRadius) / (numberOfCircles - 1);
-
-  for (let i = 0; i < numberOfCircles; i++) {
-    let circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    let radius = maxRadius - i * radiusStep;
-    circle.setAttribute("r", radius);
-    circle.setAttribute("fill", "url(#circleGradient)");
-    svg.appendChild(circle);
-    points.push({ element: circle, x: -64, y: -64 });
+  background-color: black;
+  h1 {
+    color: white;
+    font-size: 4.5vw;
+    text-align: center;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.25em;
+    
+    .line {
+      overflow: hidden;
+    }
+    
   }
-
-  function updateCircles() {
-    for (let i = points.length - 1; i > 0; i--) {
-      points[i].x = points[i - 1].x;
-      points[i].y = points[i - 1].y;
-      points[i].element.setAttribute("cx", points[i].x);
-      points[i].element.setAttribute("cy", points[i].y);
+  &:nth-child(even) {
+    background-color: white;
+    h1 {
+      color: black;
     }
   }
+}const animEls = document.querySelectorAll('.anim-in');
 
-  function movePoints(x, y) {
-    points[0].x = x;
-    points[0].y = y;
-    points[0].element.setAttribute("cx", points[0].x);
-    points[0].element.setAttribute("cy", points[0].y);
-    updateCircles();
-  }
-
-  document.addEventListener('mousemove', (event) => {
-    movePoints(event.clientX, event.clientY);
-  });
+animEls.forEach(el => {
+  var splitEl = new SplitText(el, {type:"lines, words", linesClass:"line"});
+  var splitTl = gsap.timeline({duration: .35, ease: 'power4', scrollTrigger: {trigger: el, start:'top 90%'}});
+  
+  splitTl.from(splitEl.words, {yPercent:"100", stagger: 0.025,});
+  
 });

@@ -1,78 +1,11 @@
 import AnimatedArrowButton from '../UI/AnimatedArrowButton';
 import SimplePhone from '../PhoneMockup/SimplePhone';
-import { useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
 import { scrollManager } from '../../utils/scrollSmoother';
 
 const Hero = () => {
-  const phoneRef = useRef<HTMLDivElement>(null);
-  const dotRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const subtextRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-
   const handleSolutionsClick = () => {
     scrollManager.scrollTo('#solutions');
   };
-
-  useEffect(() => {
-    // Hide elements initially
-    gsap.set([phoneRef.current, dotRef.current, headingRef.current, subtextRef.current, ctaRef.current], {
-      opacity: 0
-    });
-    
-    gsap.set(phoneRef.current, {
-      scale: 0.8,
-      opacity: 0
-    });
-    
-    gsap.set(headingRef.current, {
-      y: 30,
-      opacity: 0
-    });
-    
-    gsap.set(subtextRef.current, {
-      y: 30,
-      opacity: 0
-    });
-
-    // All animations at 4.2s - synchronized (faster loading)
-    const tl = gsap.timeline();
-    
-    tl.to(dotRef.current, {
-      opacity: 1,
-      duration: 0.64,
-      ease: "power2.out"
-    }, 4.2)
-    .to(headingRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    }, 4.3)
-    .to(subtextRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out"
-    }, 4.4)
-    .to(phoneRef.current, {
-      scale: 1,
-      opacity: 1,
-      duration: 0.96,
-      ease: "power2.out"
-    }, 4.2)
-    // CTA (text + arrow) simple fade-in animation
-    .to(ctaRef.current, {
-      opacity: 1,
-      duration: 0.6,
-      ease: "power2.out"
-    }, 4.2); // Same exact timing as SplitText delay
-
-    return () => {
-      tl.kill();
-    };
-  }, []);
 
   return (
     <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
@@ -131,7 +64,7 @@ const Hero = () => {
           <div className="lg:col-span-8 text-center lg:text-left pt-16 h-full">
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 justify-center lg:justify-start mb-6">
-              <div ref={dotRef} className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
+              <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
               <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">
                 Intelligent Business Solutions
               </span>
@@ -139,41 +72,30 @@ const Hero = () => {
 
             {/* Main Heading */}
             <div className="mb-8">
-              <h1 ref={headingRef} className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-black dark:text-white leading-[1.1] tracking-tight transition-colors duration-500">
-                {/* Mobile & Tablet - Static text */}
-                <span className="lg:hidden">
-                  One partner,<br />
-                  for all your <span className="italic font-normal">Tech Solutions</span><br />
-                  <span className="text-black dark:text-white font-bold transition-colors duration-500">Step into TechView</span>
-                </span>
-                
-                {/* Desktop - Static text */}
-                <span className="hidden lg:block">
-                  One partner,<br />
-                  for all your <span className="italic font-normal">Tech Solutions</span><br />
-                  <span className="text-black dark:text-white font-bold transition-colors duration-500">Step into TechView</span>
-                </span>
+              <h1 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-black dark:text-white leading-[1.1] tracking-tight transition-colors duration-500">
+                One partner,<br />
+                for all your <span className="italic font-normal">Tech Solutions</span><br />
+                <span className="text-black dark:text-white font-bold transition-colors duration-500">Step into TechView</span>
               </h1>
             </div>
 
             {/* Subtext */}
             <div className="mt-16 w-full">
-              <div ref={subtextRef} className="w-full space-y-2">
-                <p className="text-xl sm:text-2xl lg:text-3xl text-black dark:text-gray-300 leading-[1.6] font-normal transition-colors duration-500">
-                  We build, automate and engineer personalized tech solutions
+              <div className="w-full space-y-1">
+                <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 leading-[1.4] font-bold transition-colors duration-500">
+                  We build, automate and engineer
                 </p>
-                <p className="text-xl sm:text-2xl lg:text-3xl text-black dark:text-gray-300 leading-[1.6] font-normal transition-colors duration-500">
-                  that help you and your business
+                <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 leading-[1.4] font-bold transition-colors duration-500">
+                  personalized tech solutions that help
                 </p>
-                <p className="text-xl sm:text-2xl lg:text-3xl text-black dark:text-gray-300 leading-[1.6] font-normal transition-colors duration-500">
-                  to gain a competitive edge.
+                <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 leading-[1.4] font-bold transition-colors duration-500">
+                  you and your business gain a competitive edge.
                 </p>
               </div>
             </div>
 
             {/* CTA */}
             <div 
-              ref={ctaRef}
               className="mt-16 flex items-center justify-center lg:justify-start space-x-4 cursor-pointer group"
               onClick={handleSolutionsClick}
             >
@@ -188,7 +110,7 @@ const Hero = () => {
 
           {/* Phone - Hidden on mobile/tablet */}
           <div className="hidden lg:flex lg:col-span-4 relative items-center justify-end pr-48 h-full">
-            <div ref={phoneRef}>
+            <div>
               <SimplePhone className="scale-110" />
             </div>
           </div>
