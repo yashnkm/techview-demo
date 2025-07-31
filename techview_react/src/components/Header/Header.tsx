@@ -120,8 +120,8 @@ const Header = () => {
       <header ref={headerRef} className="fixed top-4 sm:top-6 left-1/2 transform -translate-x-1/2 z-50 flex items-center justify-between bg-white/90 dark:bg-black/90 backdrop-blur-sm border border-gray-200 dark:border-transparent rounded-xl py-2 shadow-lg dark:shadow-none w-[95%] max-w-[1104px] min-w-[320px] transition-colors duration-500">
           {/* Logo - Left side */}
           <div className="flex items-center space-x-2 sm:space-x-3 px-3 sm:px-6">
-            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg" style={{backgroundColor: '#74f5a2'}}></div>
-            <span className="text-lg sm:text-xl font-bold text-slate-800 dark:text-white transition-colors duration-500">TechView</span>
+            <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-steel-blue"></div>
+            <span className="text-lg sm:text-xl font-bold text-indigo-dye dark:text-ivory-white transition-colors duration-500">TechView</span>
           </div>
 
           {/* Desktop Navigation - Centered */}
@@ -131,7 +131,7 @@ const Header = () => {
               onMouseEnter={() => handleMouseEnter('services')}
               onMouseLeave={handleMouseLeave}
             >
-              <a href="#services" className="text-slate-700 dark:text-gray-300 hover:text-slate-700 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-transparent font-bold transition-all duration-200 px-5 py-3 rounded-lg flex items-center space-x-1 group">
+              <a href="#services" className="text-indigo-dye dark:text-gray-300 hover:text-steel-blue dark:hover:text-ivory-white hover:bg-cool-gray dark:hover:bg-transparent font-bold transition-all duration-200 px-5 py-3 rounded-lg flex items-center space-x-1 group">
                 <span>Services</span>
                 <svg className="w-3 h-3 fill-current transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 12 8">
                   <path d="M6 8L0 0h12L6 8z"/>
@@ -144,7 +144,7 @@ const Header = () => {
               onMouseEnter={() => handleMouseEnter('cases')}
               onMouseLeave={handleMouseLeave}
             >
-              <a href="#cases" className="text-slate-700 dark:text-gray-300 hover:text-slate-700 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-transparent font-bold transition-all duration-200 px-5 py-3 rounded-lg flex items-center space-x-1 group">
+              <a href="#cases" className="text-indigo-dye dark:text-gray-300 hover:text-steel-blue dark:hover:text-ivory-white hover:bg-cool-gray dark:hover:bg-transparent font-bold transition-all duration-200 px-5 py-3 rounded-lg flex items-center space-x-1 group">
                 <span>Cases</span>
                 <svg className="w-3 h-3 fill-current transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 12 8">
                   <path d="M6 8L0 0h12L6 8z"/>
@@ -152,13 +152,13 @@ const Header = () => {
               </a>
             </div>
             
-            <a href="#about" className="text-slate-700 dark:text-gray-300 hover:text-slate-700 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-transparent font-bold transition-all duration-200 px-5 py-3 rounded-lg">About</a>
-            <a href="#contact" className="text-slate-700 dark:text-gray-300 hover:text-slate-700 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-transparent font-bold transition-all duration-200 px-5 py-3 rounded-lg">Contact</a>
+            <a href="#about" className="text-indigo-dye dark:text-gray-300 hover:text-steel-blue dark:hover:text-ivory-white hover:bg-cool-gray dark:hover:bg-transparent font-bold transition-all duration-200 px-5 py-3 rounded-lg">About</a>
+            <a href="#contact" className="text-indigo-dye dark:text-gray-300 hover:text-steel-blue dark:hover:text-ivory-white hover:bg-cool-gray dark:hover:bg-transparent font-bold transition-all duration-200 px-5 py-3 rounded-lg">Contact</a>
           </nav>
 
           {/* Text and Square Button - Right side */}
           <div className="hidden md:flex items-center space-x-2 sm:space-x-3 px-3 sm:px-6">
-            <span className="text-slate-700 dark:text-gray-300 font-bold text-sm sm:text-base transition-colors duration-500">Talk with us</span>
+            <span className="text-indigo-dye dark:text-gray-300 font-bold text-sm sm:text-base transition-colors duration-500">Talk with us</span>
             <AnimatedArrowButton arrowDirection="top-right" size="md" />
           </div>
 
@@ -190,8 +190,8 @@ const Header = () => {
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.1s both'}}>
                     <div className="bg-gray-200 dark:bg-gray-800 p-4 md:p-6 rounded-sm hover:bg-gray-300 dark:hover:bg-gray-800 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-40 hover:z-10">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white mb-2 text-base transition-colors duration-500">AI Solutions</h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 leading-tight transition-colors duration-500">Custom AI models and<br />machine learning solutions</p>
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white mb-2 text-base transition-colors duration-500">AI Solutions</h3>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 leading-tight transition-colors duration-500">Custom AI models and<br />machine learning solutions</p>
                       </div>
                       <div className="absolute bottom-4 right-4 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="sm" />
@@ -203,8 +203,8 @@ const Header = () => {
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.2s both'}}>
                     <div className="bg-gray-200 dark:bg-gray-800 p-4 md:p-6 rounded-sm hover:bg-gray-300 dark:hover:bg-gray-800 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-40 hover:z-10">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white mb-2 text-base transition-colors duration-500">Web Development</h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 leading-tight transition-colors duration-500">Modern web applications<br />and responsive designs</p>
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white mb-2 text-base transition-colors duration-500">Web Development</h3>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 leading-tight transition-colors duration-500">Modern web applications<br />and responsive designs</p>
                       </div>
                       <div className="absolute bottom-4 right-4 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="sm" />
@@ -216,8 +216,8 @@ const Header = () => {
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.3s both'}}>
                     <div className="bg-gray-200 dark:bg-gray-800 p-4 md:p-6 rounded-sm hover:bg-gray-300 dark:hover:bg-gray-800 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-40 hover:z-10">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white mb-2 text-base transition-colors duration-500">Business Intelligence</h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 leading-tight transition-colors duration-500">Data analytics and<br />intelligent reporting tools</p>
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white mb-2 text-base transition-colors duration-500">Business Intelligence</h3>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 leading-tight transition-colors duration-500">Data analytics and<br />intelligent reporting tools</p>
                       </div>
                       <div className="absolute bottom-4 right-4 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="sm" />
@@ -232,8 +232,8 @@ const Header = () => {
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.4s both'}}>
                     <div className="bg-gray-200 dark:bg-gray-800 p-4 md:p-6 rounded-sm hover:bg-gray-300 dark:hover:bg-gray-800 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-40 hover:z-10">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white mb-2 text-base transition-colors duration-500">Cloud Solutions</h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 leading-tight transition-colors duration-500">Scalable cloud infrastructure<br />and deployment</p>
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white mb-2 text-base transition-colors duration-500">Cloud Solutions</h3>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 leading-tight transition-colors duration-500">Scalable cloud infrastructure<br />and deployment</p>
                       </div>
                       <div className="absolute bottom-4 right-4 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="sm" />
@@ -245,8 +245,8 @@ const Header = () => {
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.5s both'}}>
                     <div className="bg-gray-200 dark:bg-gray-800 p-4 md:p-6 rounded-sm hover:bg-gray-300 dark:hover:bg-gray-800 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-40 hover:z-10">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white mb-2 text-base transition-colors duration-500">Mobile Apps</h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 leading-tight transition-colors duration-500">Native and cross-platform<br />mobile applications</p>
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white mb-2 text-base transition-colors duration-500">Mobile Apps</h3>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 leading-tight transition-colors duration-500">Native and cross-platform<br />mobile applications</p>
                       </div>
                       <div className="absolute bottom-4 right-4 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="sm" />
@@ -265,8 +265,8 @@ const Header = () => {
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.1s both'}}>
                     <div className="bg-gray-200 dark:bg-gray-800 p-4 md:p-6 rounded-sm hover:bg-gray-300 dark:hover:bg-gray-800 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-40 hover:z-10">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white mb-2 text-base transition-colors duration-500">Blog</h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 leading-tight transition-colors duration-500">Insights and updates from<br />our tech journey</p>
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white mb-2 text-base transition-colors duration-500">Blog</h3>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 leading-tight transition-colors duration-500">Insights and updates from<br />our tech journey</p>
                       </div>
                       <div className="absolute bottom-4 right-4 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="sm" />
@@ -278,8 +278,8 @@ const Header = () => {
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.2] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.2s both'}}>
                     <div className="bg-gray-200 dark:bg-gray-800 p-4 md:p-6 rounded-sm hover:bg-gray-300 dark:hover:bg-gray-800 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-40 hover:z-10">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white mb-2 text-base transition-colors duration-500">Case Studies</h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 leading-tight transition-colors duration-500">Real client success stories<br />and project showcases</p>
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white mb-2 text-base transition-colors duration-500">Case Studies</h3>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 leading-tight transition-colors duration-500">Real client success stories<br />and project showcases</p>
                       </div>
                       <div className="absolute bottom-4 right-4 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="sm" />
@@ -294,8 +294,8 @@ const Header = () => {
                   <div className="group/card cursor-pointer flex-1 hover:flex-[1.05] transition-all duration-300 ease-out" style={{animation: 'slideInUp 0.4s ease-out 0.3s both'}}>
                     <div className="bg-gray-200 dark:bg-gray-800 p-4 md:p-6 rounded-sm hover:bg-gray-300 dark:hover:bg-gray-800 hover:shadow-md transition-all duration-300 ease-out relative h-32 md:h-40 hover:z-10">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white mb-2 text-base transition-colors duration-500">Newsletter</h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 leading-tight transition-colors duration-500">Monthly tech insights<br /><span className="text-slate-500">(Coming Soon)</span></p>
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white mb-2 text-base transition-colors duration-500">Newsletter</h3>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 leading-tight transition-colors duration-500">Monthly tech insights<br /><span className="text-slate-500">(Coming Soon)</span></p>
                       </div>
                       <div className="absolute bottom-4 right-4 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="sm" />
@@ -318,7 +318,7 @@ const Header = () => {
               <div>
                 <button 
                   onClick={() => setMobileDropdown(mobileDropdown === 'services' ? null : 'services')}
-                  className="w-full text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-transparent font-medium transition-all duration-200 px-4 py-3 rounded-lg flex items-center justify-between"
+                  className="w-full text-indigo-dye dark:text-gray-300 hover:text-steel-blue dark:hover:text-ivory-white hover:bg-cool-gray dark:hover:bg-transparent font-medium transition-all duration-200 px-4 py-3 rounded-lg flex items-center justify-between"
                 >
                   <span>Services</span>
                   <svg className={`w-3 h-3 fill-current transition-transform duration-200 ${mobileDropdown === 'services' ? 'rotate-180' : ''}`} viewBox="0 0 12 8">
@@ -327,7 +327,7 @@ const Header = () => {
                 </button>
                 {mobileDropdown === 'services' && (
                   <div className="ml-4 mt-2 space-y-2">
-                    <a href="#ai-solutions" className="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-4 py-2 rounded transition-colors duration-500">AI Solutions</a>
+                    <a href="#ai-solutions" className="block text-sm text-steel-blue dark:text-gray-400 hover:text-indigo-dye dark:hover:text-ivory-white px-4 py-2 rounded transition-colors duration-500">AI Solutions</a>
                     <a href="#web-development" className="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-4 py-2 rounded transition-colors duration-500">Web Development</a>
                     <a href="#business-intelligence" className="block text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-4 py-2 rounded transition-colors duration-500">Business Intelligence</a>
                   </div>
@@ -338,7 +338,7 @@ const Header = () => {
               <div>
                 <button 
                   onClick={() => setMobileDropdown(mobileDropdown === 'cases' ? null : 'cases')}
-                  className="w-full text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-transparent font-medium transition-all duration-200 px-4 py-3 rounded-lg flex items-center justify-between"
+                  className="w-full text-indigo-dye dark:text-gray-300 hover:text-steel-blue dark:hover:text-ivory-white hover:bg-cool-gray dark:hover:bg-transparent font-medium transition-all duration-200 px-4 py-3 rounded-lg flex items-center justify-between"
                 >
                   <span>Cases</span>
                   <svg className={`w-3 h-3 fill-current transition-transform duration-200 ${mobileDropdown === 'cases' ? 'rotate-180' : ''}`} viewBox="0 0 12 8">
@@ -354,11 +354,11 @@ const Header = () => {
                 )}
               </div>
 
-              <a href="#about" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-transparent font-medium transition-all duration-200 px-4 py-3 rounded-lg">About</a>
-              <a href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-transparent font-medium transition-all duration-200 px-4 py-3 rounded-lg">Contact</a>
+              <a href="#about" className="text-indigo-dye dark:text-gray-300 hover:text-steel-blue dark:hover:text-ivory-white hover:bg-cool-gray dark:hover:bg-transparent font-medium transition-all duration-200 px-4 py-3 rounded-lg">About</a>
+              <a href="#contact" className="text-indigo-dye dark:text-gray-300 hover:text-steel-blue dark:hover:text-ivory-white hover:bg-cool-gray dark:hover:bg-transparent font-medium transition-all duration-200 px-4 py-3 rounded-lg">Contact</a>
               
               <div className="flex items-center space-x-3 mt-4 px-4 py-3">
-                <span className="text-slate-800 dark:text-gray-300 font-medium transition-colors duration-500">Talk with us</span>
+                <span className="text-indigo-dye dark:text-gray-300 font-medium transition-colors duration-500">Talk with us</span>
                 <AnimatedArrowButton arrowDirection="top-right" size="md" />
               </div>
             </nav>

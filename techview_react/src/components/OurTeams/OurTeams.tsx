@@ -65,7 +65,7 @@ const OurTeams = () => {
 
 
   return (
-    <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
+    <section className="relative overflow-hidden bg-cool-gray dark:bg-dark-bg transition-colors duration-500">
       {/* Same background textures as Hero and Results */}
       {/* Heavy Random Grain Texture - Light */}
       <div className="absolute inset-0 opacity-60 dark:opacity-40 transition-opacity duration-500" 
@@ -124,7 +124,7 @@ const OurTeams = () => {
             {/* Section Badge */}
             <ScrollReveal delay={0} className="mb-6">
               <div className="inline-flex items-center space-x-2">
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-steel-blue"></div>
                 <ScrollSplitText
                   delay={0.1}
                   duration={0.1}
@@ -138,7 +138,7 @@ const OurTeams = () => {
             </ScrollReveal>
             
             {/* Main Heading */}
-            <h1 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-slate-900 dark:text-white leading-[1.1] tracking-tight mb-8 transition-colors duration-500">
+            <h1 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-indigo-dye dark:text-ivory-white leading-[1.1] tracking-tight mb-8 transition-colors duration-500">
               <ScrollSplitText
                 delay={0.2}
                 duration={0.25}
@@ -192,7 +192,7 @@ const OurTeams = () => {
                 duration={0.15}
                 stagger={0.02}
                 splitBy="words"
-                className="text-lg sm:text-xl font-bold text-slate-800 dark:text-gray-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-500"
+                className="text-lg sm:text-xl font-bold text-indigo-dye dark:text-gray-200 group-hover:text-steel-blue dark:group-hover:text-ivory-white transition-colors duration-500"
                 as="span"
               >
                 Join our team

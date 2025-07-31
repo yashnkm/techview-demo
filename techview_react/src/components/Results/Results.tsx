@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <div className="bg-white dark:bg-black p-6 sm:p-10 md:p-16 lg:p-20 rounded-xl shadow-sm dark:shadow-none border border-gray-100 dark:border-transparent min-w-[280px] sm:min-w-[400px] md:min-w-[600px] lg:min-w-[1000px] transition-all duration-300 hover:shadow-lg dark:hover:shadow-none hover:scale-[1.02] hover:border-gray-200 dark:hover:border-transparent group cursor-grab">
     <div className="mb-6 sm:mb-10 md:mb-14 lg:mb-16">
-      <p className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl text-slate-800 dark:text-white leading-relaxed group-hover:text-slate-900 dark:group-hover:text-gray-200 transition-colors duration-300">
+      <p className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl text-indigo-dye dark:text-ivory-white leading-relaxed group-hover:text-steel-blue dark:group-hover:text-gray-200 transition-colors duration-300">
         "<ScrollSplitText
           delay={0.1}
           duration={0.4}
@@ -67,7 +67,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
           stagger={0.03}
           splitBy="words"
           start="top 90%"
-          className="font-semibold text-slate-900 dark:text-white text-sm sm:text-base lg:text-lg group-hover:text-black dark:group-hover:text-gray-200 transition-colors duration-300"
+          className="font-semibold text-indigo-dye dark:text-ivory-white text-sm sm:text-base lg:text-lg group-hover:text-steel-blue dark:group-hover:text-gray-200 transition-colors duration-300"
           as="p"
         >
           {testimonial.name}
@@ -78,7 +78,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
           stagger={0.01}
           splitBy="words"
           start="top 90%"
-          className="text-slate-600 dark:text-gray-300 text-xs sm:text-sm lg:text-base group-hover:text-slate-700 dark:group-hover:text-gray-400 transition-colors duration-300"
+          className="text-steel-blue dark:text-gray-300 text-xs sm:text-sm lg:text-base group-hover:text-indigo-dye dark:group-hover:text-gray-400 transition-colors duration-300"
           as="p"
         >
           {testimonial.title} - {testimonial.company}
@@ -189,7 +189,7 @@ const Results = () => {
   }, [currentIndex, cardWidth, maxScroll]);
 
   return (
-    <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
+    <section className="relative overflow-hidden bg-cool-gray dark:bg-dark-bg transition-colors duration-500">
       {/* Same background textures as Hero */}
       {/* Heavy Random Grain Texture - Light */}
       <div className="absolute inset-0 opacity-60 dark:opacity-40 transition-opacity duration-500" 
@@ -249,7 +249,7 @@ const Results = () => {
             {/* Results Badge */}
             <ScrollReveal delay={0} className="absolute top-6 left-8">
               <div className="inline-flex items-center space-x-2">
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-steel-blue"></div>
                 <ScrollSplitText
                   delay={0.1}
                   duration={0.15}
@@ -264,7 +264,7 @@ const Results = () => {
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center pt-8">
               <div className="lg:col-span-6">
-                <h2 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-slate-900 dark:text-white leading-[1.1] tracking-tight transition-colors duration-500">
+                <h2 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-indigo-dye dark:text-ivory-white leading-[1.1] tracking-tight transition-colors duration-500">
                   <ScrollSplitText
                     delay={0.2}
                     duration={0.3}
@@ -314,7 +314,7 @@ const Results = () => {
                     duration={0.2}
                     stagger={0.03}
                     splitBy="words"
-                    className="text-xl font-bold text-slate-800 dark:text-gray-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-500"
+                    className="text-xl font-bold text-indigo-dye dark:text-gray-200 group-hover:text-steel-blue dark:group-hover:text-ivory-white transition-colors duration-500"
                     as="span"
                   >
                     Explore our work

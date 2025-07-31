@@ -47,8 +47,7 @@ const AnimatedArrowButton: React.FC<AnimatedArrowButtonProps> = ({
 
   return (
     <button 
-      className={`${currentSize.button} rounded-lg relative overflow-hidden group ${className}`}
-      style={{backgroundColor: '#74f5a2'}}
+      className={`${currentSize.button} rounded-lg relative overflow-hidden group bg-steel-blue ${className}`}
       onClick={onClick}
     >
       {/* Black/White wipe overlay */}
@@ -58,7 +57,7 @@ const AnimatedArrowButton: React.FC<AnimatedArrowButtonProps> = ({
       <div className={`relative ${currentSize.arrow} mx-auto my-auto`}>
         {/* Original arrow - exits based on direction */}
         <svg 
-          className={`${currentSize.arrow} absolute inset-0 z-10 transition-all duration-[244ms] ease-in-out group-hover:scale-[0.3] ${currentArrow.originalExit} group-hover:opacity-0 text-slate-800`} 
+          className={`${currentSize.arrow} absolute inset-0 z-10 transition-all duration-[244ms] ease-in-out group-hover:scale-[0.3] ${currentArrow.originalExit} group-hover:opacity-0 text-ivory-white`} 
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"

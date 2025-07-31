@@ -94,7 +94,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
+    <section className="relative overflow-hidden bg-cool-gray dark:bg-dark-bg transition-colors duration-500">
       {/* Background textures */}
       {/* Heavy Random Grain Texture - Light */}
       <div className="absolute inset-0 opacity-60 dark:opacity-40 transition-opacity duration-500" 
@@ -169,7 +169,7 @@ const Blog = () => {
               <div className="sticky top-0 z-10 pt-4 sm:pt-8 pb-2 sm:pb-4 px-4 sm:px-8 transition-colors duration-500">
                 <div className="p-4 sm:p-6 lg:p-8 mx-0 sm:mx-2 lg:mx-4">
                   <ScrollReveal delay={0} className="inline-flex items-center space-x-2 mb-4 sm:mb-6">
-                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-steel-blue"></div>
                     <ScrollSplitText
                       delay={0.1}
                       duration={0.2}
@@ -194,7 +194,7 @@ const Blog = () => {
                     className="min-h-screen flex flex-col justify-center py-8 sm:py-12 lg:py-16 px-4 sm:px-8"
                   >
                     <div className="w-full h-full bg-white dark:bg-black rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg dark:shadow-none border border-gray-200 dark:border-transparent mx-0 sm:mx-2 lg:mx-4 my-2 sm:my-4 transition-colors duration-500">
-                      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-slate-900 dark:text-white leading-tight mb-3 sm:mb-4 lg:mb-6 transition-colors duration-500">
+                      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-indigo-dye dark:text-ivory-white leading-tight mb-3 sm:mb-4 lg:mb-6 transition-colors duration-500">
                         <ScrollSplitText
                           delay={0}
                           duration={0.4}
@@ -207,7 +207,7 @@ const Blog = () => {
                         </ScrollSplitText>
                       </h2>
                       
-                      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-slate-700 dark:text-gray-300 mb-6 sm:mb-8 lg:mb-12 transition-colors duration-500">
+                      <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-steel-blue dark:text-gray-300 mb-6 sm:mb-8 lg:mb-12 transition-colors duration-500">
                         <ScrollSplitText
                           delay={0}
                           duration={0.3}
@@ -220,7 +220,7 @@ const Blog = () => {
                         </ScrollSplitText>
                       </h3>
                       
-                      <div className="space-y-4 sm:space-y-6 lg:space-y-8 text-sm sm:text-base lg:text-lg text-slate-700 dark:text-gray-300 leading-relaxed transition-colors duration-500">
+                      <div className="space-y-4 sm:space-y-6 lg:space-y-8 text-sm sm:text-base lg:text-lg text-steel-blue dark:text-gray-300 leading-relaxed transition-colors duration-500">
                         <p className="font-semibold mb-4 sm:mb-6 lg:mb-8">
                           <ScrollSplitText
                             delay={0}
@@ -248,7 +248,7 @@ const Blog = () => {
                           </p>
                         )}
                         {card.detailedContent && (
-                          <p className="bg-slate-50 dark:bg-gray-800 p-3 sm:p-4 lg:p-6 rounded-lg mb-4 sm:mb-6 lg:mb-8 transition-colors duration-500">
+                          <p className="bg-powder-blue/20 dark:bg-gray-800 p-3 sm:p-4 lg:p-6 rounded-lg mb-4 sm:mb-6 lg:mb-8 transition-colors duration-500">
                             <ScrollSplitText
                               delay={0}
                               duration={0.4}
@@ -264,8 +264,8 @@ const Blog = () => {
                         
                         {/* Tips section */}
                         {card.tips && (
-                          <ScrollReveal delay={0.3} className="mt-4 sm:mt-6 lg:mt-8 p-3 sm:p-4 lg:p-6 bg-green-50 dark:bg-green-900/20 border-l-4 border-green-400 rounded-r-lg transition-colors duration-500">
-                            <h4 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3 transition-colors duration-500">
+                          <ScrollReveal delay={0.3} className="mt-4 sm:mt-6 lg:mt-8 p-3 sm:p-4 lg:p-6 bg-powder-blue/30 dark:bg-steel-blue/20 border-l-4 border-steel-blue rounded-r-lg transition-colors duration-500">
+                            <h4 className="text-lg sm:text-xl font-bold text-indigo-dye dark:text-ivory-white mb-2 sm:mb-3 transition-colors duration-500">
                               <ScrollSplitText
                                 delay={0}
                                 duration={0.2}
@@ -277,7 +277,7 @@ const Blog = () => {
                                 💡 Expert Tips
                               </ScrollSplitText>
                             </h4>
-                            <p className="text-xs sm:text-sm lg:text-base text-slate-700 dark:text-gray-300 transition-colors duration-500">
+                            <p className="text-xs sm:text-sm lg:text-base text-steel-blue dark:text-gray-300 transition-colors duration-500">
                               <ScrollSplitText
                                 delay={0}
                                 duration={0.4}
@@ -293,8 +293,8 @@ const Blog = () => {
                         )}
                         
                         {/* The result section */}
-                        <div className="mt-6 sm:mt-8 lg:mt-12 pt-4 sm:pt-6 lg:pt-8 border-t border-slate-300 dark:border-transparent transition-colors duration-500">
-                          <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4 lg:mb-6 transition-colors duration-500">
+                        <div className="mt-6 sm:mt-8 lg:mt-12 pt-4 sm:pt-6 lg:pt-8 border-t border-steel-blue/30 dark:border-transparent transition-colors duration-500">
+                          <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-indigo-dye dark:text-ivory-white mb-3 sm:mb-4 lg:mb-6 transition-colors duration-500">
                             <ScrollSplitText
                               delay={0}
                               duration={0.2}
@@ -313,7 +313,7 @@ const Blog = () => {
                               stagger={0.03}
                               splitBy="words"
                               start="top 85%"
-                              className="text-lg sm:text-xl font-bold text-slate-800 dark:text-gray-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-500"
+                              className="text-lg sm:text-xl font-bold text-indigo-dye dark:text-gray-200 group-hover:text-steel-blue dark:group-hover:text-ivory-white transition-colors duration-500"
                               as="span"
                             >
                               Read full guide

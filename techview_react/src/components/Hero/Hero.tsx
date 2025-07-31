@@ -9,7 +9,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
+    <section className="relative overflow-hidden bg-cool-gray dark:bg-dark-bg transition-colors duration-500">
       {/* Heavy Random Grain Texture - Light */}
       <div className="absolute inset-0 opacity-60 dark:opacity-40 transition-opacity duration-500" 
            style={{
@@ -68,7 +68,7 @@ const Hero = () => {
               <div 
                 className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full opacity-0 animate-fadeIn" 
                 style={{ 
-                  backgroundColor: '#74f5a2',
+                  backgroundColor: '#4682B4', // Steel Blue
                   animation: 'fadeIn 0.5s ease-out forwards'
                 }}
               ></div>
@@ -85,7 +85,7 @@ const Hero = () => {
 
             {/* Main Heading */}
             <div className="mb-8">
-              <h1 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-black dark:text-white leading-[1.1] tracking-tight transition-colors duration-500">
+              <h1 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-indigo-dye dark:text-ivory-white leading-[1.1] tracking-tight transition-colors duration-500">
                 <SplitTextReveal
                   delay={0.1}
                   duration={0.4}

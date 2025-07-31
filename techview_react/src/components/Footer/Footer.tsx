@@ -3,11 +3,11 @@ import ScrollReveal from '../UI/ScrollReveal';
 const Footer = () => {
 
   return (
-    <footer className="relative w-full py-8 sm:py-12 lg:py-16 overflow-hidden bg-gray-900 dark:bg-white transition-colors duration-500">
+    <footer className="relative w-full py-8 sm:py-12 lg:py-16 overflow-hidden bg-indigo-dye dark:bg-ivory-white transition-colors duration-500">
       {/* Decorative elements - hidden on mobile */}
-      <div className="hidden sm:block absolute top-4 right-4 w-8 h-8 rounded-sm" style={{backgroundColor: '#74f5a2'}}></div>
-      <div className="hidden md:block absolute top-16 right-16 w-6 h-6 rounded-sm" style={{backgroundColor: '#74f5a2'}}></div>
-      <div className="hidden lg:block absolute top-8 right-32 w-4 h-4 rounded-sm" style={{backgroundColor: '#74f5a2'}}></div>
+      <div className="hidden sm:block absolute top-4 right-4 w-8 h-8 rounded-sm bg-steel-blue"></div>
+      <div className="hidden md:block absolute top-16 right-16 w-6 h-6 rounded-sm bg-steel-blue"></div>
+      <div className="hidden lg:block absolute top-8 right-32 w-4 h-4 rounded-sm bg-steel-blue"></div>
 
       <div className="w-full px-4 sm:px-6 md:px-8">
         <div className="max-w-[9.24xl] mx-auto w-full" style={{maxWidth: '110.88rem'}}>
@@ -19,10 +19,10 @@ const Footer = () => {
               
                 {/* Contact Section */}
                 <div className="col-span-1">
-                <h3 className="text-white dark:text-black font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">Contact TechView</h3>
+                <h3 className="text-ivory-white dark:text-indigo-dye font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">Contact TechView</h3>
                 <div className="space-y-1">
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm transition-colors duration-500">hello@techview.ai</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm transition-colors duration-500">+1 (555) 123-4567</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm transition-colors duration-500">hello@techview.ai</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm transition-colors duration-500">+1 (555) 123-4567</p>
                 </div>
                 </div>
 
@@ -30,8 +30,8 @@ const Footer = () => {
                 <div className="col-span-1">
                 <h3 className="text-white dark:text-black font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">TechView San Francisco</h3>
                 <div className="space-y-1">
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm transition-colors duration-500">123 Innovation St, 5th floor</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm transition-colors duration-500">94105 San Francisco</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm transition-colors duration-500">123 Innovation St, 5th floor</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm transition-colors duration-500">94105 San Francisco</p>
                 </div>
                 </div>
 
@@ -39,11 +39,11 @@ const Footer = () => {
                 <div className="col-span-1">
                 <h3 className="text-white dark:text-black font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">Services</h3>
                 <div className="space-y-1">
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">AI Development</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Web Applications</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Data Analytics</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Cloud Solutions</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Consulting</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">AI Development</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Web Applications</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Data Analytics</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Cloud Solutions</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Consulting</p>
                 </div>
                 </div>
 
@@ -51,11 +51,11 @@ const Footer = () => {
                 <div className="col-span-1">
                 <h3 className="text-white dark:text-black font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">Expertise</h3>
                 <div className="space-y-1">
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Machine Learning</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">React & TypeScript</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Node.js & Python</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Cloud Architecture</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">DevOps</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Machine Learning</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">React & TypeScript</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Node.js & Python</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Cloud Architecture</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">DevOps</p>
                 </div>
                 </div>
 
@@ -63,10 +63,10 @@ const Footer = () => {
                 <div className="col-span-1">
                 <h3 className="text-white dark:text-black font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">Resources</h3>
                 <div className="space-y-1">
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Case Studies</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Blog</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Documentation</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Newsletter</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Case Studies</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Blog</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Documentation</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Newsletter</p>
                 </div>
                 </div>
 
@@ -74,11 +74,11 @@ const Footer = () => {
                 <div className="col-span-1">
                 <h3 className="text-white dark:text-black font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">Company</h3>
                 <div className="space-y-1">
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">About</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Careers</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Contact</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Privacy Policy</p>
-                  <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Terms of Service</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">About</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Careers</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Contact</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Privacy Policy</p>
+                  <p className="text-powder-blue dark:text-steel-blue text-xs sm:text-sm hover:text-ivory-white dark:hover:text-indigo-dye transition-colors cursor-pointer duration-500">Terms of Service</p>
                 </div>
                 </div>
 
@@ -92,8 +92,8 @@ const Footer = () => {
                 {/* Logo */}
                 <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-sm flex items-center justify-center" style={{backgroundColor: '#74f5a2'}}>
-                    <svg className="w-3 h-3 sm:w-5 sm:h-5 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-sm flex items-center justify-center bg-steel-blue">
+                    <svg className="w-3 h-3 sm:w-5 sm:h-5 text-indigo-dye" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>

@@ -159,12 +159,12 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                   
                   {/* Unlock Instruction */}
                   <div className="flex flex-col items-center space-y-4">
-                    <div className="w-12 h-12 border-2 border-green-400 rounded-full flex items-center justify-center animate-pulse">
-                      <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 border-2 border-steel-blue rounded-full flex items-center justify-center animate-pulse">
+                      <svg className="w-6 h-6 text-steel-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/>
                       </svg>
                     </div>
-                    <p className="text-green-400 font-bold animate-pulse tracking-wide" style={{
+                    <p className="text-steel-blue font-bold animate-pulse tracking-wide" style={{
                       textShadow: '0 0 10px rgba(34, 197, 94, 0.8)'
                     }}>
                       TAP TO UNLOCK
@@ -208,7 +208,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                           animation: animationState === 'unlocked' ? 'appIconBounce 2s ease-in-out infinite' : 'none'
                         }}
                       >
-                        <div className="absolute inset-0 bg-gradient-to-b from-green-400 via-green-500 to-green-600 rounded-[22%]"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-steel-blue via-steel-blue to-steel-blue rounded-[22%]"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-white/10 to-transparent rounded-[22%]"></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-[22%]"></div>
                         <span className="text-white font-bold text-lg drop-shadow-lg relative z-10">TV</span>
@@ -343,7 +343,7 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                     <div className="flex space-x-3 bg-black bg-opacity-20 backdrop-blur-md rounded-3xl px-5 py-4 border border-white border-opacity-10">
                       {/* iOS 18 Phone Icon */}
                       <div onClick={handlePhoneClick} className="w-14 h-14 rounded-[22%] flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-200 cursor-pointer relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-b from-green-400 via-green-500 to-green-600 rounded-[22%]"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-steel-blue via-steel-blue to-steel-blue rounded-[22%]"></div>
                         <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-white/10 to-transparent rounded-[22%]"></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-[22%]"></div>
                         <svg className="w-8 h-8 text-white drop-shadow-lg relative z-10" fill="currentColor" viewBox="0 0 24 24">
@@ -394,13 +394,13 @@ const SimplePhone: React.FC<SimplePhoneProps> = ({ className = '' }) => {
                 >
                   <div className="bg-white rounded-3xl px-8 py-6 shadow-2xl border border-gray-200">
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="w-16 h-16 bg-steel-blue rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                         </svg>
                       </div>
                       <h3 className="text-xl font-bold text-gray-800 mb-2">Call TechView</h3>
-                      <p className="text-3xl font-bold text-green-600 tracking-wider mb-4">9518571613</p>
+                      <p className="text-3xl font-bold text-steel-blue tracking-wider mb-4">9518571613</p>
                       <button 
                         onClick={() => setShowPhoneNumber(false)}
                         className="bg-gray-100 hover:bg-gray-200 text-gray-800 font-medium px-6 py-2 rounded-full transition-colors duration-200"

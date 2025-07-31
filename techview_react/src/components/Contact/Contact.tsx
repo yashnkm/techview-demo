@@ -49,7 +49,7 @@ const Contact = () => {
 
 
   return (
-    <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
+    <section className="relative overflow-hidden bg-cool-gray dark:bg-dark-bg transition-colors duration-500">
       {/* TechView signature background textures */}
       {/* Heavy Random Grain Texture - Light */}
       <div className="absolute inset-0 opacity-60 dark:opacity-40 transition-opacity duration-500" 
@@ -107,7 +107,7 @@ const Contact = () => {
             {/* Contact Badge */}
             <ScrollReveal delay={0} className="mb-8">
               <div className="inline-flex items-center space-x-2">
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-steel-blue"></div>
                 <ScrollSplitText
                   delay={0.1}
                   duration={0.2}
@@ -129,13 +129,13 @@ const Contact = () => {
               <ScrollReveal delay={0.2} y={40}>
                 <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-transparent hover:shadow-xl dark:hover:shadow-none transition-all duration-300 group">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 bg-steel-blue">
                       <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.04 1.05 4.4L1 22l5.6-2.05C8.96 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-slate-800 dark:group-hover:text-gray-200 transition-colors duration-500">
+                      <h3 className="text-xl font-bold text-indigo-dye dark:text-ivory-white mb-2 group-hover:text-steel-blue dark:group-hover:text-gray-200 transition-colors duration-500">
                         <ScrollSplitText
                           delay={0.3}
                           duration={0.3}
@@ -147,7 +147,7 @@ const Contact = () => {
                           Chat to us
                         </ScrollSplitText>
                       </h3>
-                      <p className="text-base text-slate-600 dark:text-gray-300 mb-3 transition-colors duration-500">
+                      <p className="text-base text-steel-blue dark:text-gray-300 mb-3 transition-colors duration-500">
                         <ScrollSplitText
                           delay={0.4}
                           duration={0.3}
@@ -180,13 +180,13 @@ const Contact = () => {
               <ScrollReveal delay={0.3} y={40}>
                 <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-transparent hover:shadow-xl dark:hover:shadow-none transition-all duration-300 group">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 bg-steel-blue">
                       <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-slate-800 dark:group-hover:text-gray-200 transition-colors duration-500">
+                      <h3 className="text-xl font-bold text-indigo-dye dark:text-ivory-white mb-2 group-hover:text-steel-blue dark:group-hover:text-gray-200 transition-colors duration-500">
                         <ScrollSplitText
                           delay={0.4}
                           duration={0.4}
@@ -198,7 +198,7 @@ const Contact = () => {
                           Visit us
                         </ScrollSplitText>
                       </h3>
-                      <p className="text-base text-slate-600 dark:text-gray-300 mb-3 transition-colors duration-500">
+                      <p className="text-base text-steel-blue dark:text-gray-300 mb-3 transition-colors duration-500">
                         <ScrollSplitText
                           delay={0.5}
                           duration={0.5}
@@ -245,13 +245,13 @@ const Contact = () => {
               <ScrollReveal delay={0.4} y={40}>
                 <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-transparent hover:shadow-xl dark:hover:shadow-none transition-all duration-300 group">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 bg-steel-blue">
                       <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-slate-800 dark:group-hover:text-gray-200 transition-colors duration-500">
+                      <h3 className="text-xl font-bold text-indigo-dye dark:text-ivory-white mb-2 group-hover:text-steel-blue dark:group-hover:text-gray-200 transition-colors duration-500">
                         <ScrollSplitText
                           delay={0.5}
                           duration={0.4}
@@ -263,7 +263,7 @@ const Contact = () => {
                           Call us
                         </ScrollSplitText>
                       </h3>
-                      <p className="text-base text-slate-600 dark:text-gray-300 mb-3 transition-colors duration-500">
+                      <p className="text-base text-steel-blue dark:text-gray-300 mb-3 transition-colors duration-500">
                         <ScrollSplitText
                           delay={0.6}
                           duration={0.5}
@@ -295,11 +295,11 @@ const Contact = () => {
 
             {/* Right Side - Main Form Area */}
             <ScrollReveal delay={0.4} className="lg:col-span-8 h-full">
-              <div className="rounded-2xl p-8 lg:p-12 shadow-xl h-full flex flex-col" style={{backgroundColor: '#74f5a2'}}>
+              <div className="rounded-2xl p-8 lg:p-12 shadow-xl h-full flex flex-col bg-steel-blue">
                 
                 {/* Hero Text */}
                 <div className="mb-8">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-[1.1] tracking-tight mb-4">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-4">
                     <ScrollSplitText
                       delay={0.5}
                       duration={0.4}
@@ -311,7 +311,7 @@ const Contact = () => {
                       Got ideas? We've got the skills. Let's team up.
                     </ScrollSplitText>
                   </h1>
-                  <p className="text-lg sm:text-xl text-black leading-relaxed opacity-90">
+                  <p className="text-lg sm:text-xl text-white leading-relaxed opacity-90">
                     <ScrollSplitText
                       delay={0.7}
                       duration={0.4}
@@ -338,7 +338,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black text-lg placeholder-black placeholder-opacity-70 focus:outline-none transition-colors"
+                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-white focus:border-white text-white text-lg placeholder-white placeholder-opacity-70 focus:outline-none transition-colors"
                         placeholder="Your name"
                       />
                     </div>
@@ -351,7 +351,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black text-lg placeholder-black placeholder-opacity-70 focus:outline-none transition-colors"
+                        className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-white focus:border-white text-white text-lg placeholder-white placeholder-opacity-70 focus:outline-none transition-colors"
                         placeholder="you@company.com"
                       />
                     </div>
@@ -366,14 +366,14 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-black focus:border-black text-black text-lg placeholder-black focus:outline-none transition-colors"
+                      className="w-full px-0 py-4 bg-transparent border-0 border-b-2 border-white focus:border-white text-white text-lg placeholder-white focus:outline-none transition-colors"
                       placeholder="Tell us a little about the project..."
                     />
                   </div>
 
                   {/* Service Selection */}
                   <div>
-                    <p className="text-lg font-semibold text-black mb-6">How can we help?</p>
+                    <p className="text-lg font-semibold text-white mb-6">How can we help?</p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {services.map((service) => (
                         <label key={service.id} className="flex items-center space-x-3 cursor-pointer group">
@@ -384,17 +384,17 @@ const Contact = () => {
                               onChange={() => handleServiceChange(service.id)}
                               className="sr-only"
                             />
-                            <div className={`w-6 h-6 border-2 border-black rounded-sm flex items-center justify-center transition-all duration-200 ${
-                              service.checked ? 'bg-black' : 'bg-transparent'
+                            <div className={`w-6 h-6 border-2 border-white rounded-sm flex items-center justify-center transition-all duration-200 ${
+                              service.checked ? 'bg-white' : 'bg-transparent'
                             }`}>
                               {service.checked && (
-                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" style={{color: '#74f5a2'}}>
+                                <svg className="w-4 h-4 text-steel-blue" fill="currentColor" viewBox="0 0 24 24">
                                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                                 </svg>
                               )}
                             </div>
                           </div>
-                          <span className="text-base text-black group-hover:text-slate-800 transition-colors">{service.label}</span>
+                          <span className="text-base text-white group-hover:text-gray-200 transition-colors">{service.label}</span>
                         </label>
                       ))}
                     </div>
@@ -404,7 +404,7 @@ const Contact = () => {
                   <div className="pt-8">
                     <button
                       type="submit"
-                      className="w-full py-4 bg-black text-white font-bold text-lg rounded-lg hover:bg-black dark:hover:bg-black transition-colors duration-200"
+                      className="w-full py-4 bg-white text-steel-blue font-bold text-lg rounded-lg hover:bg-gray-100 transition-colors duration-200"
                     >
                       Let's get started!
                     </button>

@@ -46,7 +46,7 @@ const DarkModeToggle = () => {
     <button
       onClick={toggleDarkMode}
       className={`fixed right-0 top-1/2 -translate-y-1/2 translate-x-12 z-50 w-20 h-16 rounded-l-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-start pl-2 group ${
-        isDark ? 'bg-[#74f5a2]' : 'bg-white'
+        isDark ? 'bg-powder-blue' : 'bg-ivory-white'
       }`}
       style={{
         borderTopRightRadius: 0,

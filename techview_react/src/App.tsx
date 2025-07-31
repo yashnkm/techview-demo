@@ -24,7 +24,7 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-white dark:bg-dark-bg transition-colors duration-500">
+    <div className="min-h-screen bg-ivory-white dark:bg-dark-bg transition-colors duration-500">
       {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
       <Header />
       <DarkModeToggle />

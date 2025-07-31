@@ -74,15 +74,15 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
       ref={loadingRef}
       className="fixed inset-0 z-50 flex items-center justify-center"
       style={{ 
-        backgroundColor: '#a8a8a8', // 35% darker than #efeeef
+        backgroundColor: '#B8C4CA', // Darker Cool Gray
         willChange: 'clip-path, transform'
       }}
     >
       
       {/* Loading Text and Counter */}
       <div className="flex items-center space-x-3 sm:space-x-4">
-        <span className="text-xl sm:text-2xl font-bold text-black">loading</span>
-        <span className="text-xl sm:text-2xl font-bold text-black">
+        <span className="text-xl sm:text-2xl font-bold text-indigo-dye">loading</span>
+        <span className="text-xl sm:text-2xl font-bold text-indigo-dye">
           / <span ref={counterRef}>0</span>
         </span>
       </div>
@@ -90,8 +90,8 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
       {/* TechView Logo/Brand */}
       <div className="absolute bottom-6 sm:bottom-8 left-4 sm:left-8">
         <div className="flex items-center space-x-2">
-          <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-          <span className="text-lg sm:text-xl font-bold text-black">TechView</span>
+          <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-steel-blue"></div>
+          <span className="text-lg sm:text-xl font-bold text-indigo-dye">TechView</span>
         </div>
       </div>
     </div>

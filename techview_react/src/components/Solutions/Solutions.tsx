@@ -24,7 +24,7 @@ const serviceDescriptions = {
 const Solutions = () => {
   const [currentImage, setCurrentImage] = useState(serviceImages.default);
   return (
-    <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
+    <section className="relative overflow-hidden bg-cool-gray dark:bg-dark-bg transition-colors duration-500">
       {/* Heavy Random Grain Texture - Light */}
       <div className="absolute inset-0 opacity-60 dark:opacity-40 transition-opacity duration-500" 
            style={{
@@ -83,8 +83,8 @@ const Solutions = () => {
             {/* Our Services Badge */}
             <ScrollReveal delay={0} className="mb-6">
               <div className="inline-flex items-center space-x-2">
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Our Services</span>
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-steel-blue"></div>
+                <span className="text-xl sm:text-2xl font-bold text-indigo-dye dark:text-ivory-white transition-colors duration-500">Our Services</span>
               </div>
             </ScrollReveal>
             
@@ -105,7 +105,7 @@ const Solutions = () => {
               
               {/* TechView overlay */}
               <div className="absolute top-[1.5rem] left-[1.5rem] bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
-                <span className="font-bold text-slate-800 text-xl">TechView</span>
+                <span className="font-bold text-indigo-dye text-xl">TechView</span>
               </div>
             </ScrollReveal>
           </div>
@@ -116,17 +116,17 @@ const Solutions = () => {
             {/* Mobile Our Services Badge */}
             <ScrollReveal delay={0} className="lg:hidden mb-6">
               <div className="inline-flex items-center space-x-2">
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Our Services</span>
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-steel-blue"></div>
+                <span className="text-xl sm:text-2xl font-bold text-indigo-dye dark:text-ivory-white transition-colors duration-500">Our Services</span>
               </div>
             </ScrollReveal>
 
             {/* Main Heading */}
             <ScrollReveal delay={0.1} y={80}>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-slate-900 dark:text-white leading-[0.85] tracking-tight transition-colors duration-500">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-indigo-dye dark:text-ivory-white leading-[0.85] tracking-tight transition-colors duration-500">
                 Comprehensive<br />
                 Tech Solutions<br />
-                <span className="text-slate-600 dark:text-gray-300 font-bold transition-colors duration-500">for Modern Business</span>
+                <span className="text-steel-blue dark:text-gray-300 font-bold transition-colors duration-500">for Modern Business</span>
               </h1>
             </ScrollReveal>
 
@@ -145,15 +145,15 @@ const Solutions = () => {
                   >
                     <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">AI Solutions</h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Custom AI models and machine learning solutions</p>
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white text-lg md:text-lg lg:text-xl transition-colors duration-500">AI Solutions</h3>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Custom AI models and machine learning solutions</p>
                       </div>
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
                       {/* Hover text overlay - Desktop only */}
                       <div className="hidden md:block absolute bottom-4 left-6 md:bottom-6 md:left-8 lg:left-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
-                        <p className="text-sm font-bold text-slate-600 dark:text-gray-300 max-w-[200px]">
+                        <p className="text-sm font-bold text-steel-blue dark:text-gray-300 max-w-[200px]">
                           {serviceDescriptions['ai-solutions']}
                         </p>
                       </div>
@@ -168,15 +168,15 @@ const Solutions = () => {
                   >
                     <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Web Development</h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Modern web applications and responsive designs</p>
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Web Development</h3>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Modern web applications and responsive designs</p>
                       </div>
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
                       {/* Hover text overlay - Desktop only */}
                       <div className="hidden md:block absolute bottom-4 left-6 md:bottom-6 md:left-8 lg:left-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
-                        <p className="text-sm font-bold text-slate-600 dark:text-gray-300 max-w-[200px]">
+                        <p className="text-sm font-bold text-steel-blue dark:text-gray-300 max-w-[200px]">
                           {serviceDescriptions['web-development']}
                         </p>
                       </div>
@@ -192,18 +192,18 @@ const Solutions = () => {
                   >
                     <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white text-lg md:text-lg lg:text-xl transition-colors duration-500">
                           <span className="md:hidden">Business Intelligence</span>
                           <span className="hidden md:inline">Business<br />Intelligence</span>
                         </h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Data analytics and intelligent reporting tools</p>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Data analytics and intelligent reporting tools</p>
                       </div>
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
                       {/* Hover text overlay - Desktop only */}
                       <div className="hidden md:block absolute bottom-4 left-6 md:bottom-6 md:left-8 lg:left-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
-                        <p className="text-sm font-bold text-slate-600 dark:text-gray-300 max-w-[200px]">
+                        <p className="text-sm font-bold text-steel-blue dark:text-gray-300 max-w-[200px]">
                           {serviceDescriptions['business-intelligence']}
                         </p>
                       </div>
@@ -222,15 +222,15 @@ const Solutions = () => {
                   >
                     <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Cloud Solutions</h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Scalable cloud infrastructure and deployment</p>
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Cloud Solutions</h3>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Scalable cloud infrastructure and deployment</p>
                       </div>
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
                       {/* Hover text overlay - Desktop only */}
                       <div className="hidden md:block absolute bottom-4 left-6 md:bottom-6 md:left-8 lg:left-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
-                        <p className="text-sm font-bold text-slate-600 dark:text-gray-300 max-w-[200px]">
+                        <p className="text-sm font-bold text-steel-blue dark:text-gray-300 max-w-[200px]">
                           {serviceDescriptions['cloud-solutions']}
                         </p>
                       </div>
@@ -246,15 +246,15 @@ const Solutions = () => {
                   >
                     <div className="bg-white dark:bg-black p-6 md:p-8 lg:p-10 rounded-sm hover:bg-gray-50 dark:hover:bg-black hover:shadow-md dark:hover:shadow-none transition-all duration-300 ease-out relative h-32 md:h-48 lg:h-56 hover:z-10 border border-gray-100 dark:border-transparent">
                       <div className="pr-8">
-                        <h3 className="font-bold text-slate-800 dark:text-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Mobile Apps</h3>
-                        <p className="text-sm text-slate-600 dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Native and cross-platform mobile applications</p>
+                        <h3 className="font-bold text-indigo-dye dark:text-ivory-white text-lg md:text-lg lg:text-xl transition-colors duration-500">Mobile Apps</h3>
+                        <p className="text-sm text-steel-blue dark:text-gray-300 mt-2 md:hidden transition-colors duration-500">Native and cross-platform mobile applications</p>
                       </div>
                       <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 group-hover/card:scale-110 transition-transform duration-300">
                         <AnimatedArrowButton arrowDirection="top-right" size="md" />
                       </div>
                       {/* Hover text overlay - Desktop only */}
                       <div className="hidden md:block absolute bottom-4 left-6 md:bottom-6 md:left-8 lg:left-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 ease-out">
-                        <p className="text-sm font-bold text-slate-600 dark:text-gray-300 max-w-[200px]">
+                        <p className="text-sm font-bold text-steel-blue dark:text-gray-300 max-w-[200px]">
                           {serviceDescriptions['mobile-apps']}
                         </p>
                       </div>

@@ -12,7 +12,15 @@ export default {
         'inter': ['Inter', 'sans-serif'],
       },
       colors: {
-        'dark-bg': '#1a1a1a',
+        // Light Theme Colors
+        'ivory-white': '#FDFDFD',
+        'cool-gray': '#EAEFF2',
+        'steel-blue': '#4682B4',
+        'powder-blue': '#B0D6E8',
+        
+        // Dark Theme Colors
+        'indigo-dye': '#264653',
+        'dark-bg': '#264653', // Updated to use Indigo Dye
       },
     },
   },
