@@ -1,4 +1,6 @@
 import AnimatedArrowButton from '../UI/AnimatedArrowButton';
+import ScrollSplitText from '../UI/ScrollSplitText';
+import ScrollReveal from '../UI/ScrollReveal';
 
 interface TeamMember {
   id: string;
@@ -120,33 +122,87 @@ const OurTeams = () => {
           {/* Header Section */}
           <div className="text-center mb-16 lg:mb-24">
             {/* Section Badge */}
-            <div className="mb-6">
+            <ScrollReveal delay={0} className="mb-6">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Our Team</span>
+                <ScrollSplitText
+                  delay={0.1}
+                  duration={0.1}
+                  stagger={0.03}
+                  splitBy="chars"
+                  className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500"
+                >
+                  Our Team
+                </ScrollSplitText>
               </div>
-            </div>
+            </ScrollReveal>
             
             {/* Main Heading */}
             <h1 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-slate-900 dark:text-white leading-[1.1] tracking-tight mb-8 transition-colors duration-500">
-              Meet the innovators<br />
-              <span className="italic font-normal">behind</span> TechView
+              <ScrollSplitText
+                delay={0.2}
+                duration={0.25}
+                stagger={0.03}
+                splitBy="words"
+                as="span"
+              >
+                Meet the innovators
+              </ScrollSplitText>
+              <br />
+              <ScrollSplitText
+                delay={0.3}
+                duration={0.25}
+                stagger={0.03}
+                splitBy="words"
+                className="italic font-normal"
+                as="span"
+              >
+                behind
+              </ScrollSplitText>{" "}
+              <ScrollSplitText
+                delay={0.4}
+                duration={0.25}
+                stagger={0.03}
+                splitBy="words"
+                as="span"
+              >
+                TechView
+              </ScrollSplitText>
             </h1>
             
             {/* Description */}
             <div className="max-w-4xl mx-auto space-y-4 mb-8">
               <p className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300 leading-relaxed font-medium tracking-normal transition-colors duration-500">
-                Our diverse team combines technical expertise with creative vision to deliver 
-                exceptional results for every project.
+                <ScrollSplitText
+                  delay={0.5}
+                  duration={0.3}
+                  stagger={0.01}
+                  splitBy="words"
+                  as="span"
+                >
+                  Our diverse team combines technical expertise with creative vision to deliver exceptional results for every project.
+                </ScrollSplitText>
               </p>
             </div>
             
             {/* Call to Action */}
             <div className="flex items-center justify-center space-x-4 cursor-pointer group">
-              <span className="text-lg sm:text-xl font-bold text-slate-800 dark:text-gray-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-500">
+              <ScrollSplitText
+                delay={0.7}
+                duration={0.15}
+                stagger={0.02}
+                splitBy="words"
+                className="text-lg sm:text-xl font-bold text-slate-800 dark:text-gray-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-500"
+                as="span"
+              >
                 Join our team
-              </span>
-              <div className="group-hover:scale-110 transition-transform flex items-center">
+              </ScrollSplitText>
+              <div 
+                className="group-hover:scale-110 transition-transform flex items-center opacity-0"
+                style={{
+                  animation: 'fadeIn 0.5s ease-out 0.9s forwards'
+                }}
+              >
                 <AnimatedArrowButton arrowDirection="top-right" size="md" />
               </div>
             </div>
@@ -154,9 +210,12 @@ const OurTeams = () => {
 
           {/* Team Cards Grid */}
           <div className="grid grid-cols-2 gap-6 max-w-3xl mx-auto lg:max-w-6xl lg:grid-cols-4 lg:gap-8">
-            {teamMembers.map((member) => (
-              <div
+            {teamMembers.map((member, index) => (
+              <ScrollReveal 
                 key={member.id}
+                delay={index * 0.1}
+                y={60}
+                duration={0.6}
                 className="group relative w-full aspect-[3/4] rounded-2xl overflow-hidden shadow-lg dark:shadow-none hover:shadow-xl dark:hover:shadow-none transition-all duration-300 hover:scale-105"
               >
                 {/* Card Image */}
@@ -172,8 +231,30 @@ const OurTeams = () => {
                   
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="font-semibold text-lg mb-1">{member.name}</h3>
-                    <p className="text-sm opacity-90 mb-3">{member.title}</p>
+                    <h3 className="font-semibold text-lg mb-1">
+                      <ScrollSplitText
+                        delay={0.2}
+                        duration={0.2}
+                        stagger={0.03}
+                        splitBy="words"
+                        start="top 90%"
+                        as="span"
+                      >
+                        {member.name}
+                      </ScrollSplitText>
+                    </h3>
+                    <p className="text-sm opacity-90 mb-3">
+                      <ScrollSplitText
+                        delay={0.3}
+                        duration={0.2}
+                        stagger={0.015}
+                        splitBy="words"
+                        start="top 90%"
+                        as="span"
+                      >
+                        {member.title}
+                      </ScrollSplitText>
+                    </p>
                     
                     {/* Social Links */}
                     <div className="flex space-x-3">
@@ -201,7 +282,7 @@ const OurTeams = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 

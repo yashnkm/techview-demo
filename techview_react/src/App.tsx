@@ -12,18 +12,16 @@ import DarkModeToggle from './components/UI/DarkModeToggle'
 import { scrollManager } from './utils/scrollSmoother'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false) // Disabled loading screen
 
   const handleLoadingComplete = () => {
     setIsLoading(false)
   }
 
   useEffect(() => {
-    if (!isLoading) {
-      // Initialize ScrollSmoother after loading completes
-      scrollManager.init()
-    }
-  }, [isLoading])
+    // Initialize ScrollSmoother immediately
+    scrollManager.init()
+  }, [])
 
   return (
     <div className="min-h-screen bg-white dark:bg-dark-bg transition-colors duration-500">

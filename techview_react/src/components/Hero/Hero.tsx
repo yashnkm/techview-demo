@@ -1,5 +1,6 @@
 import AnimatedArrowButton from '../UI/AnimatedArrowButton';
 import SimplePhone from '../PhoneMockup/SimplePhone';
+import SplitTextReveal from '../UI/SplitTextReveal';
 import { scrollManager } from '../../utils/scrollSmoother';
 
 const Hero = () => {
@@ -64,18 +65,56 @@ const Hero = () => {
           <div className="lg:col-span-8 text-center lg:text-left pt-16 h-full">
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 justify-center lg:justify-start mb-6">
-              <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-              <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">
+              <div 
+                className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full opacity-0 animate-fadeIn" 
+                style={{ 
+                  backgroundColor: '#74f5a2',
+                  animation: 'fadeIn 0.5s ease-out forwards'
+                }}
+              ></div>
+              <SplitTextReveal
+                delay={0.1}
+                duration={0.3}
+                stagger={0.02}
+                splitBy="chars"
+                className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500"
+              >
                 Intelligent Business Solutions
-              </span>
+              </SplitTextReveal>
             </div>
 
             {/* Main Heading */}
             <div className="mb-8">
               <h1 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-black dark:text-white leading-[1.1] tracking-tight transition-colors duration-500">
-                One partner,<br />
-                for all your <span className="italic font-normal">Tech Solutions</span><br />
-                <span className="text-black dark:text-white font-bold transition-colors duration-500">Step into TechView</span>
+                <SplitTextReveal
+                  delay={0.1}
+                  duration={0.4}
+                  stagger={0.05}
+                  splitBy="words"
+                  as="span"
+                >
+                  One partner,
+                </SplitTextReveal>
+                <br />
+                <SplitTextReveal
+                  delay={0.2}
+                  duration={0.4}
+                  stagger={0.05}
+                  splitBy="words"
+                  as="span"
+                >
+                  for all your Tech Solutions
+                </SplitTextReveal>
+                <br />
+                <SplitTextReveal
+                  delay={0.3}
+                  duration={0.4}
+                  stagger={0.05}
+                  splitBy="words"
+                  as="span"
+                >
+                  Step into TechView
+                </SplitTextReveal>
               </h1>
             </div>
 
@@ -83,13 +122,37 @@ const Hero = () => {
             <div className="mt-16 w-full">
               <div className="w-full space-y-1">
                 <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 leading-[1.4] font-bold transition-colors duration-500">
-                  We build, automate and engineer
+                  <SplitTextReveal
+                    delay={0.5}
+                    duration={0.3}
+                    stagger={0.02}
+                    splitBy="words"
+                    as="span"
+                  >
+                    We build, automate and engineer
+                  </SplitTextReveal>
                 </p>
                 <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 leading-[1.4] font-bold transition-colors duration-500">
-                  personalized tech solutions that help
+                  <SplitTextReveal
+                    delay={0.6}
+                    duration={0.3}
+                    stagger={0.02}
+                    splitBy="words"
+                    as="span"
+                  >
+                    personalized tech solutions that help
+                  </SplitTextReveal>
                 </p>
                 <p className="text-lg sm:text-xl lg:text-2xl text-black dark:text-gray-300 leading-[1.4] font-bold transition-colors duration-500">
-                  you and your business gain a competitive edge.
+                  <SplitTextReveal
+                    delay={0.7}
+                    duration={0.3}
+                    stagger={0.02}
+                    splitBy="words"
+                    as="span"
+                  >
+                    you and your business gain a competitive edge.
+                  </SplitTextReveal>
                 </p>
               </div>
             </div>
@@ -100,9 +163,22 @@ const Hero = () => {
               onClick={handleSolutionsClick}
             >
               <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">
-                See Our Solutions
+                <SplitTextReveal
+                  delay={0.9}
+                  duration={0.4}
+                  stagger={0.05}
+                  splitBy="words"
+                  as="span"
+                >
+                  See Our Solutions
+                </SplitTextReveal>
               </span>
-              <div className="group-hover:scale-110 transition-transform flex items-center">
+              <div 
+                className="group-hover:scale-110 transition-transform flex items-center opacity-0"
+                style={{
+                  animation: 'fadeIn 0.5s ease-out 1.1s forwards'
+                }}
+              >
                 <AnimatedArrowButton arrowDirection="down" size="md" />
               </div>
             </div>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import AnimatedArrowButton from '../UI/AnimatedArrowButton'
+import AnimatedArrowButton from '../UI/AnimatedArrowButton';
+import ScrollReveal from '../UI/ScrollReveal';
 
 // Service images data
 const serviceImages = {
@@ -80,14 +81,14 @@ const Solutions = () => {
           {/* Left Side - Professional Image - Hidden on mobile */}
           <div className="hidden lg:flex lg:col-span-5 relative p-4 h-full flex-col mr-1">
             {/* Our Services Badge */}
-            <div className="mb-6">
+            <ScrollReveal delay={0} className="mb-6">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
                 <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Our Services</span>
               </div>
-            </div>
+            </ScrollReveal>
             
-            <div className="relative flex-1">
+            <ScrollReveal delay={0.2} className="relative flex-1">
               <div className="w-full h-full rounded-2xl overflow-hidden shadow-xl">
                 {/* Dynamic service image */}
                 <img 
@@ -106,30 +107,32 @@ const Solutions = () => {
               <div className="absolute top-[1.5rem] left-[1.5rem] bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg">
                 <span className="font-bold text-slate-800 text-xl">TechView</span>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Services Content - Full width on mobile, partial on desktop */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left p-2">
             
             {/* Mobile Our Services Badge */}
-            <div className="lg:hidden mb-6">
+            <ScrollReveal delay={0} className="lg:hidden mb-6">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
                 <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Our Services</span>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Main Heading */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-slate-900 dark:text-white leading-[0.85] tracking-tight transition-colors duration-500">
-              Comprehensive<br />
-              Tech Solutions<br />
-              <span className="text-slate-600 dark:text-gray-300 font-bold transition-colors duration-500">for Modern Business</span>
-            </h1>
+            <ScrollReveal delay={0.1} y={80}>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-slate-900 dark:text-white leading-[0.85] tracking-tight transition-colors duration-500">
+                Comprehensive<br />
+                Tech Solutions<br />
+                <span className="text-slate-600 dark:text-gray-300 font-bold transition-colors duration-500">for Modern Business</span>
+              </h1>
+            </ScrollReveal>
 
 
             {/* Services Grid - Mobile optimized: equal height cards stacked vertically */}
-            <div className="pt-[2rem]">
+            <ScrollReveal delay={0.3} y={60} className="pt-[2rem]">
               <div className="flex flex-col gap-3 md:gap-1">
                 {/* Mobile: All cards stacked vertically with equal height */}
                 {/* Desktop: Top row - 3 cards */}
@@ -137,7 +140,6 @@ const Solutions = () => {
                   {/* AI Solutions */}
                   <div 
                     className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.35] transition-all duration-300 ease-out" 
-                    style={{animation: 'slideInUp 0.4s ease-out 0.1s both'}}
                     onMouseEnter={() => setCurrentImage(serviceImages['ai-solutions'])}
                     onMouseLeave={() => setCurrentImage(serviceImages.default)}
                   >
@@ -161,7 +163,6 @@ const Solutions = () => {
                   {/* Web Development */}
                   <div 
                     className="group/card cursor-pointer w-full md:flex-1 md:hover:flex-[1.35] transition-all duration-300 ease-out" 
-                    style={{animation: 'slideInUp 0.4s ease-out 0.2s both'}}
                     onMouseEnter={() => setCurrentImage(serviceImages['web-development'])}
                     onMouseLeave={() => setCurrentImage(serviceImages.default)}
                   >
@@ -261,7 +262,7 @@ const Solutions = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
           </div>
         </div>

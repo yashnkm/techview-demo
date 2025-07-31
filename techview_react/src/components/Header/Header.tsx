@@ -11,26 +11,7 @@ const Header = () => {
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
   const headerRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    // Hide header initially
-    gsap.set(headerRef.current, {
-      y: -50,
-      opacity: 0
-    });
-
-    // Header animation at 4.2s - same as all content
-    const tl = gsap.timeline({ delay: 4.2 });
-    tl.to(headerRef.current, {
-      y: 0,
-      opacity: 1,
-      duration: 0.64,
-      ease: "power2.out"
-    });
-
-    return () => {
-      tl.kill();
-    };
-  }, []);
+  // Removed header animation - show immediately
 
   const handleMouseEnter = (dropdown: string) => {
     if (hoverTimeout) {

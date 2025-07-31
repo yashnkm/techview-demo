@@ -3,6 +3,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AnimatedArrowButton from '../UI/AnimatedArrowButton';
 import SimplePhone from '../PhoneMockup/SimplePhone';
+import ScrollSplitText from '../UI/ScrollSplitText';
+import ScrollReveal from '../UI/ScrollReveal';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -166,10 +168,18 @@ const Blog = () => {
               {/* Section Header */}
               <div className="sticky top-0 z-10 pt-4 sm:pt-8 pb-2 sm:pb-4 px-4 sm:px-8 transition-colors duration-500">
                 <div className="p-4 sm:p-6 lg:p-8 mx-0 sm:mx-2 lg:mx-4">
-                  <div className="inline-flex items-center space-x-2 mb-4 sm:mb-6">
+                  <ScrollReveal delay={0} className="inline-flex items-center space-x-2 mb-4 sm:mb-6">
                     <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                    <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Blogs & Resources</span>
-                  </div>
+                    <ScrollSplitText
+                      delay={0.1}
+                      duration={0.2}
+                      stagger={0.05}
+                      splitBy="chars"
+                      className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500"
+                    >
+                      Blogs & Resources
+                    </ScrollSplitText>
+                  </ScrollReveal>
                 </div>
               </div>
 
@@ -185,42 +195,135 @@ const Blog = () => {
                   >
                     <div className="w-full h-full bg-white dark:bg-black rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg dark:shadow-none border border-gray-200 dark:border-transparent mx-0 sm:mx-2 lg:mx-4 my-2 sm:my-4 transition-colors duration-500">
                       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-slate-900 dark:text-white leading-tight mb-3 sm:mb-4 lg:mb-6 transition-colors duration-500">
-                        {card.title}
+                        <ScrollSplitText
+                          delay={0}
+                          duration={0.4}
+                          stagger={0.03}
+                          splitBy="words"
+                          start="top 85%"
+                          as="span"
+                        >
+                          {card.title}
+                        </ScrollSplitText>
                       </h2>
                       
                       <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal text-slate-700 dark:text-gray-300 mb-6 sm:mb-8 lg:mb-12 transition-colors duration-500">
-                        {card.subtitle}
+                        <ScrollSplitText
+                          delay={0}
+                          duration={0.3}
+                          stagger={0.02}
+                          splitBy="words"
+                          start="top 85%"
+                          as="span"
+                        >
+                          {card.subtitle}
+                        </ScrollSplitText>
                       </h3>
                       
                       <div className="space-y-4 sm:space-y-6 lg:space-y-8 text-sm sm:text-base lg:text-lg text-slate-700 dark:text-gray-300 leading-relaxed transition-colors duration-500">
-                        <p className="font-semibold mb-4 sm:mb-6 lg:mb-8">{card.content}</p>
+                        <p className="font-semibold mb-4 sm:mb-6 lg:mb-8">
+                          <ScrollSplitText
+                            delay={0}
+                            duration={0.4}
+                            stagger={0.01}
+                            splitBy="words"
+                            start="top 85%"
+                            as="span"
+                          >
+                            {card.content}
+                          </ScrollSplitText>
+                        </p>
                         {card.additionalContent && (
-                          <p className="mb-4 sm:mb-6 lg:mb-8">{card.additionalContent}</p>
+                          <p className="mb-4 sm:mb-6 lg:mb-8">
+                            <ScrollSplitText
+                              delay={0}
+                              duration={0.4}
+                              stagger={0.01}
+                              splitBy="words"
+                              start="top 85%"
+                              as="span"
+                            >
+                              {card.additionalContent}
+                            </ScrollSplitText>
+                          </p>
                         )}
                         {card.detailedContent && (
-                          <p className="bg-slate-50 dark:bg-gray-800 p-3 sm:p-4 lg:p-6 rounded-lg mb-4 sm:mb-6 lg:mb-8 transition-colors duration-500">{card.detailedContent}</p>
+                          <p className="bg-slate-50 dark:bg-gray-800 p-3 sm:p-4 lg:p-6 rounded-lg mb-4 sm:mb-6 lg:mb-8 transition-colors duration-500">
+                            <ScrollSplitText
+                              delay={0}
+                              duration={0.4}
+                              stagger={0.01}
+                              splitBy="words"
+                              start="top 85%"
+                              as="span"
+                            >
+                              {card.detailedContent}
+                            </ScrollSplitText>
+                          </p>
                         )}
                         
                         {/* Tips section */}
                         {card.tips && (
-                          <div className="mt-4 sm:mt-6 lg:mt-8 p-3 sm:p-4 lg:p-6 bg-green-50 dark:bg-green-900/20 border-l-4 border-green-400 rounded-r-lg transition-colors duration-500">
+                          <ScrollReveal delay={0.3} className="mt-4 sm:mt-6 lg:mt-8 p-3 sm:p-4 lg:p-6 bg-green-50 dark:bg-green-900/20 border-l-4 border-green-400 rounded-r-lg transition-colors duration-500">
                             <h4 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-2 sm:mb-3 transition-colors duration-500">
-                              💡 Expert Tips
+                              <ScrollSplitText
+                                delay={0}
+                                duration={0.2}
+                                stagger={0.04}
+                                splitBy="words"
+                                start="top 85%"
+                                as="span"
+                              >
+                                💡 Expert Tips
+                              </ScrollSplitText>
                             </h4>
-                            <p className="text-xs sm:text-sm lg:text-base text-slate-700 dark:text-gray-300 transition-colors duration-500">{card.tips}</p>
-                          </div>
+                            <p className="text-xs sm:text-sm lg:text-base text-slate-700 dark:text-gray-300 transition-colors duration-500">
+                              <ScrollSplitText
+                                delay={0}
+                                duration={0.4}
+                                stagger={0.01}
+                                splitBy="words"
+                                start="top 85%"
+                                as="span"
+                              >
+                                {card.tips}
+                              </ScrollSplitText>
+                            </p>
+                          </ScrollReveal>
                         )}
                         
                         {/* The result section */}
                         <div className="mt-6 sm:mt-8 lg:mt-12 pt-4 sm:pt-6 lg:pt-8 border-t border-slate-300 dark:border-transparent transition-colors duration-500">
                           <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white mb-3 sm:mb-4 lg:mb-6 transition-colors duration-500">
-                            Ready to get started?
+                            <ScrollSplitText
+                              delay={0}
+                              duration={0.2}
+                              stagger={0.04}
+                              splitBy="words"
+                              start="top 85%"
+                              as="span"
+                            >
+                              Ready to get started?
+                            </ScrollSplitText>
                           </h4>
                           <div className="flex items-center space-x-3 sm:space-x-4 cursor-pointer group">
-                            <span className="text-lg sm:text-xl font-bold text-slate-800 dark:text-gray-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-500">
+                            <ScrollSplitText
+                              delay={0}
+                              duration={0.2}
+                              stagger={0.03}
+                              splitBy="words"
+                              start="top 85%"
+                              className="text-lg sm:text-xl font-bold text-slate-800 dark:text-gray-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-500"
+                              as="span"
+                            >
                               Read full guide
-                            </span>
-                            <div className="group-hover:scale-110 transition-transform flex items-center">
+                            </ScrollSplitText>
+                            <div 
+                              className="group-hover:scale-110 transition-transform flex items-center opacity-0"
+                              style={{
+                                animation: 'fadeIn 0.5s ease-out 1.9s forwards'
+                              }}
+                            >
                               <AnimatedArrowButton arrowDirection="top-right" size="md" />
                             </div>
                           </div>

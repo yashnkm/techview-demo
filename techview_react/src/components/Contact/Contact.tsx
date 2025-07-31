@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
+import { useState } from 'react';
+import ScrollSplitText from '../UI/ScrollSplitText';
+import ScrollReveal from '../UI/ScrollReveal';
 
 interface ServiceOption {
   id: string;
@@ -8,11 +9,6 @@ interface ServiceOption {
 }
 
 const Contact = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const badgeRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const leftCardsRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLDivElement>(null);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -51,59 +47,9 @@ const Contact = () => {
     console.log('Form submitted:', { ...formData, services: selectedServices });
   };
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (!badgeRef.current || !headingRef.current || !leftCardsRef.current || !formRef.current) return;
-
-      // Hide elements initially
-      gsap.set([badgeRef.current, headingRef.current, leftCardsRef.current, formRef.current], {
-        opacity: 0
-      });
-      
-      gsap.set(headingRef.current, {
-        y: 30,
-        opacity: 0
-      });
-      
-      gsap.set([leftCardsRef.current, formRef.current], {
-        y: 20,
-        opacity: 0
-      });
-
-      // Synchronized animations at 4.2s timing
-      const tl = gsap.timeline();
-      
-      tl.to(badgeRef.current, {
-        opacity: 1,
-        duration: 0.64,
-        ease: "power2.out"
-      }, 4.2)
-      .to(headingRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out"
-      }, 4.3)
-      .to(leftCardsRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out"
-      }, 4.4)
-      .to(formRef.current, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out"
-      }, 4.5);
-
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
-    <section ref={containerRef} className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
+    <section className="relative overflow-hidden bg-[#efeeef] dark:bg-dark-bg transition-colors duration-500">
       {/* TechView signature background textures */}
       {/* Heavy Random Grain Texture - Light */}
       <div className="absolute inset-0 opacity-60 dark:opacity-40 transition-opacity duration-500" 
@@ -154,92 +100,228 @@ const Contact = () => {
            }}>
       </div>
 
-      <div ref={containerRef} className="w-full">
+      <div className="w-full">
         <div className="max-w-[9.24xl] mx-auto" style={{maxWidth: '110.88rem'}}>
           <div className="px-4 sm:px-6 md:px-8 py-16">
             
             {/* Contact Badge */}
-            <div ref={badgeRef} className="mb-8">
+            <ScrollReveal delay={0} className="mb-8">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Contact</span>
+                <ScrollSplitText
+                  delay={0.1}
+                  duration={0.2}
+                  stagger={0.05}
+                  splitBy="chars"
+                  className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500"
+                >
+                  Contact
+                </ScrollSplitText>
               </div>
-            </div>
+            </ScrollReveal>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-8 items-stretch">
             
             {/* Left Side - Contact Information Cards */}
-            <div ref={leftCardsRef} className="lg:col-span-4 flex flex-col gap-6 h-full">
+            <div className="lg:col-span-4 flex flex-col gap-6 h-full">
               
               {/* Chat to us Card */}
-              <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-transparent hover:shadow-xl dark:hover:shadow-none transition-all duration-300 group">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
-                    <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.04 1.05 4.4L1 22l5.6-2.05C8.96 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-slate-800 dark:group-hover:text-gray-200 transition-colors duration-500">Chat to us</h3>
-                    <p className="text-base text-slate-600 dark:text-gray-300 mb-3 transition-colors duration-500">Our friendly team is here to help.</p>
-                    <a href="mailto:hello@techview.ai" className="text-base text-black dark:text-white font-semibold hover:underline transition-colors duration-500">
-                      hello@techview.ai
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Visit us Card */}
-              <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-transparent hover:shadow-xl dark:hover:shadow-none transition-all duration-300 group">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
-                    <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-slate-800 dark:group-hover:text-gray-200 transition-colors duration-500">Visit us</h3>
-                    <p className="text-base text-slate-600 dark:text-gray-300 mb-3 transition-colors duration-500">Come say hello at our office HQ.</p>
-                    <div className="text-base text-black dark:text-white font-semibold transition-colors duration-500">
-                      <p>100 Smith Street</p>
-                      <p>San Francisco, CA 94102</p>
+              <ScrollReveal delay={0.2} y={40}>
+                <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-transparent hover:shadow-xl dark:hover:shadow-none transition-all duration-300 group">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
+                      <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3.04 1.05 4.4L1 22l5.6-2.05C8.96 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-slate-800 dark:group-hover:text-gray-200 transition-colors duration-500">
+                        <ScrollSplitText
+                          delay={0.3}
+                          duration={0.3}
+                          stagger={0.06}
+                          splitBy="words"
+                          start="top 85%"
+                          as="span"
+                        >
+                          Chat to us
+                        </ScrollSplitText>
+                      </h3>
+                      <p className="text-base text-slate-600 dark:text-gray-300 mb-3 transition-colors duration-500">
+                        <ScrollSplitText
+                          delay={0.4}
+                          duration={0.3}
+                          stagger={0.02}
+                          splitBy="words"
+                          start="top 85%"
+                          as="span"
+                        >
+                          Our friendly team is here to help.
+                        </ScrollSplitText>
+                      </p>
+                      <a href="mailto:hello@techview.ai" className="text-base text-black dark:text-white font-semibold hover:underline transition-colors duration-500">
+                        <ScrollSplitText
+                          delay={0.5}
+                          duration={0.4}
+                          stagger={0.02}
+                          splitBy="chars"
+                          start="top 85%"
+                          as="span"
+                        >
+                          hello@techview.ai
+                        </ScrollSplitText>
+                      </a>
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
 
-              {/* Call us Card */}
-              <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-transparent hover:shadow-xl dark:hover:shadow-none transition-all duration-300 group">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
-                    <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-slate-800 dark:group-hover:text-gray-200 transition-colors duration-500">Call us</h3>
-                    <p className="text-base text-slate-600 dark:text-gray-300 mb-3 transition-colors duration-500">Mon-Fri from 8am to 5pm.</p>
-                    <a href="tel:+15551234567" className="text-base text-black dark:text-white font-semibold hover:underline transition-colors duration-500">
-                      +1 (555) 123-4567
-                    </a>
+              {/* Visit us Card */}
+              <ScrollReveal delay={0.3} y={40}>
+                <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-transparent hover:shadow-xl dark:hover:shadow-none transition-all duration-300 group">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
+                      <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-slate-800 dark:group-hover:text-gray-200 transition-colors duration-500">
+                        <ScrollSplitText
+                          delay={0.4}
+                          duration={0.4}
+                          stagger={0.1}
+                          splitBy="words"
+                          start="top 85%"
+                          as="span"
+                        >
+                          Visit us
+                        </ScrollSplitText>
+                      </h3>
+                      <p className="text-base text-slate-600 dark:text-gray-300 mb-3 transition-colors duration-500">
+                        <ScrollSplitText
+                          delay={0.5}
+                          duration={0.5}
+                          stagger={0.03}
+                          splitBy="words"
+                          start="top 85%"
+                          as="span"
+                        >
+                          Come say hello at our office HQ.
+                        </ScrollSplitText>
+                      </p>
+                      <div className="text-base text-black dark:text-white font-semibold transition-colors duration-500">
+                        <p>
+                          <ScrollSplitText
+                            delay={0.6}
+                            duration={0.4}
+                            stagger={0.05}
+                            splitBy="words"
+                            start="top 85%"
+                            as="span"
+                          >
+                            100 Smith Street
+                          </ScrollSplitText>
+                        </p>
+                        <p>
+                          <ScrollSplitText
+                            delay={0.7}
+                            duration={0.4}
+                            stagger={0.02}
+                            splitBy="words"
+                            start="top 85%"
+                            as="span"
+                          >
+                            San Francisco, CA 94102
+                          </ScrollSplitText>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
+
+              {/* Call us Card */}
+              <ScrollReveal delay={0.4} y={40}>
+                <div className="bg-white dark:bg-black p-8 rounded-2xl shadow-lg dark:shadow-none border border-gray-100 dark:border-transparent hover:shadow-xl dark:hover:shadow-none transition-all duration-300 group">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#74f5a2'}}>
+                      <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-black dark:text-white mb-2 group-hover:text-slate-800 dark:group-hover:text-gray-200 transition-colors duration-500">
+                        <ScrollSplitText
+                          delay={0.5}
+                          duration={0.4}
+                          stagger={0.1}
+                          splitBy="words"
+                          start="top 85%"
+                          as="span"
+                        >
+                          Call us
+                        </ScrollSplitText>
+                      </h3>
+                      <p className="text-base text-slate-600 dark:text-gray-300 mb-3 transition-colors duration-500">
+                        <ScrollSplitText
+                          delay={0.6}
+                          duration={0.5}
+                          stagger={0.03}
+                          splitBy="words"
+                          start="top 85%"
+                          as="span"
+                        >
+                          Mon-Fri from 8am to 5pm.
+                        </ScrollSplitText>
+                      </p>
+                      <a href="tel:+15551234567" className="text-base text-black dark:text-white font-semibold hover:underline transition-colors duration-500">
+                        <ScrollSplitText
+                          delay={0.7}
+                          duration={0.4}
+                          stagger={0.02}
+                          splitBy="chars"
+                          start="top 85%"
+                          as="span"
+                        >
+                          +1 (555) 123-4567
+                        </ScrollSplitText>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
 
             {/* Right Side - Main Form Area */}
-            <div ref={formRef} className="lg:col-span-8 h-full">
+            <ScrollReveal delay={0.4} className="lg:col-span-8 h-full">
               <div className="rounded-2xl p-8 lg:p-12 shadow-xl h-full flex flex-col" style={{backgroundColor: '#74f5a2'}}>
                 
                 {/* Hero Text */}
                 <div className="mb-8">
-                  <h1 ref={headingRef} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-[1.1] tracking-tight mb-4">
-                    Got <span className="italic font-normal">ideas</span>?<br />
-                    We've got the skills.<br />
-                    <span className="text-black">Let's team up.</span>
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-[1.1] tracking-tight mb-4">
+                    <ScrollSplitText
+                      delay={0.5}
+                      duration={0.4}
+                      stagger={0.05}
+                      splitBy="words"
+                      start="top 85%"
+                      as="span"
+                    >
+                      Got ideas? We've got the skills. Let's team up.
+                    </ScrollSplitText>
                   </h1>
                   <p className="text-lg sm:text-xl text-black leading-relaxed opacity-90">
-                    Tell us more about yourself and what you've got in mind.
+                    <ScrollSplitText
+                      delay={0.7}
+                      duration={0.4}
+                      stagger={0.02}
+                      splitBy="words"
+                      start="top 85%"
+                      as="span"
+                    >
+                      Tell us more about yourself and what you've got in mind.
+                    </ScrollSplitText>
                   </p>
                 </div>
 
@@ -329,7 +411,7 @@ const Contact = () => {
                   </div>
                 </form>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
           </div>
         </div>

@@ -1,22 +1,6 @@
-import { useRef, useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import ScrollReveal from '../UI/ScrollReveal';
 
 const Footer = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (!containerRef.current) return;
-
-      // Add scroll trigger animations here if needed
-      
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <footer className="relative w-full py-8 sm:py-12 lg:py-16 overflow-hidden bg-gray-900 dark:bg-white transition-colors duration-500">
@@ -27,31 +11,32 @@ const Footer = () => {
 
       <div className="w-full px-4 sm:px-6 md:px-8">
         <div className="max-w-[9.24xl] mx-auto w-full" style={{maxWidth: '110.88rem'}}>
-          <div ref={containerRef} className="space-y-6 sm:space-y-8 lg:space-y-12">
+          <div className="space-y-6 sm:space-y-8 lg:space-y-12">
             
             {/* Main Footer Content */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
+            <ScrollReveal delay={0} y={30} duration={0.5}>
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
               
-              {/* Contact Section */}
-              <div className="col-span-1">
+                {/* Contact Section */}
+                <div className="col-span-1">
                 <h3 className="text-white dark:text-black font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">Contact TechView</h3>
                 <div className="space-y-1">
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm transition-colors duration-500">hello@techview.ai</p>
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm transition-colors duration-500">+1 (555) 123-4567</p>
                 </div>
-              </div>
+                </div>
 
-              {/* Address Section */}
-              <div className="col-span-1">
+                {/* Address Section */}
+                <div className="col-span-1">
                 <h3 className="text-white dark:text-black font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">TechView San Francisco</h3>
                 <div className="space-y-1">
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm transition-colors duration-500">123 Innovation St, 5th floor</p>
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm transition-colors duration-500">94105 San Francisco</p>
                 </div>
-              </div>
+                </div>
 
-              {/* Services Section */}
-              <div className="col-span-1">
+                {/* Services Section */}
+                <div className="col-span-1">
                 <h3 className="text-white dark:text-black font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">Services</h3>
                 <div className="space-y-1">
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">AI Development</p>
@@ -60,10 +45,10 @@ const Footer = () => {
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Cloud Solutions</p>
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Consulting</p>
                 </div>
-              </div>
+                </div>
 
-              {/* Expertise Section */}
-              <div className="col-span-1">
+                {/* Expertise Section */}
+                <div className="col-span-1">
                 <h3 className="text-white dark:text-black font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">Expertise</h3>
                 <div className="space-y-1">
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Machine Learning</p>
@@ -72,10 +57,10 @@ const Footer = () => {
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Cloud Architecture</p>
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">DevOps</p>
                 </div>
-              </div>
+                </div>
 
-              {/* Resources Section */}
-              <div className="col-span-1">
+                {/* Resources Section */}
+                <div className="col-span-1">
                 <h3 className="text-white dark:text-black font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">Resources</h3>
                 <div className="space-y-1">
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Case Studies</p>
@@ -83,10 +68,10 @@ const Footer = () => {
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Documentation</p>
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Newsletter</p>
                 </div>
-              </div>
+                </div>
 
-              {/* Company Section */}
-              <div className="col-span-1">
+                {/* Company Section */}
+                <div className="col-span-1">
                 <h3 className="text-white dark:text-black font-semibold text-sm sm:text-base lg:text-lg mb-2 sm:mb-3 lg:mb-4 transition-colors duration-500">Company</h3>
                 <div className="space-y-1">
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">About</p>
@@ -95,15 +80,17 @@ const Footer = () => {
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Privacy Policy</p>
                   <p className="text-gray-300 dark:text-gray-600 text-xs sm:text-sm hover:text-white dark:hover:text-black transition-colors cursor-pointer duration-500">Terms of Service</p>
                 </div>
-              </div>
+                </div>
 
-            </div>
+              </div>
+            </ScrollReveal>
 
             {/* Logo and Bottom Section */}
-            <div className="flex flex-col sm:flex-row lg:flex-row items-start sm:items-center lg:items-center justify-between border-t border-gray-700 pt-4 sm:pt-6 lg:pt-8 space-y-4 sm:space-y-0 lg:space-y-0">
+            <ScrollReveal delay={0} y={20} duration={0.4} start="top 95%">
+              <div className="flex flex-col sm:flex-row lg:flex-row items-start sm:items-center lg:items-center justify-between border-t border-gray-700 pt-4 sm:pt-6 lg:pt-8 space-y-4 sm:space-y-0 lg:space-y-0">
               
-              {/* Logo */}
-              <div className="flex items-center space-x-4">
+                {/* Logo */}
+                <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
                   <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-sm flex items-center justify-center" style={{backgroundColor: '#74f5a2'}}>
                     <svg className="w-3 h-3 sm:w-5 sm:h-5 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,10 +99,10 @@ const Footer = () => {
                   </div>
                   <span className="text-xl sm:text-2xl font-bold text-white dark:text-black transition-colors duration-500">TechView</span>
                 </div>
-              </div>
+                </div>
 
-              {/* Bottom Info */}
-              <div className="w-full sm:w-auto flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+                {/* Bottom Info */}
+                <div className="w-full sm:w-auto flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-3">
                   <p className="text-gray-400 dark:text-gray-600 text-xs transition-colors duration-500">© 2025 TechView</p>
                   <p className="text-gray-400 dark:text-gray-600 text-xs transition-colors duration-500">Privacy Policy</p>
@@ -139,10 +126,11 @@ const Footer = () => {
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                     </svg>
                   </a>
+                  </div>
                 </div>
-              </div>
 
-            </div>
+              </div>
+            </ScrollReveal>
 
           </div>
         </div>

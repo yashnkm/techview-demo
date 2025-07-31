@@ -3,6 +3,9 @@ import { gsap } from 'gsap';
 import { Draggable } from 'gsap/Draggable';
 import AnimatedArrowButton from '../UI/AnimatedArrowButton';
 import CustomNavButton from '../UI/CustomNavButton';
+import SplitTextReveal from '../UI/SplitTextReveal';
+import ScrollReveal from '../UI/ScrollReveal';
+import ScrollSplitText from '../UI/ScrollSplitText';
 
 gsap.registerPlugin(Draggable);
 
@@ -44,13 +47,42 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
   <div className="bg-white dark:bg-black p-6 sm:p-10 md:p-16 lg:p-20 rounded-xl shadow-sm dark:shadow-none border border-gray-100 dark:border-transparent min-w-[280px] sm:min-w-[400px] md:min-w-[600px] lg:min-w-[1000px] transition-all duration-300 hover:shadow-lg dark:hover:shadow-none hover:scale-[1.02] hover:border-gray-200 dark:hover:border-transparent group cursor-grab">
     <div className="mb-6 sm:mb-10 md:mb-14 lg:mb-16">
       <p className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl text-slate-800 dark:text-white leading-relaxed group-hover:text-slate-900 dark:group-hover:text-gray-200 transition-colors duration-300">
-        "{testimonial.quote}"
+        "<ScrollSplitText
+          delay={0.1}
+          duration={0.4}
+          stagger={0.015}
+          splitBy="words"
+          start="top 90%"
+          as="span"
+        >
+          {testimonial.quote}
+        </ScrollSplitText>"
       </p>
     </div>
     <div className="flex items-center justify-end">
       <div className="text-right">
-        <p className="font-semibold text-slate-900 dark:text-white text-sm sm:text-base lg:text-lg group-hover:text-black dark:group-hover:text-gray-200 transition-colors duration-300">{testimonial.name}</p>
-        <p className="text-slate-600 dark:text-gray-300 text-xs sm:text-sm lg:text-base group-hover:text-slate-700 dark:group-hover:text-gray-400 transition-colors duration-300">{testimonial.title} - {testimonial.company}</p>
+        <ScrollSplitText
+          delay={0.3}
+          duration={0.2}
+          stagger={0.03}
+          splitBy="words"
+          start="top 90%"
+          className="font-semibold text-slate-900 dark:text-white text-sm sm:text-base lg:text-lg group-hover:text-black dark:group-hover:text-gray-200 transition-colors duration-300"
+          as="p"
+        >
+          {testimonial.name}
+        </ScrollSplitText>
+        <ScrollSplitText
+          delay={0.4}
+          duration={0.2}
+          stagger={0.01}
+          splitBy="words"
+          start="top 90%"
+          className="text-slate-600 dark:text-gray-300 text-xs sm:text-sm lg:text-base group-hover:text-slate-700 dark:group-hover:text-gray-400 transition-colors duration-300"
+          as="p"
+        >
+          {testimonial.title} - {testimonial.company}
+        </ScrollSplitText>
       </div>
     </div>
   </div>
@@ -215,29 +247,84 @@ const Results = () => {
           {/* Top Section - Hero Content */}
           <div className="relative p-8 flex-1 flex items-center">
             {/* Results Badge */}
-            <div className="absolute top-6 left-8">
+            <ScrollReveal delay={0} className="absolute top-6 left-8">
               <div className="inline-flex items-center space-x-2">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full" style={{ backgroundColor: '#74f5a2' }}></div>
-                <span className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500">Results</span>
+                <ScrollSplitText
+                  delay={0.1}
+                  duration={0.15}
+                  stagger={0.05}
+                  splitBy="chars"
+                  className="text-xl sm:text-2xl font-bold text-black dark:text-white transition-colors duration-500"
+                >
+                  Results
+                </ScrollSplitText>
               </div>
-            </div>
+            </ScrollReveal>
             
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full items-center pt-8">
               <div className="lg:col-span-6">
                 <h2 className="text-[3.2rem] sm:text-[3.6rem] md:text-[4.2rem] lg:text-[5.4rem] font-bold text-slate-900 dark:text-white leading-[1.1] tracking-tight transition-colors duration-500">
-                  Driven by an<br />
-                  <span className="italic font-normal">innovation</span> mindset
+                  <ScrollSplitText
+                    delay={0.2}
+                    duration={0.3}
+                    stagger={0.04}
+                    splitBy="words"
+                    as="span"
+                  >
+                    Driven by an
+                  </ScrollSplitText>
+                  <br />
+                  <ScrollSplitText
+                    delay={0.3}
+                    duration={0.3}
+                    stagger={0.04}
+                    splitBy="words"
+                    className="italic font-normal"
+                    as="span"
+                  >
+                    innovation
+                  </ScrollSplitText>{" "}
+                  <ScrollSplitText
+                    delay={0.4}
+                    duration={0.3}
+                    stagger={0.04}
+                    splitBy="words"
+                    as="span"
+                  >
+                    mindset
+                  </ScrollSplitText>
                 </h2>
               </div>
               <div className="lg:col-span-6 flex flex-col">
                 <p className="text-base sm:text-lg lg:text-xl text-black dark:text-gray-300 leading-relaxed mb-6 font-medium tracking-normal transition-colors duration-500">
-                  We are a team of creative problem-solvers who love a good challenge and are focused on making a real difference for you. We find better ways to get you results. Your goals become our goals, and we'll be just as excited to see you succeed.
+                  <ScrollSplitText
+                    delay={0.5}
+                    duration={0.4}
+                    stagger={0.01}
+                    splitBy="words"
+                    as="span"
+                  >
+                    We are a team of creative problem-solvers who love a good challenge and are focused on making a real difference for you. We find better ways to get you results. Your goals become our goals, and we'll be just as excited to see you succeed.
+                  </ScrollSplitText>
                 </p>
                 <div className="flex items-center space-x-4 cursor-pointer group">
-                  <span className="text-xl font-bold text-slate-800 dark:text-gray-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-500">
+                  <ScrollSplitText
+                    delay={0.7}
+                    duration={0.2}
+                    stagger={0.03}
+                    splitBy="words"
+                    className="text-xl font-bold text-slate-800 dark:text-gray-200 group-hover:text-slate-900 dark:group-hover:text-white transition-colors duration-500"
+                    as="span"
+                  >
                     Explore our work
-                  </span>
-                  <div className="group-hover:scale-110 transition-transform flex items-center">
+                  </ScrollSplitText>
+                  <div 
+                    className="group-hover:scale-110 transition-transform flex items-center opacity-0"
+                    style={{
+                      animation: 'fadeIn 0.5s ease-out 0.9s forwards'
+                    }}
+                  >
                     <AnimatedArrowButton arrowDirection="top-right" size="md" />
                   </div>
                 </div>
@@ -247,7 +334,7 @@ const Results = () => {
 
           {/* Bottom Section - Testimonial Carousel */}
           <div className="relative p-8 flex-1 overflow-hidden">
-            <div className="flex items-center justify-end mb-8">
+            <ScrollReveal delay={0.2} className="flex items-center justify-end mb-8">
               <div className="flex space-x-2">
                 <CustomNavButton
                   direction="left"
@@ -260,7 +347,7 @@ const Results = () => {
                   disabled={currentIndex === testimonials.length - 1}
                 />
               </div>
-            </div>
+            </ScrollReveal>
             
             <div ref={containerRef} className="overflow-hidden cursor-grab active:cursor-grabbing">
               <div 
